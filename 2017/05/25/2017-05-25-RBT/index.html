@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans,en,default">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="近来回顾往日之学习，深感光阴虚度，愧对祖宗，所学多为纸上谈兵，死记硬背，极少深入理解知识中的精髓，往往知其HOW而不知其WHY。 不过知其WHY是一件极为困难的事情，于是便决心要多多实践，纸上得来终觉浅，觉知此事要躬行。 红黑树是一种什么树，三言两语是说不清楚的，在此推荐Wikipedia页面,为了实现一棵树，我盯着这个页面好些天才算看明白了一点点，我在此主要记录一下代码实现细节过程。 首先定义节">
+<meta property="og:type" content="article">
+<meta property="og:title" content="徒手(加上Wikipedia)实现一颗红黑树">
+<meta property="og:url" content="http://yoursite.com/2017/05/25/2017-05-25-RBT/index.html">
+<meta property="og:site_name" content="苟利社稷生死以之">
+<meta property="og:description" content="近来回顾往日之学习，深感光阴虚度，愧对祖宗，所学多为纸上谈兵，死记硬背，极少深入理解知识中的精髓，往往知其HOW而不知其WHY。 不过知其WHY是一件极为困难的事情，于是便决心要多多实践，纸上得来终觉浅，觉知此事要躬行。 红黑树是一种什么树，三言两语是说不清楚的，在此推荐Wikipedia页面,为了实现一棵树，我盯着这个页面好些天才算看明白了一点点，我在此主要记录一下代码实现细节过程。 首先定义节">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oqqy3xbdd.bkt.clouddn.com/Casdfsdfsdfsdpture.PNG">
+<meta property="og:updated_time" content="2017-05-30T04:30:32.432Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="徒手(加上Wikipedia)实现一颗红黑树">
+<meta name="twitter:description" content="近来回顾往日之学习，深感光阴虚度，愧对祖宗，所学多为纸上谈兵，死记硬背，极少深入理解知识中的精髓，往往知其HOW而不知其WHY。 不过知其WHY是一件极为困难的事情，于是便决心要多多实践，纸上得来终觉浅，觉知此事要躬行。 红黑树是一种什么树，三言两语是说不清楚的，在此推荐Wikipedia页面,为了实现一棵树，我盯着这个页面好些天才算看明白了一点点，我在此主要记录一下代码实现细节过程。 首先定义节">
+<meta name="twitter:image" content="http://oqqy3xbdd.bkt.clouddn.com/Casdfsdfsdfsdpture.PNG">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/25/2017-05-25-RBT/"/>
+
+
+
+
+
+  <title>徒手(加上Wikipedia)实现一颗红黑树 | 苟利社稷生死以之</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f5e0c2ffb23bc2bc6815ca1fdc83bff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苟利社稷生死以之</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">John's Blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/25/2017-05-25-RBT/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John.Harris.Tsemin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苟利社稷生死以之">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">徒手(加上Wikipedia)实现一颗红黑树</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-25T01:14:31+08:00">
+                2017-05-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>近来回顾往日之学习，深感光阴虚度，愧对祖宗，所学多为纸上谈兵，死记硬背，极少深入理解知识中的精髓，往往知其HOW而不知其WHY。</p>
+<p>不过知其WHY是一件极为困难的事情，于是便决心要多多实践，纸上得来终觉浅，觉知此事要躬行。</p>
+<p>红黑树是一种什么树，三言两语是说不清楚的，在此推荐<a href="https://zh.wikipedia.org/zh-cn/%E7%BA%A2%E9%BB%91%E6%A0%91" target="_blank" rel="external">Wikipedia页面</a>,为了实现一棵树，我盯着这个页面好些天才算看明白了一点点，我在此主要记录一下代码实现细节过程。</p>
+<p>首先定义节点的形式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">/*RBT*/</div><div class="line">#include &lt;iostream&gt;</div><div class="line">#include&lt;iomanip&gt;</div><div class="line">#include &lt;stdlib.h&gt;</div><div class="line">#include &lt;vector&gt;</div><div class="line">#define RED 0</div><div class="line">#define BLACK 1</div><div class="line">#define LEFT -1</div><div class="line">#define RIGHT 1</div><div class="line">using namespace std;</div><div class="line">struct RBT_Node &#123;</div><div class="line">	int key;</div><div class="line">	int color;//颜色</div><div class="line">	RBT_Node * left;</div><div class="line">	RBT_Node * right;</div><div class="line">	RBT_Node * parent;</div><div class="line">&#125;;</div><div class="line">struct RBTree &#123;</div><div class="line">	RBT_Node * root;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>树最重要的是增删查改操作，其中增删是主要的，所以我只实现增加和删除两个操作。</p>
+<p>下面来实现节点的插入，根据原理，我们根据给出的key构造一个红节点，插入到树中，插入完毕必须要调整以满足红黑树性质，用RBT_adjust（）来实现，这个函数在后面再写出具体实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">int RBT_insert(RBT_Node*  p, RBTree&amp;  T, int n) &#123;</div><div class="line">	int RBT_adjust(RBT_Node *p, RBTree&amp; t);</div><div class="line">	RBT_Node*  node;</div><div class="line">	if (T.root == NULL)</div><div class="line">	&#123;</div><div class="line">		T.root = new RBT_Node;</div><div class="line">		node = T.root;</div><div class="line">		node-&gt;color = RED;//0是红色</div><div class="line">		node-&gt;key = n;</div><div class="line">		node-&gt;left = NULL;</div><div class="line">		node-&gt;right = NULL;</div><div class="line">		node-&gt;parent = NULL;</div><div class="line">		RBT_adjust(node, T);</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	if (n&lt;p-&gt;key) &#123;</div><div class="line">		if (p-&gt;left == NULL)</div><div class="line">		&#123;</div><div class="line">			p-&gt;left = new RBT_Node;</div><div class="line">			node = p-&gt;left;</div><div class="line">			node-&gt;color = RED;//0是红色</div><div class="line">			node-&gt;key = n;</div><div class="line">			node-&gt;left = NULL;</div><div class="line">			node-&gt;right = NULL;</div><div class="line">			node-&gt;parent = p;</div><div class="line">			RBT_adjust(node, T);</div><div class="line"></div><div class="line">		&#125;</div><div class="line">		else RBT_insert((p-&gt;left), T, n);</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else if (n&gt;p-&gt;key) &#123;</div><div class="line">		if (p-&gt;right == NULL)</div><div class="line">		&#123;</div><div class="line">			p-&gt;right = new RBT_Node;</div><div class="line">			node = p-&gt;right;</div><div class="line">			node-&gt;color = RED;//0是红色</div><div class="line">			node-&gt;key = n;</div><div class="line">			node-&gt;left = NULL;</div><div class="line">			node-&gt;right = NULL;</div><div class="line">			node-&gt;parent = p;</div><div class="line">			RBT_adjust(node, T);</div><div class="line">		&#125;</div><div class="line">		else RBT_insert((p-&gt;right), T, n);</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else return -1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>接下来定义几个工具函数，分别实现几种旋转，找到叔叔节点，判断孩子和父亲的左右关系等等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">int RBT_adjust_LL(RBT_Node* p, RBTree&amp; t) &#123;</div><div class="line">	RBT_Node** temp = NULL;</div><div class="line">	if (p-&gt;parent == NULL) &#123;</div><div class="line">		t.root = p-&gt;right;</div><div class="line">		p-&gt;right-&gt;parent = NULL;</div><div class="line">		p-&gt;right = p-&gt;right-&gt;left;</div><div class="line">		if (p-&gt;right != NULL) p-&gt;right-&gt;parent = p;</div><div class="line">		t.root-&gt;left = p;</div><div class="line">		p-&gt;parent = t.root;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else &#123;</div><div class="line">		if (p-&gt;parent-&gt;right == p)temp = &amp;(p-&gt;parent-&gt;right);</div><div class="line">		else temp = &amp;(p-&gt;parent-&gt;left);</div><div class="line">		*temp = p-&gt;right;</div><div class="line">		p-&gt;right-&gt;parent = p-&gt;parent;</div><div class="line">		p-&gt;right = p-&gt;right-&gt;left;</div><div class="line">		if (p-&gt;right != NULL) p-&gt;right-&gt;parent = p;</div><div class="line">		(*temp)-&gt;left = p;</div><div class="line">		p-&gt;parent = (*temp);</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">int RBT_adjust_RR(RBT_Node* p, RBTree&amp; t) &#123;</div><div class="line">	RBT_Node** temp = NULL;</div><div class="line">	if (p-&gt;parent == NULL) &#123;</div><div class="line">		t.root = p-&gt;left;</div><div class="line">		p-&gt;left-&gt;parent = NULL;</div><div class="line">		p-&gt;left = p-&gt;left-&gt;right;</div><div class="line">		if (p-&gt;left != NULL) p-&gt;left-&gt;parent = p;</div><div class="line">		t.root-&gt;right = p;</div><div class="line">		p-&gt;parent = t.root;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else &#123;</div><div class="line">		if (p-&gt;parent-&gt;right == p)temp = &amp;(p-&gt;parent-&gt;right);</div><div class="line">		else temp = &amp;(p-&gt;parent-&gt;left);</div><div class="line">		*temp = p-&gt;left;</div><div class="line">		p-&gt;left-&gt;parent = p-&gt;parent;</div><div class="line">		p-&gt;left = p-&gt;left-&gt;right;</div><div class="line">		if (p-&gt;left != NULL) p-&gt;left-&gt;parent = p;</div><div class="line">		(*temp)-&gt;right = p;</div><div class="line">		p-&gt;parent = *temp;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">int RBT_adjust_RL(RBT_Node* p, RBTree&amp; t) &#123;</div><div class="line">	RBT_Node* temp1 = p;</div><div class="line">	RBT_Node* temp2 = p-&gt;right;</div><div class="line">	RBT_adjust_RR(temp2, t);</div><div class="line">	RBT_adjust_LL(temp1, t);</div><div class="line">	return 0;</div><div class="line"></div><div class="line">&#125;</div><div class="line">int RBT_adjust_LR(RBT_Node* p, RBTree&amp; t) &#123;</div><div class="line">	RBT_Node* temp1 = p;</div><div class="line">	RBT_Node* temp2 = p-&gt;left;</div><div class="line">	RBT_adjust_LL(temp2, t);</div><div class="line">	RBT_adjust_RR(temp1, t);</div><div class="line">	return 0;</div><div class="line">&#125;</div><div class="line">bool isRchild(RBT_Node* node) &#123;</div><div class="line">	if (node-&gt;parent == NULL || node == NULL)return -1;</div><div class="line">	if (node-&gt;parent-&gt;right == node)return true;</div><div class="line">	else return false;</div><div class="line">&#125;</div><div class="line">bool isLchild(RBT_Node* node) &#123;</div><div class="line">	if (node-&gt;parent == NULL||node==NULL)return -1;</div><div class="line">	if (node-&gt;parent-&gt;left == node)return true;</div><div class="line">	else return false;</div><div class="line">&#125;</div><div class="line">struct RBT_Node* getUncle(RBT_Node* node) &#123;</div><div class="line">	//前提是爷爷存在</div><div class="line">	if (isLchild(node-&gt;parent)) &#123;</div><div class="line">		return node-&gt;parent-&gt;parent-&gt;right;</div><div class="line">	&#125;</div><div class="line">	else if (isRchild(node-&gt;parent)) &#123;</div><div class="line">		return node-&gt;parent-&gt;parent-&gt;left;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这便是最核心的部分，也就是插入完成后的调整了，代码中，关键部位，我加了一些注释。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">int RBT_adjust_case3(RBT_Node *p, RBTree&amp; t) &#123;</div><div class="line">	//爸爸红，叔叔黑或者是null</div><div class="line">	if (isLchild(p) &amp;&amp; isRchild(p-&gt;parent)) &#123;</div><div class="line">		RBT_adjust_LR(p-&gt;parent-&gt;parent,t);</div><div class="line">		p-&gt;color = BLACK;</div><div class="line">		if(p-&gt;left)p-&gt;left-&gt;color = RED;</div><div class="line">		if(p-&gt;right)p-&gt;right-&gt;color = RED;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else if (isRchild(p) &amp;&amp; isLchild(p-&gt;parent)) &#123;</div><div class="line">		RBT_adjust_RL(p-&gt;parent-&gt;parent,t);</div><div class="line">		p-&gt;color = BLACK;</div><div class="line">		 if(p-&gt;left)p-&gt;left-&gt;color = RED;</div><div class="line">		if(p-&gt;right)p-&gt;right-&gt;color = RED;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else if (isLchild(p) &amp;&amp; isLchild(p-&gt;parent)) &#123;</div><div class="line">		RBT_adjust_RR(p-&gt;parent-&gt;parent,t);</div><div class="line">		p-&gt;parent-&gt;color = BLACK;</div><div class="line">		if(p-&gt;parent-&gt;right)p-&gt;parent-&gt;right-&gt;color = RED;</div><div class="line">		if(p-&gt;parent-&gt;left)p-&gt;parent-&gt;left-&gt;color = RED;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else &#123;</div><div class="line">		RBT_adjust_LL(p-&gt;parent-&gt;parent,t);</div><div class="line">		p-&gt;parent-&gt;color = BLACK;</div><div class="line">		if(p-&gt;parent-&gt;right)p-&gt;parent-&gt;right-&gt;color = RED;</div><div class="line">		if(p-&gt;parent-&gt;left)p-&gt;parent-&gt;left-&gt;color = RED;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line">int RBT_adjust_case2(RBT_Node *p, RBTree&amp; t) &#123;</div><div class="line">	//父亲RED,所以爷爷是黑色,此处父亲红色，所以肯定不是根，爷爷 必定存在</div><div class="line">	if ((NULL!= getUncle(p))&amp;&amp;(getUncle(p)-&gt;color==RED))</div><div class="line">	&#123;</div><div class="line">		//若叔叔是红色，可以把爸爸 和叔叔公用的爷爷这个黑色节点，下放到父辈，也就是把爷爷染红，爸爸和叔叔染黑</div><div class="line">		//如此一来，就相当于在爷爷处插入了一个新的红节点，需要递归调用调整操作</div><div class="line">		p-&gt;parent-&gt;parent-&gt;color = RED;</div><div class="line">		getUncle(p)-&gt;color = BLACK;</div><div class="line">		p-&gt;parent-&gt;color = BLACK;</div><div class="line">		int RBT_adjust(RBT_Node *p, RBTree&amp; t);</div><div class="line">		RBT_adjust(p-&gt;parent-&gt;parent, t);</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else </div><div class="line">	&#123;</div><div class="line">		RBT_adjust_case3(p,  t);</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">int RBT_adjust(RBT_Node *p, RBTree&amp; t) &#123;</div><div class="line">	if (p-&gt;parent == NULL) &#123; p-&gt;color = BLACK; return 0; &#125;//插入之后是树根</div><div class="line">	if ((p-&gt;parent-&gt;color) ==BLACK) return 0;</div><div class="line">	else RBT_adjust_case2(p,t);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这是这段代码中最臭最长的一部分，实现了删除操作，我要说的内容，都在注释内。。。。。。。。。。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div></pre></td><td class="code"><pre><div class="line">//delete</div><div class="line">RBT_Node*  getBrother(RBT_Node*p) &#123;</div><div class="line">	if (NULL == p || NULL == p-&gt;parent)return NULL;</div><div class="line">	if (p-&gt;parent-&gt;left == p)return p-&gt;parent-&gt;right;</div><div class="line">	else return p-&gt;parent-&gt;left;</div><div class="line">	</div><div class="line">&#125;</div><div class="line">int delete_case6(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node)</div><div class="line">&#123;/*所以综合为：父亲红黑均可，兄弟黑，兄弟两个孩子不全黑,且new节点是父亲左孩子时兄弟左孩子是黑的，</div><div class="line">	new节点是父亲右孩子时兄弟右孩子是黑的</div><div class="line">	如此只剩下：</div><div class="line">	当new节点是父亲左孩子时，父亲红，兄弟右孩子红，或父亲黑，兄弟右孩子黑</div><div class="line">	当new节点是父亲右孩子时，对称。</div><div class="line">	*/</div><div class="line">	RBT_Node*l, *r;</div><div class="line">	if (father_of_new_node-&gt;left == new_node)</div><div class="line">	&#123;</div><div class="line">		l = father_of_new_node-&gt;right-&gt;left;</div><div class="line">		r = father_of_new_node-&gt;right-&gt;right;</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">	&#123;</div><div class="line">		l = father_of_new_node-&gt;left-&gt;left;</div><div class="line">		r = father_of_new_node-&gt;left-&gt;right;</div><div class="line">	&#125;</div><div class="line">	if (new_node-&gt;parent-&gt;left == new_node)</div><div class="line">	&#123;</div><div class="line">		RBT_adjust_RR(father_of_new_node,t);</div><div class="line">		r-&gt;color = BLACK;</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">	&#123;</div><div class="line">		RBT_adjust_LL(father_of_new_node, t);</div><div class="line">		l-&gt;color = BLACK;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	return 0;</div><div class="line">&#125;</div><div class="line">int delete_case5(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node)</div><div class="line">&#123;//此时前提是，兄弟为黑色,（父亲，兄弟的两个孩子不全为黑色)且有（父亲为红时，兄弟两个孩子不同时为黑）</div><div class="line">	//所以综合为：父亲红黑均可，兄弟黑，兄弟两个孩子不全黑</div><div class="line">	RBT_Node*l, *r;</div><div class="line">	if (father_of_new_node-&gt;left == new_node)</div><div class="line">	&#123;</div><div class="line">		l = father_of_new_node-&gt;right-&gt;left;</div><div class="line">		r = father_of_new_node-&gt;right-&gt;right;</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">	&#123;</div><div class="line">		l = father_of_new_node-&gt;left-&gt;left;</div><div class="line">		r = father_of_new_node-&gt;left-&gt;right;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	if (new_node-&gt;parent-&gt;left==new_node) </div><div class="line">	&#123;</div><div class="line">		if (l&amp;&amp;l-&gt;color == RED)</div><div class="line">		&#123;</div><div class="line">			RBT_adjust_RR(l-&gt;parent, t);</div><div class="line">			l-&gt;color = BLACK;</div><div class="line">			l-&gt;right-&gt;color = RED;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">	&#123;</div><div class="line">		if (r&amp;&amp;r-&gt;color == RED)</div><div class="line">		&#123;</div><div class="line">			RBT_adjust_LL(l-&gt;parent, t);</div><div class="line">			l-&gt;color = BLACK;</div><div class="line">			l-&gt;left-&gt;color = RED;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	delete_case6(t, new_node, father_of_new_node);</div><div class="line"></div><div class="line">	return 0;</div><div class="line">&#125;</div><div class="line">int delete_case4(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node)</div><div class="line">&#123;//此时前提是，兄弟为黑色,（父亲，兄弟的两个孩子不全为黑色)</div><div class="line">	RBT_Node*l, *r;</div><div class="line">	if (father_of_new_node-&gt;left == new_node)</div><div class="line">	&#123;</div><div class="line">		l = father_of_new_node-&gt;right-&gt;left;</div><div class="line">		r = father_of_new_node-&gt;right-&gt;right;</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">	&#123;</div><div class="line">		l = father_of_new_node-&gt;left-&gt;left;</div><div class="line">		r = father_of_new_node-&gt;left-&gt;right;</div><div class="line">	&#125;</div><div class="line">	if ((NULL == l || l-&gt;color == BLACK) &amp;&amp; (NULL == r || r-&gt;color == BLACK) &amp;&amp; father_of_new_node-&gt;color == RED)</div><div class="line">	&#123;</div><div class="line">		father_of_new_node-&gt;color = BLACK;</div><div class="line">		getBrother(new_node)-&gt;color = RED;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else  delete_case5(t, new_node, father_of_new_node);</div><div class="line"></div><div class="line">&#125;</div><div class="line">int delete_case3(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node)</div><div class="line">&#123;//此时前提是，兄弟为黑色</div><div class="line">	RBT_Node*l, *r;</div><div class="line"></div><div class="line">		if (father_of_new_node-&gt;left == new_node)</div><div class="line">		&#123;</div><div class="line">			l = father_of_new_node-&gt;right-&gt;left;</div><div class="line">			r = father_of_new_node-&gt;right-&gt;right;</div><div class="line">		&#125;</div><div class="line">		else</div><div class="line">		&#123;</div><div class="line">			l = father_of_new_node-&gt;left-&gt;left;</div><div class="line">			r = father_of_new_node-&gt;left-&gt;right;</div><div class="line">		&#125;</div><div class="line">	</div><div class="line">	</div><div class="line">		if ((NULL==l||l-&gt;color==BLACK)&amp;&amp;(NULL==r||r-&gt;color==BLACK)&amp;&amp;father_of_new_node-&gt;color == BLACK)</div><div class="line">		&#123;//父亲和兄弟以及兄弟的孩子都是黑的，将兄弟染红，递归调用</div><div class="line">			</div><div class="line">			if (father_of_new_node-&gt;left == new_node)</div><div class="line">			&#123;</div><div class="line">				father_of_new_node-&gt;right-&gt;color = RED;</div><div class="line">			&#125;</div><div class="line">			else</div><div class="line">			&#123;</div><div class="line">				father_of_new_node-&gt;left-&gt;color = RED;</div><div class="line">			&#125;</div><div class="line">			int delete_adjust(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node, int deletedColor);</div><div class="line">			delete_adjust(t, father_of_new_node, father_of_new_node-&gt;parent, BLACK);//递归</div><div class="line">		&#125;</div><div class="line">		else delete_case4(t, new_node, father_of_new_node);</div><div class="line"></div><div class="line">		return 0;</div><div class="line">&#125;</div><div class="line">int delete_case2(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node)</div><div class="line">&#123;</div><div class="line">	//case2</div><div class="line">		</div><div class="line">			if (getBrother(new_node))//实际上brother不可能为空</div><div class="line">			&#123;</div><div class="line">				if (getBrother(new_node)-&gt;color == RED)</div><div class="line">				&#123;//新节点兄弟是红的，也就决定了父亲是黑的，且兄弟的二个儿子是黑的</div><div class="line">					if (father_of_new_node-&gt;left = new_node) </div><div class="line">					&#123;</div><div class="line">						RBT_adjust_LL(father_of_new_node, t);</div><div class="line">					&#125;</div><div class="line">					else</div><div class="line">					&#123;</div><div class="line">						RBT_adjust_RR(father_of_new_node, t);</div><div class="line">					&#125;</div><div class="line">					father_of_new_node-&gt;parent-&gt;color = BLACK;</div><div class="line">					father_of_new_node-&gt;color = RED;</div><div class="line">				&#125;</div><div class="line">				 </div><div class="line">			&#125;</div><div class="line">			delete_case3(t, new_node, father_of_new_node);</div><div class="line">			return 0;</div><div class="line">		</div><div class="line">	</div><div class="line">&#125;</div><div class="line">int delete_adjust(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node, int deletedColor) &#123;</div><div class="line">	//parent_of_deleted至多含有一个非空节点</div><div class="line">	//传来的参数给出了被删除节点的颜色,被删除节点的父亲</div><div class="line">	if (deletedColor == RED)return 0;</div><div class="line">	if (new_node&amp;&amp;new_node-&gt;color == RED) &#123;</div><div class="line">		//被删掉的是黑色，新顶替上来的是红色</div><div class="line">		new_node-&gt;color = BLACK; return 0;</div><div class="line">	&#125;</div><div class="line">	else </div><div class="line">	&#123;//被删掉的是黑色，新顶替上来的是黑色or空，这样这条路径就少了一个黑色</div><div class="line">			//case1</div><div class="line">		if (NULL == father_of_new_node)return 0;</div><div class="line">		else  delete_case2(t,new_node,father_of_new_node);</div><div class="line">		</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line">int RBT_delete(RBTree&amp; t, RBT_Node*p, int n) &#123;</div><div class="line">	if (p == NULL) &#123;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	RBT_Node* temp = NULL;</div><div class="line">	if (n == p-&gt;key) &#123;</div><div class="line">		if ((!(p-&gt;left)) &amp;&amp; (!(p-&gt;right))) &#123;//leaf node</div><div class="line">			temp = p;</div><div class="line">			if (!p-&gt;parent) &#123;//是树内唯一根节点</div><div class="line">				t.root = NULL;</div><div class="line">				delete p;</div><div class="line">				return 0;</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			if (p-&gt;parent-&gt;right == p) &#123; </div><div class="line">				p-&gt;parent-&gt;right = NULL; </div><div class="line">				delete_adjust(t,temp-&gt;parent-&gt;right ,temp-&gt;parent,0);</div><div class="line">			&#125;</div><div class="line">			else</div><div class="line">			&#123;</div><div class="line">				p-&gt;parent-&gt;left = NULL;</div><div class="line">				delete_adjust(t, temp-&gt;parent-&gt;left,temp-&gt;parent, 0);</div><div class="line">			&#125;</div><div class="line">			delete p;</div><div class="line">			return 0;</div><div class="line">		&#125;</div><div class="line">		else if (p-&gt;left) &#123;//若左子树存在则找出左最大的</div><div class="line">			temp = p-&gt;left;</div><div class="line">			while (temp-&gt;right != NULL) &#123;</div><div class="line">				temp = temp-&gt;right;</div><div class="line">			&#125;</div><div class="line">			p-&gt;key = temp-&gt;key;//复制key</div><div class="line">			 </div><div class="line">				//if (temp-&gt;parent-&gt;right == p) p-&gt;parent-&gt;right = NULL;</div><div class="line">				//else temp-&gt;parent-&gt;left = NULL;</div><div class="line">				if (temp-&gt;parent-&gt;left == temp)</div><div class="line">				&#123;</div><div class="line">					temp-&gt;parent-&gt;left = temp-&gt;left;</div><div class="line">					if (temp-&gt;left != NULL)temp-&gt;left-&gt;parent = temp-&gt;parent;</div><div class="line">					delete_adjust(t, temp-&gt;parent-&gt;left,temp-&gt;parent,temp-&gt;color);</div><div class="line">				&#125;</div><div class="line">				else</div><div class="line">				&#123;</div><div class="line">					temp-&gt;parent-&gt;right = temp-&gt;left;</div><div class="line">					if (temp-&gt;left != NULL)temp-&gt;left-&gt;parent = temp-&gt;parent;</div><div class="line">					delete_adjust(t, temp-&gt;parent-&gt;right, temp-&gt;parent, temp-&gt;color);</div><div class="line">				&#125;</div><div class="line">				delete temp;</div><div class="line">				return 0;//调整</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">		else if (p-&gt;right) &#123;//找右边最小的</div><div class="line">			temp = p-&gt;right;</div><div class="line">			while (temp-&gt;left != NULL) &#123;</div><div class="line">				temp = temp-&gt;left;</div><div class="line">			&#125;</div><div class="line">			p-&gt;key = temp-&gt;key;//复制key</div><div class="line">			if (temp-&gt;parent-&gt;left == temp)</div><div class="line">			&#123;</div><div class="line">				temp-&gt;parent-&gt;left = temp-&gt;right;</div><div class="line">				if (temp-&gt;right != NULL)temp-&gt;right-&gt;parent = temp-&gt;parent;</div><div class="line">				delete_adjust(t, temp-&gt;parent-&gt;left, temp-&gt;parent, temp-&gt;color);</div><div class="line">			&#125;</div><div class="line">			else</div><div class="line">			&#123;</div><div class="line">				temp-&gt;parent-&gt;right = temp-&gt;right;</div><div class="line">				if (temp-&gt;right != NULL)temp-&gt;right-&gt;parent = temp-&gt;parent;</div><div class="line">				delete_adjust(t, temp-&gt;parent-&gt;right, temp-&gt;parent, temp-&gt;color);</div><div class="line">			&#125;</div><div class="line">			delete temp;</div><div class="line">			return 0;//调整</div><div class="line"></div><div class="line">		&#125;</div><div class="line">		</div><div class="line">	&#125;//p-&gt;key==n</div><div class="line">	else &#123;</div><div class="line">		if (n &gt; p-&gt;key) &#123;</div><div class="line">			RBT_delete(t, p-&gt;right, n);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		else &#123;</div><div class="line">			RBT_delete(t, p-&gt;left, n);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>定义两种遍历，用于输出树的形态，方便调试。<br>前序遍历不必多讲，这个层序遍历我做了换行，一层输出一行，并且红色节点用[]，黑色节点用（），空的位置用+占位，使得二叉树能够可视化表示出来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">//遍历输出</div><div class="line">int pre_Treverse(RBT_Node* t) &#123;</div><div class="line">	if (t == NULL)</div><div class="line">	&#123;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	pre_Treverse(t-&gt;left);</div><div class="line">	cout &lt;&lt; t-&gt;key &lt;&lt; &quot; &quot;;</div><div class="line"></div><div class="line">	pre_Treverse(t-&gt;right);</div><div class="line">&#125;</div><div class="line">//层序遍历</div><div class="line">int levelOrder_traverse(RBTree t) &#123;</div><div class="line">	/*</div><div class="line">	此函数用于层序使出二叉树，红色节点用[]，黑色节点用（），空的位置用+占位</div><div class="line">	*/</div><div class="line">	if (t.root == NULL)return -1;</div><div class="line">	vector&lt;RBT_Node*&gt; vec;</div><div class="line">	vec.push_back(t.root);</div><div class="line">	int cur = 0;</div><div class="line">	int num_of_nextlevel = 1;</div><div class="line">	int num_of_nextlevel_notnull = 0;</div><div class="line">	int step_of_thislecel = 100;</div><div class="line">	while (cur&lt;vec.size())</div><div class="line">	&#123;</div><div class="line">		for (int i = 0; i &lt; num_of_nextlevel; i++) &#123;</div><div class="line"></div><div class="line">			if (vec.at(cur) == NULL) &#123;</div><div class="line">				vec.push_back(NULL); vec.push_back(NULL);</div><div class="line">				cout &lt;&lt; &quot;+&quot;;</div><div class="line">			&#125;</div><div class="line">			else &#123;</div><div class="line">				if (vec.at(cur)-&gt;color == BLACK)</div><div class="line">				&#123;</div><div class="line">					cout &lt;&lt;&quot;[&quot;&lt;&lt; vec.at(cur)-&gt;key&lt;&lt;&quot;]&quot;;</div><div class="line">				&#125;</div><div class="line">				else</div><div class="line">				&#123;</div><div class="line">					cout &lt;&lt; &quot;(&quot; &lt;&lt; vec.at(cur)-&gt;key &lt;&lt; &quot;)&quot;;</div><div class="line">				&#125;</div><div class="line">				if (vec.at(cur)-&gt;left != NULL) &#123; vec.push_back(vec.at(cur)-&gt;left); num_of_nextlevel_notnull++; &#125;</div><div class="line">				else &#123; vec.push_back(NULL); &#125;</div><div class="line">				if (vec.at(cur)-&gt;right != NULL) &#123; vec.push_back(vec.at(cur)-&gt;right); num_of_nextlevel_notnull++; &#125;</div><div class="line">				else &#123; vec.push_back(NULL); &#125;</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			cur++;</div><div class="line">		&#125;</div><div class="line">		cout &lt;&lt; endl;</div><div class="line">		step_of_thislecel /= 2;</div><div class="line">		num_of_nextlevel *= 2;</div><div class="line">		if (num_of_nextlevel_notnull == 0) break;</div><div class="line">		num_of_nextlevel_notnull = 0;</div><div class="line"></div><div class="line">	&#125;//while end</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>main函数现身，程序终于完了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">int main() &#123;</div><div class="line">	RBTree T = &#123; NULL &#125;;</div><div class="line">	for (int i = 0; i &lt; 20; i++) &#123;</div><div class="line">		RBT_insert(T.root, T, i);</div><div class="line">	&#125;</div><div class="line">    pre_Treverse(T.root);</div><div class="line">	cout &lt;&lt; endl;</div><div class="line">	levelOrder_traverse(T);</div><div class="line">	cout &lt;&lt; endl;</div><div class="line">	RBT_delete(T, T.root, 7);</div><div class="line">	levelOrder_traverse(T);</div><div class="line">	cout &lt;&lt; &quot;hello&quot;;</div><div class="line">	system(&quot;pause&quot;);</div><div class="line">	return 0;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>运行结果如下：</p>
+<blockquote>
+<p><img src="http://oqqy3xbdd.bkt.clouddn.com/Casdfsdfsdfsdpture.PNG" alt="运行结果"><br>我先顺序插入了20个节点，前序输出，然后层序输出。<br>然后删除了根节点7，再层序输出，可以看出，树的建立和节点删除没有问题，不过我对软件测试不太了解，也不保证没有bug，但是经过这个过程，对红黑树原理有了更深了解，要debug也不会素手无策了。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/20/2017-05-20-python-ping/" rel="next" title="自己实现一个ping程序">
+                <i class="fa fa-chevron-left"></i> 自己实现一个ping程序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/05/2017-06-5-sort_agrithon/" rel="prev" title="（大合集）各种排序算法的介绍与实现">
+                （大合集）各种排序算法的介绍与实现 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="John.Harris.Tsemin" />
+          <p class="site-author-name" itemprop="name">John.Harris.Tsemin</p>
+           
+              <p class="site-description motion-element" itemprop="description">一个不愿意透露姓名的粉丝</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xigou" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/Pre_Jiangzemin" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John.Harris.Tsemin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
