@@ -242,4 +242,18 @@ do(&quot;220.181.57.217&quot;)
     
   
   
+    
+    <entry>
+      <title><![CDATA[categories]]></title>
+      <url>/categories/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[tags]]></title>
+      <url>/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+  
 </search>
