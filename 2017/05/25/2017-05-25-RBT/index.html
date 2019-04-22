@@ -2,31 +2,6 @@
 
 
 
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-Hans,en,default">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
 
 
 
@@ -37,53 +12,19 @@
 
 
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
+<html class="theme-next mist use-motion" lang="en,zh-CN,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
 
-
-  
-  
-  
-  
-
-  
-    
-    
-  
 
   
-    
-      
-    
-
-    
   
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
 
 
 
@@ -92,41 +33,57 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
 
 
 
-<meta name="description" content="近来回顾往日之学习，深感光阴虚度，愧对祖宗，所学多为纸上谈兵，死记硬背，极少深入理解知识中的精髓，往往知其HOW而不知其WHY。 不过知其WHY是一件极为困难的事情，于是便决心要多多实践，纸上得来终觉浅，觉知此事要躬行。 红黑树是一种什么树，三言两语是说不清楚的，在此推荐Wikipedia页面,为了实现一棵树，我盯着这个页面好些天才算看明白了一点点，我在此主要记录一下代码实现细节过程。 首先定义节">
-<meta property="og:type" content="article">
-<meta property="og:title" content="徒手(加上Wikipedia)实现一颗红黑树">
-<meta property="og:url" content="http://yoursite.com/2017/05/25/2017-05-25-RBT/index.html">
-<meta property="og:site_name" content="苟利社稷生死以之">
-<meta property="og:description" content="近来回顾往日之学习，深感光阴虚度，愧对祖宗，所学多为纸上谈兵，死记硬背，极少深入理解知识中的精髓，往往知其HOW而不知其WHY。 不过知其WHY是一件极为困难的事情，于是便决心要多多实践，纸上得来终觉浅，觉知此事要躬行。 红黑树是一种什么树，三言两语是说不清楚的，在此推荐Wikipedia页面,为了实现一棵树，我盯着这个页面好些天才算看明白了一点点，我在此主要记录一下代码实现细节过程。 首先定义节">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oqqy3xbdd.bkt.clouddn.com/Casdfsdfsdfsdpture.PNG">
-<meta property="og:updated_time" content="2017-05-30T04:30:32.432Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="徒手(加上Wikipedia)实现一颗红黑树">
-<meta name="twitter:description" content="近来回顾往日之学习，深感光阴虚度，愧对祖宗，所学多为纸上谈兵，死记硬背，极少深入理解知识中的精髓，往往知其HOW而不知其WHY。 不过知其WHY是一件极为困难的事情，于是便决心要多多实践，纸上得来终觉浅，觉知此事要躬行。 红黑树是一种什么树，三言两语是说不清楚的，在此推荐Wikipedia页面,为了实现一棵树，我盯着这个页面好些天才算看明白了一点点，我在此主要记录一下代码实现细节过程。 首先定义节">
-<meta name="twitter:image" content="http://oqqy3xbdd.bkt.clouddn.com/Casdfsdfsdfsdpture.PNG">
 
 
 
-<script type="text/javascript" id="hexo.configurations">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -138,12 +95,40 @@
 </script>
 
 
-
-  <link rel="canonical" href="http://yoursite.com/2017/05/25/2017-05-25-RBT/"/>
-
+  
 
 
 
+
+  <meta name="description" content="红黑树是一种什么树，三言两语是说不清楚的，在此推荐Wikipedia页面,为了实现一棵树，我盯着这个页面好些天才算看明白了一点点，我在此主要记录一下代码实现细节过程。 首先定义节点的形式： 1234567891011121314151617181920/*RBT*/#include &amp;lt;iostream&amp;gt;#include&amp;lt;iomanip&amp;gt;#include &amp;lt;stdlib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="徒手(加上Wikipedia)实现一颗红黑树">
+<meta property="og:url" content="http://yoursite.com/2017/05/25/2017-05-25-RBT/index.html">
+<meta property="og:site_name" content="苟利社稷生死以之">
+<meta property="og:description" content="红黑树是一种什么树，三言两语是说不清楚的，在此推荐Wikipedia页面,为了实现一棵树，我盯着这个页面好些天才算看明白了一点点，我在此主要记录一下代码实现细节过程。 首先定义节点的形式： 1234567891011121314151617181920/*RBT*/#include &amp;lt;iostream&amp;gt;#include&amp;lt;iomanip&amp;gt;#include &amp;lt;stdlib">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://oqqy3xbdd.bkt.clouddn.com/Casdfsdfsdfsdpture.PNG">
+<meta property="og:updated_time" content="2018-08-14T00:57:05.219Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="徒手(加上Wikipedia)实现一颗红黑树">
+<meta name="twitter:description" content="红黑树是一种什么树，三言两语是说不清楚的，在此推荐Wikipedia页面,为了实现一棵树，我盯着这个页面好些天才算看明白了一点点，我在此主要记录一下代码实现细节过程。 首先定义节点的形式： 1234567891011121314151617181920/*RBT*/#include &amp;lt;iostream&amp;gt;#include&amp;lt;iomanip&amp;gt;#include &amp;lt;stdlib">
+<meta name="twitter:image" content="http://oqqy3xbdd.bkt.clouddn.com/Casdfsdfsdfsdpture.PNG">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2017/05/25/2017-05-25-RBT/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>徒手(加上Wikipedia)实现一颗红黑树 | 苟利社稷生死以之</title>
   
@@ -152,11 +137,12 @@
 
 
 
-  <script type="text/javascript">
+
+  <script>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?7f5e0c2ffb23bc2bc6815ca1fdc83bff";
+      hm.src = "https://hm.baidu.com/hm.js?d96c9f81321ba81abec7b2763c468d3e";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
@@ -168,40 +154,65 @@
 
 
 
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
   
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">苟利社稷生死以之</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <p class="site-subtitle">John's Blog</p>
       
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -209,66 +220,63 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-home">
 
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
       
         <li class="menu-item menu-item-search">
           
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
         </li>
       
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -283,9 +291,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -299,12 +305,27 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/xigou" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -317,13 +338,19 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/25/2017-05-25-RBT/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John.Harris.Tsemin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="description" content="一个不愿意透露姓名的粉丝">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -335,30 +362,56 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">徒手(加上Wikipedia)实现一颗红黑树</h1>
+          <h1 class="post-title" itemprop="name headline">徒手(加上Wikipedia)实现一颗红黑树
+
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-25T01:14:31+08:00">
-                2017-05-25
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2017-05-25 01:14:31" itemprop="dateCreated datePublished" datetime="2017-05-25T01:14:31+08:00">2017-05-25</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-08-14 08:57:05" itemprop="dateModified" datetime="2018-08-14T08:57:05+08:00">2018-08-14</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -366,14 +419,10 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 
                 
                 
@@ -382,6 +431,7 @@
           
 
           
+            
             
           
 
@@ -398,27 +448,28 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <p>近来回顾往日之学习，深感光阴虚度，愧对祖宗，所学多为纸上谈兵，死记硬背，极少深入理解知识中的精髓，往往知其HOW而不知其WHY。</p>
-<p>不过知其WHY是一件极为困难的事情，于是便决心要多多实践，纸上得来终觉浅，觉知此事要躬行。</p>
-<p>红黑树是一种什么树，三言两语是说不清楚的，在此推荐<a href="https://zh.wikipedia.org/zh-cn/%E7%BA%A2%E9%BB%91%E6%A0%91" target="_blank" rel="external">Wikipedia页面</a>,为了实现一棵树，我盯着这个页面好些天才算看明白了一点点，我在此主要记录一下代码实现细节过程。</p>
+        <p>红黑树是一种什么树，三言两语是说不清楚的，在此推荐<a href="https://zh.wikipedia.org/zh-cn/%E7%BA%A2%E9%BB%91%E6%A0%91" target="_blank" rel="noopener">Wikipedia页面</a>,为了实现一棵树，我盯着这个页面好些天才算看明白了一点点，我在此主要记录一下代码实现细节过程。</p>
 <p>首先定义节点的形式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">/*RBT*/</div><div class="line">#include &lt;iostream&gt;</div><div class="line">#include&lt;iomanip&gt;</div><div class="line">#include &lt;stdlib.h&gt;</div><div class="line">#include &lt;vector&gt;</div><div class="line">#define RED 0</div><div class="line">#define BLACK 1</div><div class="line">#define LEFT -1</div><div class="line">#define RIGHT 1</div><div class="line">using namespace std;</div><div class="line">struct RBT_Node &#123;</div><div class="line">	int key;</div><div class="line">	int color;//颜色</div><div class="line">	RBT_Node * left;</div><div class="line">	RBT_Node * right;</div><div class="line">	RBT_Node * parent;</div><div class="line">&#125;;</div><div class="line">struct RBTree &#123;</div><div class="line">	RBT_Node * root;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/*RBT*/</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include&lt;iomanip&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">#define RED 0</span><br><span class="line">#define BLACK 1</span><br><span class="line">#define LEFT -1</span><br><span class="line">#define RIGHT 1</span><br><span class="line">using namespace std;</span><br><span class="line">struct RBT_Node &#123;</span><br><span class="line">	int key;</span><br><span class="line">	int color;//颜色</span><br><span class="line">	RBT_Node * left;</span><br><span class="line">	RBT_Node * right;</span><br><span class="line">	RBT_Node * parent;</span><br><span class="line">&#125;;</span><br><span class="line">struct RBTree &#123;</span><br><span class="line">	RBT_Node * root;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>树最重要的是增删查改操作，其中增删是主要的，所以我只实现增加和删除两个操作。</p>
 <p>下面来实现节点的插入，根据原理，我们根据给出的key构造一个红节点，插入到树中，插入完毕必须要调整以满足红黑树性质，用RBT_adjust（）来实现，这个函数在后面再写出具体实现。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">int RBT_insert(RBT_Node*  p, RBTree&amp;  T, int n) &#123;</div><div class="line">	int RBT_adjust(RBT_Node *p, RBTree&amp; t);</div><div class="line">	RBT_Node*  node;</div><div class="line">	if (T.root == NULL)</div><div class="line">	&#123;</div><div class="line">		T.root = new RBT_Node;</div><div class="line">		node = T.root;</div><div class="line">		node-&gt;color = RED;//0是红色</div><div class="line">		node-&gt;key = n;</div><div class="line">		node-&gt;left = NULL;</div><div class="line">		node-&gt;right = NULL;</div><div class="line">		node-&gt;parent = NULL;</div><div class="line">		RBT_adjust(node, T);</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	if (n&lt;p-&gt;key) &#123;</div><div class="line">		if (p-&gt;left == NULL)</div><div class="line">		&#123;</div><div class="line">			p-&gt;left = new RBT_Node;</div><div class="line">			node = p-&gt;left;</div><div class="line">			node-&gt;color = RED;//0是红色</div><div class="line">			node-&gt;key = n;</div><div class="line">			node-&gt;left = NULL;</div><div class="line">			node-&gt;right = NULL;</div><div class="line">			node-&gt;parent = p;</div><div class="line">			RBT_adjust(node, T);</div><div class="line"></div><div class="line">		&#125;</div><div class="line">		else RBT_insert((p-&gt;left), T, n);</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else if (n&gt;p-&gt;key) &#123;</div><div class="line">		if (p-&gt;right == NULL)</div><div class="line">		&#123;</div><div class="line">			p-&gt;right = new RBT_Node;</div><div class="line">			node = p-&gt;right;</div><div class="line">			node-&gt;color = RED;//0是红色</div><div class="line">			node-&gt;key = n;</div><div class="line">			node-&gt;left = NULL;</div><div class="line">			node-&gt;right = NULL;</div><div class="line">			node-&gt;parent = p;</div><div class="line">			RBT_adjust(node, T);</div><div class="line">		&#125;</div><div class="line">		else RBT_insert((p-&gt;right), T, n);</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else return -1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">int RBT_insert(RBT_Node*  p, RBTree&amp;  T, int n) &#123;</span><br><span class="line">	int RBT_adjust(RBT_Node *p, RBTree&amp; t);</span><br><span class="line">	RBT_Node*  node;</span><br><span class="line">	if (T.root == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		T.root = new RBT_Node;</span><br><span class="line">		node = T.root;</span><br><span class="line">		node-&gt;color = RED;//0是红色</span><br><span class="line">		node-&gt;key = n;</span><br><span class="line">		node-&gt;left = NULL;</span><br><span class="line">		node-&gt;right = NULL;</span><br><span class="line">		node-&gt;parent = NULL;</span><br><span class="line">		RBT_adjust(node, T);</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	if (n&lt;p-&gt;key) &#123;</span><br><span class="line">		if (p-&gt;left == NULL)</span><br><span class="line">		&#123;</span><br><span class="line">			p-&gt;left = new RBT_Node;</span><br><span class="line">			node = p-&gt;left;</span><br><span class="line">			node-&gt;color = RED;//0是红色</span><br><span class="line">			node-&gt;key = n;</span><br><span class="line">			node-&gt;left = NULL;</span><br><span class="line">			node-&gt;right = NULL;</span><br><span class="line">			node-&gt;parent = p;</span><br><span class="line">			RBT_adjust(node, T);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">		else RBT_insert((p-&gt;left), T, n);</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	else if (n&gt;p-&gt;key) &#123;</span><br><span class="line">		if (p-&gt;right == NULL)</span><br><span class="line">		&#123;</span><br><span class="line">			p-&gt;right = new RBT_Node;</span><br><span class="line">			node = p-&gt;right;</span><br><span class="line">			node-&gt;color = RED;//0是红色</span><br><span class="line">			node-&gt;key = n;</span><br><span class="line">			node-&gt;left = NULL;</span><br><span class="line">			node-&gt;right = NULL;</span><br><span class="line">			node-&gt;parent = p;</span><br><span class="line">			RBT_adjust(node, T);</span><br><span class="line">		&#125;</span><br><span class="line">		else RBT_insert((p-&gt;right), T, n);</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	else return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>接下来定义几个工具函数，分别实现几种旋转，找到叔叔节点，判断孩子和父亲的左右关系等等。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">int RBT_adjust_LL(RBT_Node* p, RBTree&amp; t) &#123;</div><div class="line">	RBT_Node** temp = NULL;</div><div class="line">	if (p-&gt;parent == NULL) &#123;</div><div class="line">		t.root = p-&gt;right;</div><div class="line">		p-&gt;right-&gt;parent = NULL;</div><div class="line">		p-&gt;right = p-&gt;right-&gt;left;</div><div class="line">		if (p-&gt;right != NULL) p-&gt;right-&gt;parent = p;</div><div class="line">		t.root-&gt;left = p;</div><div class="line">		p-&gt;parent = t.root;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else &#123;</div><div class="line">		if (p-&gt;parent-&gt;right == p)temp = &amp;(p-&gt;parent-&gt;right);</div><div class="line">		else temp = &amp;(p-&gt;parent-&gt;left);</div><div class="line">		*temp = p-&gt;right;</div><div class="line">		p-&gt;right-&gt;parent = p-&gt;parent;</div><div class="line">		p-&gt;right = p-&gt;right-&gt;left;</div><div class="line">		if (p-&gt;right != NULL) p-&gt;right-&gt;parent = p;</div><div class="line">		(*temp)-&gt;left = p;</div><div class="line">		p-&gt;parent = (*temp);</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">int RBT_adjust_RR(RBT_Node* p, RBTree&amp; t) &#123;</div><div class="line">	RBT_Node** temp = NULL;</div><div class="line">	if (p-&gt;parent == NULL) &#123;</div><div class="line">		t.root = p-&gt;left;</div><div class="line">		p-&gt;left-&gt;parent = NULL;</div><div class="line">		p-&gt;left = p-&gt;left-&gt;right;</div><div class="line">		if (p-&gt;left != NULL) p-&gt;left-&gt;parent = p;</div><div class="line">		t.root-&gt;right = p;</div><div class="line">		p-&gt;parent = t.root;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else &#123;</div><div class="line">		if (p-&gt;parent-&gt;right == p)temp = &amp;(p-&gt;parent-&gt;right);</div><div class="line">		else temp = &amp;(p-&gt;parent-&gt;left);</div><div class="line">		*temp = p-&gt;left;</div><div class="line">		p-&gt;left-&gt;parent = p-&gt;parent;</div><div class="line">		p-&gt;left = p-&gt;left-&gt;right;</div><div class="line">		if (p-&gt;left != NULL) p-&gt;left-&gt;parent = p;</div><div class="line">		(*temp)-&gt;right = p;</div><div class="line">		p-&gt;parent = *temp;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">int RBT_adjust_RL(RBT_Node* p, RBTree&amp; t) &#123;</div><div class="line">	RBT_Node* temp1 = p;</div><div class="line">	RBT_Node* temp2 = p-&gt;right;</div><div class="line">	RBT_adjust_RR(temp2, t);</div><div class="line">	RBT_adjust_LL(temp1, t);</div><div class="line">	return 0;</div><div class="line"></div><div class="line">&#125;</div><div class="line">int RBT_adjust_LR(RBT_Node* p, RBTree&amp; t) &#123;</div><div class="line">	RBT_Node* temp1 = p;</div><div class="line">	RBT_Node* temp2 = p-&gt;left;</div><div class="line">	RBT_adjust_LL(temp2, t);</div><div class="line">	RBT_adjust_RR(temp1, t);</div><div class="line">	return 0;</div><div class="line">&#125;</div><div class="line">bool isRchild(RBT_Node* node) &#123;</div><div class="line">	if (node-&gt;parent == NULL || node == NULL)return -1;</div><div class="line">	if (node-&gt;parent-&gt;right == node)return true;</div><div class="line">	else return false;</div><div class="line">&#125;</div><div class="line">bool isLchild(RBT_Node* node) &#123;</div><div class="line">	if (node-&gt;parent == NULL||node==NULL)return -1;</div><div class="line">	if (node-&gt;parent-&gt;left == node)return true;</div><div class="line">	else return false;</div><div class="line">&#125;</div><div class="line">struct RBT_Node* getUncle(RBT_Node* node) &#123;</div><div class="line">	//前提是爷爷存在</div><div class="line">	if (isLchild(node-&gt;parent)) &#123;</div><div class="line">		return node-&gt;parent-&gt;parent-&gt;right;</div><div class="line">	&#125;</div><div class="line">	else if (isRchild(node-&gt;parent)) &#123;</div><div class="line">		return node-&gt;parent-&gt;parent-&gt;left;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这便是最核心的部分，也就是插入完成后的调整了，代码中，关键部位，我加了一些注释。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">int RBT_adjust_case3(RBT_Node *p, RBTree&amp; t) &#123;</div><div class="line">	//爸爸红，叔叔黑或者是null</div><div class="line">	if (isLchild(p) &amp;&amp; isRchild(p-&gt;parent)) &#123;</div><div class="line">		RBT_adjust_LR(p-&gt;parent-&gt;parent,t);</div><div class="line">		p-&gt;color = BLACK;</div><div class="line">		if(p-&gt;left)p-&gt;left-&gt;color = RED;</div><div class="line">		if(p-&gt;right)p-&gt;right-&gt;color = RED;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else if (isRchild(p) &amp;&amp; isLchild(p-&gt;parent)) &#123;</div><div class="line">		RBT_adjust_RL(p-&gt;parent-&gt;parent,t);</div><div class="line">		p-&gt;color = BLACK;</div><div class="line">		 if(p-&gt;left)p-&gt;left-&gt;color = RED;</div><div class="line">		if(p-&gt;right)p-&gt;right-&gt;color = RED;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else if (isLchild(p) &amp;&amp; isLchild(p-&gt;parent)) &#123;</div><div class="line">		RBT_adjust_RR(p-&gt;parent-&gt;parent,t);</div><div class="line">		p-&gt;parent-&gt;color = BLACK;</div><div class="line">		if(p-&gt;parent-&gt;right)p-&gt;parent-&gt;right-&gt;color = RED;</div><div class="line">		if(p-&gt;parent-&gt;left)p-&gt;parent-&gt;left-&gt;color = RED;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else &#123;</div><div class="line">		RBT_adjust_LL(p-&gt;parent-&gt;parent,t);</div><div class="line">		p-&gt;parent-&gt;color = BLACK;</div><div class="line">		if(p-&gt;parent-&gt;right)p-&gt;parent-&gt;right-&gt;color = RED;</div><div class="line">		if(p-&gt;parent-&gt;left)p-&gt;parent-&gt;left-&gt;color = RED;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line">int RBT_adjust_case2(RBT_Node *p, RBTree&amp; t) &#123;</div><div class="line">	//父亲RED,所以爷爷是黑色,此处父亲红色，所以肯定不是根，爷爷 必定存在</div><div class="line">	if ((NULL!= getUncle(p))&amp;&amp;(getUncle(p)-&gt;color==RED))</div><div class="line">	&#123;</div><div class="line">		//若叔叔是红色，可以把爸爸 和叔叔公用的爷爷这个黑色节点，下放到父辈，也就是把爷爷染红，爸爸和叔叔染黑</div><div class="line">		//如此一来，就相当于在爷爷处插入了一个新的红节点，需要递归调用调整操作</div><div class="line">		p-&gt;parent-&gt;parent-&gt;color = RED;</div><div class="line">		getUncle(p)-&gt;color = BLACK;</div><div class="line">		p-&gt;parent-&gt;color = BLACK;</div><div class="line">		int RBT_adjust(RBT_Node *p, RBTree&amp; t);</div><div class="line">		RBT_adjust(p-&gt;parent-&gt;parent, t);</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else </div><div class="line">	&#123;</div><div class="line">		RBT_adjust_case3(p,  t);</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">int RBT_adjust(RBT_Node *p, RBTree&amp; t) &#123;</div><div class="line">	if (p-&gt;parent == NULL) &#123; p-&gt;color = BLACK; return 0; &#125;//插入之后是树根</div><div class="line">	if ((p-&gt;parent-&gt;color) ==BLACK) return 0;</div><div class="line">	else RBT_adjust_case2(p,t);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">int RBT_adjust_LL(RBT_Node* p, RBTree&amp; t) &#123;</span><br><span class="line">	RBT_Node** temp = NULL;</span><br><span class="line">	if (p-&gt;parent == NULL) &#123;</span><br><span class="line">		t.root = p-&gt;right;</span><br><span class="line">		p-&gt;right-&gt;parent = NULL;</span><br><span class="line">		p-&gt;right = p-&gt;right-&gt;left;</span><br><span class="line">		if (p-&gt;right != NULL) p-&gt;right-&gt;parent = p;</span><br><span class="line">		t.root-&gt;left = p;</span><br><span class="line">		p-&gt;parent = t.root;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	else &#123;</span><br><span class="line">		if (p-&gt;parent-&gt;right == p)temp = &amp;(p-&gt;parent-&gt;right);</span><br><span class="line">		else temp = &amp;(p-&gt;parent-&gt;left);</span><br><span class="line">		*temp = p-&gt;right;</span><br><span class="line">		p-&gt;right-&gt;parent = p-&gt;parent;</span><br><span class="line">		p-&gt;right = p-&gt;right-&gt;left;</span><br><span class="line">		if (p-&gt;right != NULL) p-&gt;right-&gt;parent = p;</span><br><span class="line">		(*temp)-&gt;left = p;</span><br><span class="line">		p-&gt;parent = (*temp);</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int RBT_adjust_RR(RBT_Node* p, RBTree&amp; t) &#123;</span><br><span class="line">	RBT_Node** temp = NULL;</span><br><span class="line">	if (p-&gt;parent == NULL) &#123;</span><br><span class="line">		t.root = p-&gt;left;</span><br><span class="line">		p-&gt;left-&gt;parent = NULL;</span><br><span class="line">		p-&gt;left = p-&gt;left-&gt;right;</span><br><span class="line">		if (p-&gt;left != NULL) p-&gt;left-&gt;parent = p;</span><br><span class="line">		t.root-&gt;right = p;</span><br><span class="line">		p-&gt;parent = t.root;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	else &#123;</span><br><span class="line">		if (p-&gt;parent-&gt;right == p)temp = &amp;(p-&gt;parent-&gt;right);</span><br><span class="line">		else temp = &amp;(p-&gt;parent-&gt;left);</span><br><span class="line">		*temp = p-&gt;left;</span><br><span class="line">		p-&gt;left-&gt;parent = p-&gt;parent;</span><br><span class="line">		p-&gt;left = p-&gt;left-&gt;right;</span><br><span class="line">		if (p-&gt;left != NULL) p-&gt;left-&gt;parent = p;</span><br><span class="line">		(*temp)-&gt;right = p;</span><br><span class="line">		p-&gt;parent = *temp;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int RBT_adjust_RL(RBT_Node* p, RBTree&amp; t) &#123;</span><br><span class="line">	RBT_Node* temp1 = p;</span><br><span class="line">	RBT_Node* temp2 = p-&gt;right;</span><br><span class="line">	RBT_adjust_RR(temp2, t);</span><br><span class="line">	RBT_adjust_LL(temp1, t);</span><br><span class="line">	return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">int RBT_adjust_LR(RBT_Node* p, RBTree&amp; t) &#123;</span><br><span class="line">	RBT_Node* temp1 = p;</span><br><span class="line">	RBT_Node* temp2 = p-&gt;left;</span><br><span class="line">	RBT_adjust_LL(temp2, t);</span><br><span class="line">	RBT_adjust_RR(temp1, t);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line">bool isRchild(RBT_Node* node) &#123;</span><br><span class="line">	if (node-&gt;parent == NULL || node == NULL)return -1;</span><br><span class="line">	if (node-&gt;parent-&gt;right == node)return true;</span><br><span class="line">	else return false;</span><br><span class="line">&#125;</span><br><span class="line">bool isLchild(RBT_Node* node) &#123;</span><br><span class="line">	if (node-&gt;parent == NULL||node==NULL)return -1;</span><br><span class="line">	if (node-&gt;parent-&gt;left == node)return true;</span><br><span class="line">	else return false;</span><br><span class="line">&#125;</span><br><span class="line">struct RBT_Node* getUncle(RBT_Node* node) &#123;</span><br><span class="line">	//前提是爷爷存在</span><br><span class="line">	if (isLchild(node-&gt;parent)) &#123;</span><br><span class="line">		return node-&gt;parent-&gt;parent-&gt;right;</span><br><span class="line">	&#125;</span><br><span class="line">	else if (isRchild(node-&gt;parent)) &#123;</span><br><span class="line">		return node-&gt;parent-&gt;parent-&gt;left;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这便是最核心的部分，也就是插入完成后的调整了，代码中，关键部位，我加了一些注释。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">int RBT_adjust_case3(RBT_Node *p, RBTree&amp; t) &#123;</span><br><span class="line">	//爸爸红，叔叔黑或者是null</span><br><span class="line">	if (isLchild(p) &amp;&amp; isRchild(p-&gt;parent)) &#123;</span><br><span class="line">		RBT_adjust_LR(p-&gt;parent-&gt;parent,t);</span><br><span class="line">		p-&gt;color = BLACK;</span><br><span class="line">		if(p-&gt;left)p-&gt;left-&gt;color = RED;</span><br><span class="line">		if(p-&gt;right)p-&gt;right-&gt;color = RED;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	else if (isRchild(p) &amp;&amp; isLchild(p-&gt;parent)) &#123;</span><br><span class="line">		RBT_adjust_RL(p-&gt;parent-&gt;parent,t);</span><br><span class="line">		p-&gt;color = BLACK;</span><br><span class="line">		 if(p-&gt;left)p-&gt;left-&gt;color = RED;</span><br><span class="line">		if(p-&gt;right)p-&gt;right-&gt;color = RED;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	else if (isLchild(p) &amp;&amp; isLchild(p-&gt;parent)) &#123;</span><br><span class="line">		RBT_adjust_RR(p-&gt;parent-&gt;parent,t);</span><br><span class="line">		p-&gt;parent-&gt;color = BLACK;</span><br><span class="line">		if(p-&gt;parent-&gt;right)p-&gt;parent-&gt;right-&gt;color = RED;</span><br><span class="line">		if(p-&gt;parent-&gt;left)p-&gt;parent-&gt;left-&gt;color = RED;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	else &#123;</span><br><span class="line">		RBT_adjust_LL(p-&gt;parent-&gt;parent,t);</span><br><span class="line">		p-&gt;parent-&gt;color = BLACK;</span><br><span class="line">		if(p-&gt;parent-&gt;right)p-&gt;parent-&gt;right-&gt;color = RED;</span><br><span class="line">		if(p-&gt;parent-&gt;left)p-&gt;parent-&gt;left-&gt;color = RED;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">int RBT_adjust_case2(RBT_Node *p, RBTree&amp; t) &#123;</span><br><span class="line">	//父亲RED,所以爷爷是黑色,此处父亲红色，所以肯定不是根，爷爷 必定存在</span><br><span class="line">	if ((NULL!= getUncle(p))&amp;&amp;(getUncle(p)-&gt;color==RED))</span><br><span class="line">	&#123;</span><br><span class="line">		//若叔叔是红色，可以把爸爸 和叔叔公用的爷爷这个黑色节点，下放到父辈，也就是把爷爷染红，爸爸和叔叔染黑</span><br><span class="line">		//如此一来，就相当于在爷爷处插入了一个新的红节点，需要递归调用调整操作</span><br><span class="line">		p-&gt;parent-&gt;parent-&gt;color = RED;</span><br><span class="line">		getUncle(p)-&gt;color = BLACK;</span><br><span class="line">		p-&gt;parent-&gt;color = BLACK;</span><br><span class="line">		int RBT_adjust(RBT_Node *p, RBTree&amp; t);</span><br><span class="line">		RBT_adjust(p-&gt;parent-&gt;parent, t);</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	else </span><br><span class="line">	&#123;</span><br><span class="line">		RBT_adjust_case3(p,  t);</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int RBT_adjust(RBT_Node *p, RBTree&amp; t) &#123;</span><br><span class="line">	if (p-&gt;parent == NULL) &#123; p-&gt;color = BLACK; return 0; &#125;//插入之后是树根</span><br><span class="line">	if ((p-&gt;parent-&gt;color) ==BLACK) return 0;</span><br><span class="line">	else RBT_adjust_case2(p,t);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这是这段代码中最臭最长的一部分，实现了删除操作，我要说的内容，都在注释内。。。。。。。。。。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div></pre></td><td class="code"><pre><div class="line">//delete</div><div class="line">RBT_Node*  getBrother(RBT_Node*p) &#123;</div><div class="line">	if (NULL == p || NULL == p-&gt;parent)return NULL;</div><div class="line">	if (p-&gt;parent-&gt;left == p)return p-&gt;parent-&gt;right;</div><div class="line">	else return p-&gt;parent-&gt;left;</div><div class="line">	</div><div class="line">&#125;</div><div class="line">int delete_case6(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node)</div><div class="line">&#123;/*所以综合为：父亲红黑均可，兄弟黑，兄弟两个孩子不全黑,且new节点是父亲左孩子时兄弟左孩子是黑的，</div><div class="line">	new节点是父亲右孩子时兄弟右孩子是黑的</div><div class="line">	如此只剩下：</div><div class="line">	当new节点是父亲左孩子时，父亲红，兄弟右孩子红，或父亲黑，兄弟右孩子黑</div><div class="line">	当new节点是父亲右孩子时，对称。</div><div class="line">	*/</div><div class="line">	RBT_Node*l, *r;</div><div class="line">	if (father_of_new_node-&gt;left == new_node)</div><div class="line">	&#123;</div><div class="line">		l = father_of_new_node-&gt;right-&gt;left;</div><div class="line">		r = father_of_new_node-&gt;right-&gt;right;</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">	&#123;</div><div class="line">		l = father_of_new_node-&gt;left-&gt;left;</div><div class="line">		r = father_of_new_node-&gt;left-&gt;right;</div><div class="line">	&#125;</div><div class="line">	if (new_node-&gt;parent-&gt;left == new_node)</div><div class="line">	&#123;</div><div class="line">		RBT_adjust_RR(father_of_new_node,t);</div><div class="line">		r-&gt;color = BLACK;</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">	&#123;</div><div class="line">		RBT_adjust_LL(father_of_new_node, t);</div><div class="line">		l-&gt;color = BLACK;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	return 0;</div><div class="line">&#125;</div><div class="line">int delete_case5(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node)</div><div class="line">&#123;//此时前提是，兄弟为黑色,（父亲，兄弟的两个孩子不全为黑色)且有（父亲为红时，兄弟两个孩子不同时为黑）</div><div class="line">	//所以综合为：父亲红黑均可，兄弟黑，兄弟两个孩子不全黑</div><div class="line">	RBT_Node*l, *r;</div><div class="line">	if (father_of_new_node-&gt;left == new_node)</div><div class="line">	&#123;</div><div class="line">		l = father_of_new_node-&gt;right-&gt;left;</div><div class="line">		r = father_of_new_node-&gt;right-&gt;right;</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">	&#123;</div><div class="line">		l = father_of_new_node-&gt;left-&gt;left;</div><div class="line">		r = father_of_new_node-&gt;left-&gt;right;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	if (new_node-&gt;parent-&gt;left==new_node) </div><div class="line">	&#123;</div><div class="line">		if (l&amp;&amp;l-&gt;color == RED)</div><div class="line">		&#123;</div><div class="line">			RBT_adjust_RR(l-&gt;parent, t);</div><div class="line">			l-&gt;color = BLACK;</div><div class="line">			l-&gt;right-&gt;color = RED;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">	&#123;</div><div class="line">		if (r&amp;&amp;r-&gt;color == RED)</div><div class="line">		&#123;</div><div class="line">			RBT_adjust_LL(l-&gt;parent, t);</div><div class="line">			l-&gt;color = BLACK;</div><div class="line">			l-&gt;left-&gt;color = RED;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	delete_case6(t, new_node, father_of_new_node);</div><div class="line"></div><div class="line">	return 0;</div><div class="line">&#125;</div><div class="line">int delete_case4(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node)</div><div class="line">&#123;//此时前提是，兄弟为黑色,（父亲，兄弟的两个孩子不全为黑色)</div><div class="line">	RBT_Node*l, *r;</div><div class="line">	if (father_of_new_node-&gt;left == new_node)</div><div class="line">	&#123;</div><div class="line">		l = father_of_new_node-&gt;right-&gt;left;</div><div class="line">		r = father_of_new_node-&gt;right-&gt;right;</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">	&#123;</div><div class="line">		l = father_of_new_node-&gt;left-&gt;left;</div><div class="line">		r = father_of_new_node-&gt;left-&gt;right;</div><div class="line">	&#125;</div><div class="line">	if ((NULL == l || l-&gt;color == BLACK) &amp;&amp; (NULL == r || r-&gt;color == BLACK) &amp;&amp; father_of_new_node-&gt;color == RED)</div><div class="line">	&#123;</div><div class="line">		father_of_new_node-&gt;color = BLACK;</div><div class="line">		getBrother(new_node)-&gt;color = RED;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	else  delete_case5(t, new_node, father_of_new_node);</div><div class="line"></div><div class="line">&#125;</div><div class="line">int delete_case3(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node)</div><div class="line">&#123;//此时前提是，兄弟为黑色</div><div class="line">	RBT_Node*l, *r;</div><div class="line"></div><div class="line">		if (father_of_new_node-&gt;left == new_node)</div><div class="line">		&#123;</div><div class="line">			l = father_of_new_node-&gt;right-&gt;left;</div><div class="line">			r = father_of_new_node-&gt;right-&gt;right;</div><div class="line">		&#125;</div><div class="line">		else</div><div class="line">		&#123;</div><div class="line">			l = father_of_new_node-&gt;left-&gt;left;</div><div class="line">			r = father_of_new_node-&gt;left-&gt;right;</div><div class="line">		&#125;</div><div class="line">	</div><div class="line">	</div><div class="line">		if ((NULL==l||l-&gt;color==BLACK)&amp;&amp;(NULL==r||r-&gt;color==BLACK)&amp;&amp;father_of_new_node-&gt;color == BLACK)</div><div class="line">		&#123;//父亲和兄弟以及兄弟的孩子都是黑的，将兄弟染红，递归调用</div><div class="line">			</div><div class="line">			if (father_of_new_node-&gt;left == new_node)</div><div class="line">			&#123;</div><div class="line">				father_of_new_node-&gt;right-&gt;color = RED;</div><div class="line">			&#125;</div><div class="line">			else</div><div class="line">			&#123;</div><div class="line">				father_of_new_node-&gt;left-&gt;color = RED;</div><div class="line">			&#125;</div><div class="line">			int delete_adjust(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node, int deletedColor);</div><div class="line">			delete_adjust(t, father_of_new_node, father_of_new_node-&gt;parent, BLACK);//递归</div><div class="line">		&#125;</div><div class="line">		else delete_case4(t, new_node, father_of_new_node);</div><div class="line"></div><div class="line">		return 0;</div><div class="line">&#125;</div><div class="line">int delete_case2(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node)</div><div class="line">&#123;</div><div class="line">	//case2</div><div class="line">		</div><div class="line">			if (getBrother(new_node))//实际上brother不可能为空</div><div class="line">			&#123;</div><div class="line">				if (getBrother(new_node)-&gt;color == RED)</div><div class="line">				&#123;//新节点兄弟是红的，也就决定了父亲是黑的，且兄弟的二个儿子是黑的</div><div class="line">					if (father_of_new_node-&gt;left = new_node) </div><div class="line">					&#123;</div><div class="line">						RBT_adjust_LL(father_of_new_node, t);</div><div class="line">					&#125;</div><div class="line">					else</div><div class="line">					&#123;</div><div class="line">						RBT_adjust_RR(father_of_new_node, t);</div><div class="line">					&#125;</div><div class="line">					father_of_new_node-&gt;parent-&gt;color = BLACK;</div><div class="line">					father_of_new_node-&gt;color = RED;</div><div class="line">				&#125;</div><div class="line">				 </div><div class="line">			&#125;</div><div class="line">			delete_case3(t, new_node, father_of_new_node);</div><div class="line">			return 0;</div><div class="line">		</div><div class="line">	</div><div class="line">&#125;</div><div class="line">int delete_adjust(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node, int deletedColor) &#123;</div><div class="line">	//parent_of_deleted至多含有一个非空节点</div><div class="line">	//传来的参数给出了被删除节点的颜色,被删除节点的父亲</div><div class="line">	if (deletedColor == RED)return 0;</div><div class="line">	if (new_node&amp;&amp;new_node-&gt;color == RED) &#123;</div><div class="line">		//被删掉的是黑色，新顶替上来的是红色</div><div class="line">		new_node-&gt;color = BLACK; return 0;</div><div class="line">	&#125;</div><div class="line">	else </div><div class="line">	&#123;//被删掉的是黑色，新顶替上来的是黑色or空，这样这条路径就少了一个黑色</div><div class="line">			//case1</div><div class="line">		if (NULL == father_of_new_node)return 0;</div><div class="line">		else  delete_case2(t,new_node,father_of_new_node);</div><div class="line">		</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line">int RBT_delete(RBTree&amp; t, RBT_Node*p, int n) &#123;</div><div class="line">	if (p == NULL) &#123;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	RBT_Node* temp = NULL;</div><div class="line">	if (n == p-&gt;key) &#123;</div><div class="line">		if ((!(p-&gt;left)) &amp;&amp; (!(p-&gt;right))) &#123;//leaf node</div><div class="line">			temp = p;</div><div class="line">			if (!p-&gt;parent) &#123;//是树内唯一根节点</div><div class="line">				t.root = NULL;</div><div class="line">				delete p;</div><div class="line">				return 0;</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			if (p-&gt;parent-&gt;right == p) &#123; </div><div class="line">				p-&gt;parent-&gt;right = NULL; </div><div class="line">				delete_adjust(t,temp-&gt;parent-&gt;right ,temp-&gt;parent,0);</div><div class="line">			&#125;</div><div class="line">			else</div><div class="line">			&#123;</div><div class="line">				p-&gt;parent-&gt;left = NULL;</div><div class="line">				delete_adjust(t, temp-&gt;parent-&gt;left,temp-&gt;parent, 0);</div><div class="line">			&#125;</div><div class="line">			delete p;</div><div class="line">			return 0;</div><div class="line">		&#125;</div><div class="line">		else if (p-&gt;left) &#123;//若左子树存在则找出左最大的</div><div class="line">			temp = p-&gt;left;</div><div class="line">			while (temp-&gt;right != NULL) &#123;</div><div class="line">				temp = temp-&gt;right;</div><div class="line">			&#125;</div><div class="line">			p-&gt;key = temp-&gt;key;//复制key</div><div class="line">			 </div><div class="line">				//if (temp-&gt;parent-&gt;right == p) p-&gt;parent-&gt;right = NULL;</div><div class="line">				//else temp-&gt;parent-&gt;left = NULL;</div><div class="line">				if (temp-&gt;parent-&gt;left == temp)</div><div class="line">				&#123;</div><div class="line">					temp-&gt;parent-&gt;left = temp-&gt;left;</div><div class="line">					if (temp-&gt;left != NULL)temp-&gt;left-&gt;parent = temp-&gt;parent;</div><div class="line">					delete_adjust(t, temp-&gt;parent-&gt;left,temp-&gt;parent,temp-&gt;color);</div><div class="line">				&#125;</div><div class="line">				else</div><div class="line">				&#123;</div><div class="line">					temp-&gt;parent-&gt;right = temp-&gt;left;</div><div class="line">					if (temp-&gt;left != NULL)temp-&gt;left-&gt;parent = temp-&gt;parent;</div><div class="line">					delete_adjust(t, temp-&gt;parent-&gt;right, temp-&gt;parent, temp-&gt;color);</div><div class="line">				&#125;</div><div class="line">				delete temp;</div><div class="line">				return 0;//调整</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">		else if (p-&gt;right) &#123;//找右边最小的</div><div class="line">			temp = p-&gt;right;</div><div class="line">			while (temp-&gt;left != NULL) &#123;</div><div class="line">				temp = temp-&gt;left;</div><div class="line">			&#125;</div><div class="line">			p-&gt;key = temp-&gt;key;//复制key</div><div class="line">			if (temp-&gt;parent-&gt;left == temp)</div><div class="line">			&#123;</div><div class="line">				temp-&gt;parent-&gt;left = temp-&gt;right;</div><div class="line">				if (temp-&gt;right != NULL)temp-&gt;right-&gt;parent = temp-&gt;parent;</div><div class="line">				delete_adjust(t, temp-&gt;parent-&gt;left, temp-&gt;parent, temp-&gt;color);</div><div class="line">			&#125;</div><div class="line">			else</div><div class="line">			&#123;</div><div class="line">				temp-&gt;parent-&gt;right = temp-&gt;right;</div><div class="line">				if (temp-&gt;right != NULL)temp-&gt;right-&gt;parent = temp-&gt;parent;</div><div class="line">				delete_adjust(t, temp-&gt;parent-&gt;right, temp-&gt;parent, temp-&gt;color);</div><div class="line">			&#125;</div><div class="line">			delete temp;</div><div class="line">			return 0;//调整</div><div class="line"></div><div class="line">		&#125;</div><div class="line">		</div><div class="line">	&#125;//p-&gt;key==n</div><div class="line">	else &#123;</div><div class="line">		if (n &gt; p-&gt;key) &#123;</div><div class="line">			RBT_delete(t, p-&gt;right, n);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		else &#123;</div><div class="line">			RBT_delete(t, p-&gt;left, n);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>定义两种遍历，用于输出树的形态，方便调试。<br>前序遍历不必多讲，这个层序遍历我做了换行，一层输出一行，并且红色节点用[]，黑色节点用（），空的位置用+占位，使得二叉树能够可视化表示出来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">//遍历输出</div><div class="line">int pre_Treverse(RBT_Node* t) &#123;</div><div class="line">	if (t == NULL)</div><div class="line">	&#123;</div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	pre_Treverse(t-&gt;left);</div><div class="line">	cout &lt;&lt; t-&gt;key &lt;&lt; &quot; &quot;;</div><div class="line"></div><div class="line">	pre_Treverse(t-&gt;right);</div><div class="line">&#125;</div><div class="line">//层序遍历</div><div class="line">int levelOrder_traverse(RBTree t) &#123;</div><div class="line">	/*</div><div class="line">	此函数用于层序使出二叉树，红色节点用[]，黑色节点用（），空的位置用+占位</div><div class="line">	*/</div><div class="line">	if (t.root == NULL)return -1;</div><div class="line">	vector&lt;RBT_Node*&gt; vec;</div><div class="line">	vec.push_back(t.root);</div><div class="line">	int cur = 0;</div><div class="line">	int num_of_nextlevel = 1;</div><div class="line">	int num_of_nextlevel_notnull = 0;</div><div class="line">	int step_of_thislecel = 100;</div><div class="line">	while (cur&lt;vec.size())</div><div class="line">	&#123;</div><div class="line">		for (int i = 0; i &lt; num_of_nextlevel; i++) &#123;</div><div class="line"></div><div class="line">			if (vec.at(cur) == NULL) &#123;</div><div class="line">				vec.push_back(NULL); vec.push_back(NULL);</div><div class="line">				cout &lt;&lt; &quot;+&quot;;</div><div class="line">			&#125;</div><div class="line">			else &#123;</div><div class="line">				if (vec.at(cur)-&gt;color == BLACK)</div><div class="line">				&#123;</div><div class="line">					cout &lt;&lt;&quot;[&quot;&lt;&lt; vec.at(cur)-&gt;key&lt;&lt;&quot;]&quot;;</div><div class="line">				&#125;</div><div class="line">				else</div><div class="line">				&#123;</div><div class="line">					cout &lt;&lt; &quot;(&quot; &lt;&lt; vec.at(cur)-&gt;key &lt;&lt; &quot;)&quot;;</div><div class="line">				&#125;</div><div class="line">				if (vec.at(cur)-&gt;left != NULL) &#123; vec.push_back(vec.at(cur)-&gt;left); num_of_nextlevel_notnull++; &#125;</div><div class="line">				else &#123; vec.push_back(NULL); &#125;</div><div class="line">				if (vec.at(cur)-&gt;right != NULL) &#123; vec.push_back(vec.at(cur)-&gt;right); num_of_nextlevel_notnull++; &#125;</div><div class="line">				else &#123; vec.push_back(NULL); &#125;</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			cur++;</div><div class="line">		&#125;</div><div class="line">		cout &lt;&lt; endl;</div><div class="line">		step_of_thislecel /= 2;</div><div class="line">		num_of_nextlevel *= 2;</div><div class="line">		if (num_of_nextlevel_notnull == 0) break;</div><div class="line">		num_of_nextlevel_notnull = 0;</div><div class="line"></div><div class="line">	&#125;//while end</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>main函数现身，程序终于完了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">int main() &#123;</div><div class="line">	RBTree T = &#123; NULL &#125;;</div><div class="line">	for (int i = 0; i &lt; 20; i++) &#123;</div><div class="line">		RBT_insert(T.root, T, i);</div><div class="line">	&#125;</div><div class="line">    pre_Treverse(T.root);</div><div class="line">	cout &lt;&lt; endl;</div><div class="line">	levelOrder_traverse(T);</div><div class="line">	cout &lt;&lt; endl;</div><div class="line">	RBT_delete(T, T.root, 7);</div><div class="line">	levelOrder_traverse(T);</div><div class="line">	cout &lt;&lt; &quot;hello&quot;;</div><div class="line">	system(&quot;pause&quot;);</div><div class="line">	return 0;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br></pre></td><td class="code"><pre><span class="line">//delete</span><br><span class="line">RBT_Node*  getBrother(RBT_Node*p) &#123;</span><br><span class="line">	if (NULL == p || NULL == p-&gt;parent)return NULL;</span><br><span class="line">	if (p-&gt;parent-&gt;left == p)return p-&gt;parent-&gt;right;</span><br><span class="line">	else return p-&gt;parent-&gt;left;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">int delete_case6(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node)</span><br><span class="line">&#123;/*所以综合为：父亲红黑均可，兄弟黑，兄弟两个孩子不全黑,且new节点是父亲左孩子时兄弟左孩子是黑的，</span><br><span class="line">	new节点是父亲右孩子时兄弟右孩子是黑的</span><br><span class="line">	如此只剩下：</span><br><span class="line">	当new节点是父亲左孩子时，父亲红，兄弟右孩子红，或父亲黑，兄弟右孩子黑</span><br><span class="line">	当new节点是父亲右孩子时，对称。</span><br><span class="line">	*/</span><br><span class="line">	RBT_Node*l, *r;</span><br><span class="line">	if (father_of_new_node-&gt;left == new_node)</span><br><span class="line">	&#123;</span><br><span class="line">		l = father_of_new_node-&gt;right-&gt;left;</span><br><span class="line">		r = father_of_new_node-&gt;right-&gt;right;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		l = father_of_new_node-&gt;left-&gt;left;</span><br><span class="line">		r = father_of_new_node-&gt;left-&gt;right;</span><br><span class="line">	&#125;</span><br><span class="line">	if (new_node-&gt;parent-&gt;left == new_node)</span><br><span class="line">	&#123;</span><br><span class="line">		RBT_adjust_RR(father_of_new_node,t);</span><br><span class="line">		r-&gt;color = BLACK;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		RBT_adjust_LL(father_of_new_node, t);</span><br><span class="line">		l-&gt;color = BLACK;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line">int delete_case5(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node)</span><br><span class="line">&#123;//此时前提是，兄弟为黑色,（父亲，兄弟的两个孩子不全为黑色)且有（父亲为红时，兄弟两个孩子不同时为黑）</span><br><span class="line">	//所以综合为：父亲红黑均可，兄弟黑，兄弟两个孩子不全黑</span><br><span class="line">	RBT_Node*l, *r;</span><br><span class="line">	if (father_of_new_node-&gt;left == new_node)</span><br><span class="line">	&#123;</span><br><span class="line">		l = father_of_new_node-&gt;right-&gt;left;</span><br><span class="line">		r = father_of_new_node-&gt;right-&gt;right;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		l = father_of_new_node-&gt;left-&gt;left;</span><br><span class="line">		r = father_of_new_node-&gt;left-&gt;right;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	if (new_node-&gt;parent-&gt;left==new_node) </span><br><span class="line">	&#123;</span><br><span class="line">		if (l&amp;&amp;l-&gt;color == RED)</span><br><span class="line">		&#123;</span><br><span class="line">			RBT_adjust_RR(l-&gt;parent, t);</span><br><span class="line">			l-&gt;color = BLACK;</span><br><span class="line">			l-&gt;right-&gt;color = RED;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		if (r&amp;&amp;r-&gt;color == RED)</span><br><span class="line">		&#123;</span><br><span class="line">			RBT_adjust_LL(l-&gt;parent, t);</span><br><span class="line">			l-&gt;color = BLACK;</span><br><span class="line">			l-&gt;left-&gt;color = RED;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	delete_case6(t, new_node, father_of_new_node);</span><br><span class="line"></span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line">int delete_case4(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node)</span><br><span class="line">&#123;//此时前提是，兄弟为黑色,（父亲，兄弟的两个孩子不全为黑色)</span><br><span class="line">	RBT_Node*l, *r;</span><br><span class="line">	if (father_of_new_node-&gt;left == new_node)</span><br><span class="line">	&#123;</span><br><span class="line">		l = father_of_new_node-&gt;right-&gt;left;</span><br><span class="line">		r = father_of_new_node-&gt;right-&gt;right;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		l = father_of_new_node-&gt;left-&gt;left;</span><br><span class="line">		r = father_of_new_node-&gt;left-&gt;right;</span><br><span class="line">	&#125;</span><br><span class="line">	if ((NULL == l || l-&gt;color == BLACK) &amp;&amp; (NULL == r || r-&gt;color == BLACK) &amp;&amp; father_of_new_node-&gt;color == RED)</span><br><span class="line">	&#123;</span><br><span class="line">		father_of_new_node-&gt;color = BLACK;</span><br><span class="line">		getBrother(new_node)-&gt;color = RED;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	else  delete_case5(t, new_node, father_of_new_node);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">int delete_case3(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node)</span><br><span class="line">&#123;//此时前提是，兄弟为黑色</span><br><span class="line">	RBT_Node*l, *r;</span><br><span class="line"></span><br><span class="line">		if (father_of_new_node-&gt;left == new_node)</span><br><span class="line">		&#123;</span><br><span class="line">			l = father_of_new_node-&gt;right-&gt;left;</span><br><span class="line">			r = father_of_new_node-&gt;right-&gt;right;</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			l = father_of_new_node-&gt;left-&gt;left;</span><br><span class="line">			r = father_of_new_node-&gt;left-&gt;right;</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">		if ((NULL==l||l-&gt;color==BLACK)&amp;&amp;(NULL==r||r-&gt;color==BLACK)&amp;&amp;father_of_new_node-&gt;color == BLACK)</span><br><span class="line">		&#123;//父亲和兄弟以及兄弟的孩子都是黑的，将兄弟染红，递归调用</span><br><span class="line">			</span><br><span class="line">			if (father_of_new_node-&gt;left == new_node)</span><br><span class="line">			&#123;</span><br><span class="line">				father_of_new_node-&gt;right-&gt;color = RED;</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				father_of_new_node-&gt;left-&gt;color = RED;</span><br><span class="line">			&#125;</span><br><span class="line">			int delete_adjust(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node, int deletedColor);</span><br><span class="line">			delete_adjust(t, father_of_new_node, father_of_new_node-&gt;parent, BLACK);//递归</span><br><span class="line">		&#125;</span><br><span class="line">		else delete_case4(t, new_node, father_of_new_node);</span><br><span class="line"></span><br><span class="line">		return 0;</span><br><span class="line">&#125;</span><br><span class="line">int delete_case2(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node)</span><br><span class="line">&#123;</span><br><span class="line">	//case2</span><br><span class="line">		</span><br><span class="line">			if (getBrother(new_node))//实际上brother不可能为空</span><br><span class="line">			&#123;</span><br><span class="line">				if (getBrother(new_node)-&gt;color == RED)</span><br><span class="line">				&#123;//新节点兄弟是红的，也就决定了父亲是黑的，且兄弟的二个儿子是黑的</span><br><span class="line">					if (father_of_new_node-&gt;left = new_node) </span><br><span class="line">					&#123;</span><br><span class="line">						RBT_adjust_LL(father_of_new_node, t);</span><br><span class="line">					&#125;</span><br><span class="line">					else</span><br><span class="line">					&#123;</span><br><span class="line">						RBT_adjust_RR(father_of_new_node, t);</span><br><span class="line">					&#125;</span><br><span class="line">					father_of_new_node-&gt;parent-&gt;color = BLACK;</span><br><span class="line">					father_of_new_node-&gt;color = RED;</span><br><span class="line">				&#125;</span><br><span class="line">				 </span><br><span class="line">			&#125;</span><br><span class="line">			delete_case3(t, new_node, father_of_new_node);</span><br><span class="line">			return 0;</span><br><span class="line">		</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">int delete_adjust(RBTree&amp; t, RBT_Node*new_node, RBT_Node*father_of_new_node, int deletedColor) &#123;</span><br><span class="line">	//parent_of_deleted至多含有一个非空节点</span><br><span class="line">	//传来的参数给出了被删除节点的颜色,被删除节点的父亲</span><br><span class="line">	if (deletedColor == RED)return 0;</span><br><span class="line">	if (new_node&amp;&amp;new_node-&gt;color == RED) &#123;</span><br><span class="line">		//被删掉的是黑色，新顶替上来的是红色</span><br><span class="line">		new_node-&gt;color = BLACK; return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	else </span><br><span class="line">	&#123;//被删掉的是黑色，新顶替上来的是黑色or空，这样这条路径就少了一个黑色</span><br><span class="line">			//case1</span><br><span class="line">		if (NULL == father_of_new_node)return 0;</span><br><span class="line">		else  delete_case2(t,new_node,father_of_new_node);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">int RBT_delete(RBTree&amp; t, RBT_Node*p, int n) &#123;</span><br><span class="line">	if (p == NULL) &#123;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	RBT_Node* temp = NULL;</span><br><span class="line">	if (n == p-&gt;key) &#123;</span><br><span class="line">		if ((!(p-&gt;left)) &amp;&amp; (!(p-&gt;right))) &#123;//leaf node</span><br><span class="line">			temp = p;</span><br><span class="line">			if (!p-&gt;parent) &#123;//是树内唯一根节点</span><br><span class="line">				t.root = NULL;</span><br><span class="line">				delete p;</span><br><span class="line">				return 0;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			if (p-&gt;parent-&gt;right == p) &#123; </span><br><span class="line">				p-&gt;parent-&gt;right = NULL; </span><br><span class="line">				delete_adjust(t,temp-&gt;parent-&gt;right ,temp-&gt;parent,0);</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				p-&gt;parent-&gt;left = NULL;</span><br><span class="line">				delete_adjust(t, temp-&gt;parent-&gt;left,temp-&gt;parent, 0);</span><br><span class="line">			&#125;</span><br><span class="line">			delete p;</span><br><span class="line">			return 0;</span><br><span class="line">		&#125;</span><br><span class="line">		else if (p-&gt;left) &#123;//若左子树存在则找出左最大的</span><br><span class="line">			temp = p-&gt;left;</span><br><span class="line">			while (temp-&gt;right != NULL) &#123;</span><br><span class="line">				temp = temp-&gt;right;</span><br><span class="line">			&#125;</span><br><span class="line">			p-&gt;key = temp-&gt;key;//复制key</span><br><span class="line">			 </span><br><span class="line">				//if (temp-&gt;parent-&gt;right == p) p-&gt;parent-&gt;right = NULL;</span><br><span class="line">				//else temp-&gt;parent-&gt;left = NULL;</span><br><span class="line">				if (temp-&gt;parent-&gt;left == temp)</span><br><span class="line">				&#123;</span><br><span class="line">					temp-&gt;parent-&gt;left = temp-&gt;left;</span><br><span class="line">					if (temp-&gt;left != NULL)temp-&gt;left-&gt;parent = temp-&gt;parent;</span><br><span class="line">					delete_adjust(t, temp-&gt;parent-&gt;left,temp-&gt;parent,temp-&gt;color);</span><br><span class="line">				&#125;</span><br><span class="line">				else</span><br><span class="line">				&#123;</span><br><span class="line">					temp-&gt;parent-&gt;right = temp-&gt;left;</span><br><span class="line">					if (temp-&gt;left != NULL)temp-&gt;left-&gt;parent = temp-&gt;parent;</span><br><span class="line">					delete_adjust(t, temp-&gt;parent-&gt;right, temp-&gt;parent, temp-&gt;color);</span><br><span class="line">				&#125;</span><br><span class="line">				delete temp;</span><br><span class="line">				return 0;//调整</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		else if (p-&gt;right) &#123;//找右边最小的</span><br><span class="line">			temp = p-&gt;right;</span><br><span class="line">			while (temp-&gt;left != NULL) &#123;</span><br><span class="line">				temp = temp-&gt;left;</span><br><span class="line">			&#125;</span><br><span class="line">			p-&gt;key = temp-&gt;key;//复制key</span><br><span class="line">			if (temp-&gt;parent-&gt;left == temp)</span><br><span class="line">			&#123;</span><br><span class="line">				temp-&gt;parent-&gt;left = temp-&gt;right;</span><br><span class="line">				if (temp-&gt;right != NULL)temp-&gt;right-&gt;parent = temp-&gt;parent;</span><br><span class="line">				delete_adjust(t, temp-&gt;parent-&gt;left, temp-&gt;parent, temp-&gt;color);</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				temp-&gt;parent-&gt;right = temp-&gt;right;</span><br><span class="line">				if (temp-&gt;right != NULL)temp-&gt;right-&gt;parent = temp-&gt;parent;</span><br><span class="line">				delete_adjust(t, temp-&gt;parent-&gt;right, temp-&gt;parent, temp-&gt;color);</span><br><span class="line">			&#125;</span><br><span class="line">			delete temp;</span><br><span class="line">			return 0;//调整</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;//p-&gt;key==n</span><br><span class="line">	else &#123;</span><br><span class="line">		if (n &gt; p-&gt;key) &#123;</span><br><span class="line">			RBT_delete(t, p-&gt;right, n);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		else &#123;</span><br><span class="line">			RBT_delete(t, p-&gt;left, n);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义两种遍历，用于输出树的形态，方便调试。<br>前序遍历不必多讲，这个层序遍历我做了换行，一层输出一行，并且红色节点用[]，黑色节点用（），空的位置用+占位，使得二叉树能够可视化表示出来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">//遍历输出</span><br><span class="line">int pre_Treverse(RBT_Node* t) &#123;</span><br><span class="line">	if (t == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	pre_Treverse(t-&gt;left);</span><br><span class="line">	cout &lt;&lt; t-&gt;key &lt;&lt; &quot; &quot;;</span><br><span class="line"></span><br><span class="line">	pre_Treverse(t-&gt;right);</span><br><span class="line">&#125;</span><br><span class="line">//层序遍历</span><br><span class="line">int levelOrder_traverse(RBTree t) &#123;</span><br><span class="line">	/*</span><br><span class="line">	此函数用于层序使出二叉树，红色节点用[]，黑色节点用（），空的位置用+占位</span><br><span class="line">	*/</span><br><span class="line">	if (t.root == NULL)return -1;</span><br><span class="line">	vector&lt;RBT_Node*&gt; vec;</span><br><span class="line">	vec.push_back(t.root);</span><br><span class="line">	int cur = 0;</span><br><span class="line">	int num_of_nextlevel = 1;</span><br><span class="line">	int num_of_nextlevel_notnull = 0;</span><br><span class="line">	int step_of_thislecel = 100;</span><br><span class="line">	while (cur&lt;vec.size())</span><br><span class="line">	&#123;</span><br><span class="line">		for (int i = 0; i &lt; num_of_nextlevel; i++) &#123;</span><br><span class="line"></span><br><span class="line">			if (vec.at(cur) == NULL) &#123;</span><br><span class="line">				vec.push_back(NULL); vec.push_back(NULL);</span><br><span class="line">				cout &lt;&lt; &quot;+&quot;;</span><br><span class="line">			&#125;</span><br><span class="line">			else &#123;</span><br><span class="line">				if (vec.at(cur)-&gt;color == BLACK)</span><br><span class="line">				&#123;</span><br><span class="line">					cout &lt;&lt;&quot;[&quot;&lt;&lt; vec.at(cur)-&gt;key&lt;&lt;&quot;]&quot;;</span><br><span class="line">				&#125;</span><br><span class="line">				else</span><br><span class="line">				&#123;</span><br><span class="line">					cout &lt;&lt; &quot;(&quot; &lt;&lt; vec.at(cur)-&gt;key &lt;&lt; &quot;)&quot;;</span><br><span class="line">				&#125;</span><br><span class="line">				if (vec.at(cur)-&gt;left != NULL) &#123; vec.push_back(vec.at(cur)-&gt;left); num_of_nextlevel_notnull++; &#125;</span><br><span class="line">				else &#123; vec.push_back(NULL); &#125;</span><br><span class="line">				if (vec.at(cur)-&gt;right != NULL) &#123; vec.push_back(vec.at(cur)-&gt;right); num_of_nextlevel_notnull++; &#125;</span><br><span class="line">				else &#123; vec.push_back(NULL); &#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			cur++;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">		step_of_thislecel /= 2;</span><br><span class="line">		num_of_nextlevel *= 2;</span><br><span class="line">		if (num_of_nextlevel_notnull == 0) break;</span><br><span class="line">		num_of_nextlevel_notnull = 0;</span><br><span class="line"></span><br><span class="line">	&#125;//while end</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>main函数现身，程序终于完了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int main() &#123;</span><br><span class="line">	RBTree T = &#123; NULL &#125;;</span><br><span class="line">	for (int i = 0; i &lt; 20; i++) &#123;</span><br><span class="line">		RBT_insert(T.root, T, i);</span><br><span class="line">	&#125;</span><br><span class="line">    pre_Treverse(T.root);</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">	levelOrder_traverse(T);</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">	RBT_delete(T, T.root, 7);</span><br><span class="line">	levelOrder_traverse(T);</span><br><span class="line">	cout &lt;&lt; &quot;hello&quot;;</span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>运行结果如下：</p>
 <blockquote>
 <p><img src="http://oqqy3xbdd.bkt.clouddn.com/Casdfsdfsdfsdpture.PNG" alt="运行结果"><br>我先顺序插入了20个节点，前序输出，然后层序输出。<br>然后删除了根节点7，再层序输出，可以看出，树的建立和节点删除没有问题，不过我对软件测试不太了解，也不保证没有bug，但是经过这个过程，对红黑树原理有了更深了解，要debug也不会素手无策了。</p>
@@ -427,31 +478,101 @@
       
     </div>
 
-    <div>
+    
+
+    
+    
+    
+
+    
+
+    
       
+    
+    
+
+    
+      <div>
         
 
-      
-    </div>
 
-    <div>
-      
-        
 
-      
-    </div>
 
-    <div>
-      
-        
+  
 
-      
-    </div>
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>John.Harris.Tsemin</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    
+    <a href="http://yoursite.com/2017/05/25/2017-05-25-RBT/" title="徒手(加上Wikipedia)实现一颗红黑树">http://yoursite.com/2017/05/25/2017-05-25-RBT/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
+</ul>
+
+      </div>
+    
 
     <footer class="post-footer">
       
 
       
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+              <div>
+                
+
+<script src="//cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.css">
+
+
+  
+
+
+<div class="likely">
+	
+ 	 	<div class="twitter">Tweet</div>
+	
+ 	 	<div class="facebook">Share</div>
+	
+ 	 	<div class="linkedin">Link</div>
+	
+ 	 	<div class="telegram">Send</div>
+	
+ 	 	<div class="whatsapp">Send</div>
+	
+ 	 	<div class="pinterest">Pin</div>
+	
+</div>
+
+              </div>
+            
+            
+              <div id="needsharebutton-postbottom">
+                <span class="btn">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i>
+                </span>
+              </div>
+            
+            
+          </div>
+        
+        </div>
       
       
 
@@ -480,30 +601,21 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
-
-    <div class="post-spread">
-      
-        
-<script>
-  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-
-      
-    </div>
   </div>
 
 
           </div>
           
 
+  
 
-          
-  <div class="comments" id="comments">
-    
-  </div>
 
 
         </div>
@@ -519,85 +631,98 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.jpg"
-               alt="John.Harris.Tsemin" />
-          <p class="site-author-name" itemprop="name">John.Harris.Tsemin</p>
-           
-              <p class="site-description motion-element" itemprop="description">一个不愿意透露姓名的粉丝</p>
-          
-        </div>
-        <nav class="site-state motion-element">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John.Harris.Tsemin</p>
+              <div class="site-description motion-element" itemprop="description">一个不愿意透露姓名的粉丝</div>
+          </div>
 
           
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">categories</span>
+                  
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/xigou" title="GitHub &rarr; https://github.com/xigou" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:cau_chy@foxmail.com" title="E-Mail &rarr; mailto:cau_chy@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
             </div>
           
 
           
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
+
+          
           
 
           
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/xigou" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://twitter.com/Pre_Jiangzemin" target="_blank" title="Twitter">
-                  
-                    <i class="fa fa-fw fa-twitter"></i>
-                  
-                  Twitter
-                </a>
-              </span>
             
           
+          
+
         </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
+      </div>
 
       
 
@@ -605,6 +730,7 @@
 
     </div>
   </aside>
+  
 
 
         
@@ -613,30 +739,39 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">John.Harris.Tsemin</span>
+
+  
+
+  
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.0</div>
+
+
 
 
         
+
+
+
+
+
+
+
 
         
       </div>
@@ -649,11 +784,16 @@
       </div>
     
 
+    
+
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -667,13 +807,6 @@
 
 
 
-  
-
-
-
-
-  
-  
 
 
 
@@ -683,77 +816,8 @@
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/three.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
 
 
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -761,8 +825,59 @@
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  <script type="text/javascript">
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -811,6 +926,8 @@
         .css('overflow', 'hidden');
       $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
 
+      
+
       $.ajax({
         url: path,
         dataType: isXml ? "xml" : "json",
@@ -844,8 +961,9 @@
                 var title = data.title.trim();
                 var titleInLowerCase = title.toLowerCase();
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
                 var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
                 var indexOfTitle = [];
                 var indexOfContent = [];
                 // only match articles with not empty titles
@@ -1014,9 +1132,9 @@
               })
             };
             if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
             } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
             } else {
               resultItems.sort(function (resultLeft, resultRight) {
                 if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
@@ -1090,28 +1208,42 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+  <script>
+    
+      pbOptions = {};
+      
+        pbOptions.iconStyle = "box";
+      
+        pbOptions.boxForm = "horizontal";
+      
+        pbOptions.position = "bottomCenter";
+      
+        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+
+  
+
+  
+
+  
+
+  
 
   
 
