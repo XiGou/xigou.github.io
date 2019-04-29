@@ -1969,7 +1969,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cf4024;
+  background: #ff7d8f;
 }
 .feed-link,
 .chat {
@@ -2349,6 +2349,10 @@ pre .javascript .function {
   padding: 0 10px 0 14px;
   border: 1px solid #222;
   border-radius: 4px;
+}
+.has-jax {
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 .page-archive .archive-page-counter {
   position: relative;
