@@ -129,10 +129,10 @@ comments:
   gitalk:
     clientID    : 1381cb897db80c4eeca0 # GitHub Application Client ID
     clientSecret: 62de810758bdc0103a7cc140c57f70a46ae29acf # GitHub Application Client Secret
-    repository  : # GitHub repo
-    owner       : # GitHub repo owner
+    repository  : xigou.github.io # GitHub repo
+    owner       : XiGou # GitHub repo owner
     admin: # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
-      # - your GitHub Id
+      XiGou # - your GitHub Id
 
   ## Valine
   # please refer to https://valine.js.org/en/ for more info.
