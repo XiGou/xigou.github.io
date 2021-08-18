@@ -14,10 +14,12 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-material.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="问题背景这个问题在统计学和组合数学领域被称为群组测试问题(Group testing),问题源于二战时期，美国需要通过血样检测美军是否携带梅毒，但是当时血液检测耗时耗钱，将每个士兵的血液都检查一遍效率很低。考虑到携带梅毒的总归是少数，Rosenblatt和Dorfman提出将全部待检测士兵的血样分组混合后再检测，如果混合后的血样没有病毒，可以推定整个组都没有病毒，如此便能够减少不必要的检测。">
@@ -28,7 +30,7 @@
 <meta property="og:site_name" content="Land of Free">
 <meta property="og:description" content="问题背景这个问题在统计学和组合数学领域被称为群组测试问题(Group testing),问题源于二战时期，美国需要通过血样检测美军是否携带梅毒，但是当时血液检测耗时耗钱，将每个士兵的血液都检查一遍效率很低。考虑到携带梅毒的总归是少数，Rosenblatt和Dorfman提出将全部待检测士兵的血样分组混合后再检测，如果混合后的血样没有病毒，可以推定整个组都没有病毒，如此便能够减少不必要的检测。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-08-18T05:48:49.977Z">
+<meta property="og:updated_time" content="2021-08-18T05:55:31.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Group testing]群组测试：毒药谜题">
 <meta name="twitter:description" content="问题背景这个问题在统计学和组合数学领域被称为群组测试问题(Group testing),问题源于二战时期，美国需要通过血样检测美军是否携带梅毒，但是当时血液检测耗时耗钱，将每个士兵的血液都检查一遍效率很低。考虑到携带梅毒的总归是少数，Rosenblatt和Dorfman提出将全部待检测士兵的血样分组混合后再检测，如果混合后的血样没有病毒，可以推定整个组都没有病毒，如此便能够减少不必要的检测。">
@@ -119,9 +121,39 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a>
 
   </li>
   </ul>
@@ -138,6 +170,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 
     <main class="main">
@@ -182,7 +215,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-18 05:48:49" itemprop="dateModified" datetime="2021-08-18T05:48:49+00:00">2021-08-18</time>
+                <time title="Modified: 2021-08-18 05:55:31" itemprop="dateModified" datetime="2021-08-18T05:55:31+00:00">2021-08-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -330,11 +363,20 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
+          
         <span class="site-state-item-count">1</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/XiGou" title="GitHub → https://github.com/XiGou" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:gouxivae@gmail.com" title="E-Mail → mailto:gouxivae@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
 
 
 
@@ -351,6 +393,24 @@
     <footer class="footer">
       <div class="footer-inner">
         
+  <div class="languages">
+    <label class="lang-select-label">
+      <i class="fa fa-language"></i>
+      <span>English</span>
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </label>
+    <select class="lang-select" data-canonical="">
+      
+        <option value="en" data-href="/2019/04/28/2019-04-28-Group-testing/" selected="">
+          English
+        </option>
+      
+        <option value="zh-CN" data-href="/zh-CN/2019/04/28/2019-04-28-Group-testing/" selected="">
+          简体中文
+        </option>
+      
+    </select>
+  </div>
 
         
 
@@ -363,7 +423,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">John.Jersey</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
   </div>
 
         
