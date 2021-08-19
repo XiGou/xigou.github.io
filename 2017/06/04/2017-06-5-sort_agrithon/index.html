@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Land of Free">
 <meta property="og:description" content="写在前边：这篇文章又臭又长，纯属个人无聊总结之作。 [TOC] 排序算法在计算机界是很基础，很重要的，对人类也是至关重要的，没有排序算法，就难以把人类分成三六九等，区别对待了，那样的世界是多么恐怖啊。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-08-19T14:16:53.882Z">
+<meta property="og:updated_time" content="2021-08-19T14:20:05.002Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="（大合集）各种排序算法的介绍与实现">
 <meta name="twitter:description" content="写在前边：这篇文章又臭又长，纯属个人无聊总结之作。 [TOC] 排序算法在计算机界是很基础，很重要的，对人类也是至关重要的，没有排序算法，就难以把人类分成三六九等，区别对待了，那样的世界是多么恐怖啊。">
@@ -214,7 +214,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-19 14:16:53" itemprop="dateModified" datetime="2021-08-19T14:16:53+00:00">2021-08-19</time>
+                <time title="Modified: 2021-08-19 14:20:05" itemprop="dateModified" datetime="2021-08-19T14:20:05+00:00">2021-08-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -521,6 +521,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
