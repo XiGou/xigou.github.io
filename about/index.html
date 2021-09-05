@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Land of Free">
 <meta property="og:description" content="Hi, I am John.Jersey, a junior Software Developer now.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-09-04T18:13:08.390Z">
+<meta property="og:updated_time" content="2021-09-05T05:52:18.148Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="about">
 <meta name="twitter:description" content="Hi, I am John.Jersey, a junior Software Developer now.">
@@ -220,6 +220,7 @@
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -451,6 +452,26 @@
     
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '75f656cc2df38ffe043e',
+      clientSecret: 'c0c01f2edb6850982db45a4591280de7114bbf76',
+      repo        : 'xigou.github.io',
+      owner       : 'gouxivae@gmail.com',
+      admin       : ['gouxivae@gmail.com'],
+      id          : '3be7aa98d992907175cbd79c194399f2',
+        language: 'en,zh-CN,zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>

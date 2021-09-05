@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Land of Free">
 <meta property="og:description" content="最近学到Huffman编码，于是想要实现出来看看，查阅了一些资料，就开始动手了。首先整理一下思路，Huffman编码关键是构造huffman树，输入字母表以及对应权重，构建Huffman树；由Huffman树即可生成Huffman码和字母表的映射。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-09-04T18:13:08.390Z">
+<meta property="og:updated_time" content="2021-09-05T05:52:18.144Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="huffman树及编码的实现">
 <meta name="twitter:description" content="最近学到Huffman编码，于是想要实现出来看看，查阅了一些资料，就开始动手了。首先整理一下思路，Huffman编码关键是构造huffman树，输入字母表以及对应权重，构建Huffman树；由Huffman树即可生成Huffman码和字母表的映射。">
@@ -215,7 +215,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-04 18:13:08" itemprop="dateModified" datetime="2021-09-04T18:13:08+00:00">2021-09-04</time>
+                <time title="Modified: 2021-09-05 05:52:18" itemprop="dateModified" datetime="2021-09-05T05:52:18+00:00">2021-09-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,6 +258,23 @@
     
     
     
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>John.Jersey
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://xigou.github.io/2017/05/02/2017-05-03-hufmantree/" title="huffman树及编码的实现">https://xigou.github.io/2017/05/02/2017-05-03-hufmantree/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
 
       <footer class="post-footer">
 
@@ -286,6 +303,7 @@
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -517,6 +535,26 @@
     
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '75f656cc2df38ffe043e',
+      clientSecret: 'c0c01f2edb6850982db45a4591280de7114bbf76',
+      repo        : 'xigou.github.io',
+      owner       : 'gouxivae@gmail.com',
+      admin       : ['gouxivae@gmail.com'],
+      id          : 'a7bedeeed4e80a34c75981edabc1c26d',
+        language: 'en,zh-CN,zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
