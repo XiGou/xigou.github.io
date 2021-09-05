@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Land of Free">
 <meta property="og:description" content="最近学到Huffman编码，于是想要实现出来看看，查阅了一些资料，就开始动手了。首先整理一下思路，Huffman编码关键是构造huffman树，输入字母表以及对应权重，构建Huffman树；由Huffman树即可生成Huffman码和字母表的映射。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-09-05T06:03:59.307Z">
+<meta property="og:updated_time" content="2021-09-05T15:48:45.730Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="huffman树及编码的实现">
 <meta name="twitter:description" content="最近学到Huffman编码，于是想要实现出来看看，查阅了一些资料，就开始动手了。首先整理一下思路，Huffman编码关键是构造huffman树，输入字母表以及对应权重，构建Huffman树；由Huffman树即可生成Huffman码和字母表的映射。">
@@ -215,7 +215,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-05 06:03:59" itemprop="dateModified" datetime="2021-09-05T06:03:59+00:00">2021-09-05</time>
+                <time title="Modified: 2021-09-05 15:48:45" itemprop="dateModified" datetime="2021-09-05T15:48:45+00:00">2021-09-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -363,7 +363,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -475,6 +475,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'neutral',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

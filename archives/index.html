@@ -186,10 +186,33 @@
   <div class="post-block">
     <div class="posts-collapse">
       <div class="collection-title">
-        <span class="collection-header">Um..! 6 posts in total. Keep on posting.</span>
+        <span class="collection-header">Um..! 7 posts in total. Keep on posting.</span>
       </div>
 
       
+    <div class="collection-year">
+      <span class="collection-header">2021</span>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-09-04T21:35:04+00:00"
+              content="2021-09-04">
+          09-04
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/09/04/Computer-Networks-Top-Down-Approach-s-wireshark-experements/" itemprop="url">
+            <span itemprop="name">Wireshark experements of <i>Computer Networks: Top-Down Approach</i></span>
+          </a>
+      </div>
+
+    </header>
+  </article>
     <div class="collection-year">
       <span class="collection-header">2019</span>
     </div>
@@ -277,26 +300,6 @@
     </header>
   </article>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2017-05-02T17:14:31+00:00"
-              content="2017-05-02">
-          05-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2017/05/02/2017-05-03-hufmantree/" itemprop="url">
-            <span itemprop="name">huffman树及编码的实现</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
 
     </div>
   </div>
@@ -372,7 +375,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -484,6 +487,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'neutral',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

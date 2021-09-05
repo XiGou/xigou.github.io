@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Land of Free">
 <meta property="og:description" content="Hi, I am John.Jersey, a junior Software Developer now.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-09-05T06:03:59.311Z">
+<meta property="og:updated_time" content="2021-09-05T15:48:45.734Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="about">
 <meta name="twitter:description" content="Hi, I am John.Jersey, a junior Software Developer now.">
@@ -280,7 +280,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -392,6 +392,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'neutral',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

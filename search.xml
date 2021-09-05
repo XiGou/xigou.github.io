@@ -242,4 +242,370 @@ do(&quot;220.181.57.217&quot;)
         <tag>面试题</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Wireshark experements of &lt;i&gt;Computer Networks: Top-Down Approach&lt;/i&gt;</title>
+    <url>/2021/09/04/Computer-Networks-Top-Down-Approach-s-wireshark-experements/</url>
+    <content><![CDATA[<h1 id="intruduction"><a href="#intruduction" class="headerlink" title="intruduction"></a>intruduction</h1><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>“Tell me and I forget. Show me and I remember. Involve me and I understand.”<br><em>Chinese proverb</em></p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<hr>
+<p>I read the <em>Computer Networks: Top-Down Approach</em> about 3 years ago preparing for my CN-GRE, after read this book, I learned a lot about computer network, the reading helped me to fill in the blanks on the test paper, but I don’t have the confidence to tell others I know the principles behind computer network, expecially after years of forgetting process.</p>
+<p>So I decide to do a wireshark homework in this weekend.</p>
+<a id="more"></a>
+<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><h2 id="Basic-skill-capturing-packets-using-Wireshark"><a href="#Basic-skill-capturing-packets-using-Wireshark" class="headerlink" title="Basic skill: capturing packets using Wireshark"></a>Basic skill: capturing packets using Wireshark</h2><p><em>Wiresharks</em> is a powerful tools to capture, mastering it needs much time, but I think knowing three steps below is enough to start these labs:</p>
+<ol>
+<li>select an interface, and click the “shark fin” icon to start capturing packets;</li>
+<li>do something can trigger the protocal you want to observe;</li>
+<li>click stop icon to stop capturing and start research.</li>
+</ol>
+<p>Need to know more, just go to reference<a href="#refer-anchor-1"><sup>1</sup></a>.</p>
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><h3 id="The-Basic-HTTP-GET-response-interaction"><a href="#The-Basic-HTTP-GET-response-interaction" class="headerlink" title="The Basic HTTP GET/response interaction"></a>The Basic HTTP GET/response interaction</h3><p>What I did:<br>Open Microsoft Edge browser and open this url:  <a href="http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file1.html" target="_blank" rel="noopener">http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file1.html</a>.</p>
+<p>Captured packets:</p>
+<table>
+<thead>
+<tr>
+<th>“No.”</th>
+<th>“Time”</th>
+<th>“Source”</th>
+<th>“Destination”</th>
+<th>“Protocol”</th>
+<th>“Length”</th>
+<th>“Info”</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“370872”</td>
+<td>“899.553481”</td>
+<td>“192.168.1.3”</td>
+<td>“128.119.245.12”</td>
+<td>“HTTP”</td>
+<td>“581”</td>
+<td>“GET /wireshark-labs/HTTP-wireshark-file1.html HTTP/1.1 “</td>
+</tr>
+<tr>
+<td>“372140”</td>
+<td>“899.824395”</td>
+<td>“128.119.245.12”</td>
+<td>“192.168.1.3”</td>
+<td>“HTTP”</td>
+<td>“540”</td>
+<td>“HTTP/1.1 200 OK  (text/html)”</td>
+</tr>
+</tbody>
+</table>
+<p>Detail of packets:<br>Request:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Frame 370872: 581 bytes on wire (4648 bits), 581 bytes captured (4648 bits) on interface \Device\NPF_&#123;0A0B317B-E1D8-4D27-9D8A-9E3EC63057D4&#125;, id 0</span><br><span class="line">Ethernet II, Src: Micro-St_06:62:ec (00:d8:61:06:62:ec), Dst: Fiberhom_35:92:b1 (74:5d:68:35:92:b1)</span><br><span class="line">Internet Protocol Version 4, Src: 192.168.1.3, Dst: 128.119.245.12</span><br><span class="line">Transmission Control Protocol, Src Port: 17536, Dst Port: 80, Seq: 1, Ack: 1, Len: 527</span><br><span class="line">Hypertext Transfer Protocol</span><br><span class="line">    GET /wireshark-labs/HTTP-wireshark-file1.html HTTP/1.1\r\n</span><br><span class="line">    Host: gaia.cs.umass.edu\r\n</span><br><span class="line">    Connection: keep-alive\r\n</span><br><span class="line">    Cache-Control: max-age=0\r\n</span><br><span class="line">    Upgrade-Insecure-Requests: 1\r\n</span><br><span class="line">    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.38\r\n</span><br><span class="line">    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n</span><br><span class="line">    Accept-Encoding: gzip, deflate\r\n</span><br><span class="line">    Accept-Language: en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7\r\n</span><br><span class="line">    \r\n</span><br><span class="line">    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file1.html]</span><br><span class="line">    [HTTP request 1/1]</span><br><span class="line">    [Response in frame: 372140]</span><br></pre></td></tr></table></figure></p>
+<p>Response:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Frame 372140: 540 bytes on wire (4320 bits), 540 bytes captured (4320 bits) on interface \Device\NPF_&#123;0A0B317B-E1D8-4D27-9D8A-9E3EC63057D4&#125;, id 0</span><br><span class="line">Ethernet II, Src: Fiberhom_35:92:b1 (74:5d:68:35:92:b1), Dst: Micro-St_06:62:ec (00:d8:61:06:62:ec)</span><br><span class="line">Internet Protocol Version 4, Src: 128.119.245.12, Dst: 192.168.1.3</span><br><span class="line">Transmission Control Protocol, Src Port: 80, Dst Port: 17536, Seq: 1, Ack: 528, Len: 486</span><br><span class="line">Hypertext Transfer Protocol</span><br><span class="line">    HTTP/1.1 200 OK\r\n</span><br><span class="line">    Date: Sun, 05 Sep 2021 09:03:10 GMT\r\n</span><br><span class="line">    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.22 mod_perl/2.0.11 Perl/v5.16.3\r\n</span><br><span class="line">    Last-Modified: Sun, 05 Sep 2021 05:59:01 GMT\r\n</span><br><span class="line">    ETag: &quot;80-5cb393aaf07a9&quot;\r\n</span><br><span class="line">    Accept-Ranges: bytes\r\n</span><br><span class="line">    Content-Length: 128\r\n</span><br><span class="line">    Keep-Alive: timeout=5, max=100\r\n</span><br><span class="line">    Connection: Keep-Alive\r\n</span><br><span class="line">    Content-Type: text/html; charset=UTF-8\r\n</span><br><span class="line">    \r\n</span><br><span class="line">    [HTTP response 1/1]</span><br><span class="line">    [Time since request: 0.270914000 seconds]</span><br><span class="line">    [Request in frame: 370872]</span><br><span class="line">    [Request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file1.html]</span><br><span class="line">    File Data: 128 bytes</span><br><span class="line">Line-based text data: text/html (4 lines)</span><br><span class="line">    &lt;html&gt;\n</span><br><span class="line">    Congratulations.  You&apos;ve downloaded the file \n</span><br><span class="line">    http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file1.html!\n</span><br><span class="line">    &lt;/html&gt;\n</span><br></pre></td></tr></table></figure>
+<p>Q&amp;As:</p>
+<ol>
+<li><p>Is your browser running HTTP version 1.0, 1.1, or 2?  What version of HTTP is the server running?<br>From the header of request packet, I can see the HTTP version of my browser and server are both HTTP/1.1.</p>
+</li>
+<li><p>What languages (if any) does your browser indicate that it can accept to the server?<br>It is in the “Accept-Language” of the request packet.</p>
+</li>
+<li><p>What is the IP address of your computer?  What is the IP address of the gaia.cs.umass.edu server?<br>The Internet Protocal layer indicates my IP(Src) is 192.168.1.3, IP of gaia.cs.umass.edu server(Dst) is 128.119.245.12.</p>
+</li>
+<li><p>What is the status code returned from the server to your browser?<br>200 OK.</p>
+</li>
+<li><p>When was the HTML file that you are retrieving last modified at the server?<br>Last-Modified: Sun, 05 Sep 2021 05:59:01 GMT\r\n</p>
+</li>
+<li><p>How many bytes of content are being returned to your browser?<br>540 bytes.</p>
+</li>
+<li><p>By inspecting the raw data in the packet content window, do you see any headers within the data that are not displayed in the packet-listing window?  If so, name one.<br>Content-Length.</p>
+</li>
+</ol>
+<h3 id="The-HTTP-CONDITIONAL-GET-response-interaction"><a href="#The-HTTP-CONDITIONAL-GET-response-interaction" class="headerlink" title="The HTTP CONDITIONAL GET/response interaction"></a>The HTTP CONDITIONAL GET/response interaction</h3><p>Operations:</p>
+<ul>
+<li>Enter the following URL into your browser<br><a href="http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html" target="_blank" rel="noopener">http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html</a><br>Your browser should display a very simple five-line HTML file. </li>
+<li>Quickly enter the same URL into your browser again (or simply select the refresh button on your browser)</li>
+</ul>
+<p>Captured packets:</p>
+<table>
+<thead>
+<tr>
+<th>“No.”</th>
+<th>“Time”</th>
+<th>“Source”</th>
+<th>“Destination”</th>
+<th>“Protocol”</th>
+<th>“Length”</th>
+<th>“Info”</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“142”</td>
+<td>“6.368786”</td>
+<td>“192.168.1.3”</td>
+<td>“128.119.245.12”</td>
+<td>“HTTP”</td>
+<td>“555”</td>
+<td>“GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1 “</td>
+</tr>
+<tr>
+<td>“183”</td>
+<td>“6.633550”</td>
+<td>“128.119.245.12”</td>
+<td>“192.168.1.3”</td>
+<td>“HTTP”</td>
+<td>“784”</td>
+<td>“HTTP/1.1 200 OK  (text/html)”</td>
+</tr>
+<tr>
+<td>“237”</td>
+<td>“8.389410”</td>
+<td>“192.168.1.3”</td>
+<td>“128.119.245.12”</td>
+<td>“HTTP”</td>
+<td>“667”</td>
+<td>“GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1 “</td>
+</tr>
+<tr>
+<td>“268”</td>
+<td>“8.655003”</td>
+<td>“128.119.245.12”</td>
+<td>“192.168.1.3”</td>
+<td>“HTTP”</td>
+<td>“293”</td>
+<td>“HTTP/1.1 304 Not Modified “</td>
+</tr>
+</tbody>
+</table>
+<p>Detail of packets:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Frame 142: 555 bytes on wire (4440 bits), 555 bytes captured (4440 bits) on interface \Device\NPF_&#123;0A0B317B-E1D8-4D27-9D8A-9E3EC63057D4&#125;, id 0</span><br><span class="line">Ethernet II, Src: Micro-St_06:62:ec (00:d8:61:06:62:ec), Dst: Fiberhom_35:92:b1 (74:5d:68:35:92:b1)</span><br><span class="line">Internet Protocol Version 4, Src: 192.168.1.3, Dst: 128.119.245.12</span><br><span class="line">Transmission Control Protocol, Src Port: 1053, Dst Port: 80, Seq: 1, Ack: 1, Len: 501</span><br><span class="line">Hypertext Transfer Protocol</span><br><span class="line">    GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1\r\n</span><br><span class="line">    Host: gaia.cs.umass.edu\r\n</span><br><span class="line">    Connection: keep-alive\r\n</span><br><span class="line">    Upgrade-Insecure-Requests: 1\r\n</span><br><span class="line">    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.38\r\n</span><br><span class="line">    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n</span><br><span class="line">    Accept-Encoding: gzip, deflate\r\n</span><br><span class="line">    Accept-Language: en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7\r\n</span><br><span class="line">    \r\n</span><br><span class="line">    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html]</span><br><span class="line">    [HTTP request 1/2]</span><br><span class="line">    [Response in frame: 183]</span><br><span class="line">    [Next request in frame: 237]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Frame 183: 784 bytes on wire (6272 bits), 784 bytes captured (6272 bits) on interface \Device\NPF_&#123;0A0B317B-E1D8-4D27-9D8A-9E3EC63057D4&#125;, id 0</span><br><span class="line">Ethernet II, Src: Fiberhom_35:92:b1 (74:5d:68:35:92:b1), Dst: Micro-St_06:62:ec (00:d8:61:06:62:ec)</span><br><span class="line">Internet Protocol Version 4, Src: 128.119.245.12, Dst: 192.168.1.3</span><br><span class="line">Transmission Control Protocol, Src Port: 80, Dst Port: 1053, Seq: 1, Ack: 502, Len: 730</span><br><span class="line">Hypertext Transfer Protocol</span><br><span class="line">    HTTP/1.1 200 OK\r\n</span><br><span class="line">    Date: Sun, 05 Sep 2021 12:49:23 GMT\r\n</span><br><span class="line">    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.22 mod_perl/2.0.11 Perl/v5.16.3\r\n</span><br><span class="line">    Last-Modified: Sun, 05 Sep 2021 05:59:01 GMT\r\n</span><br><span class="line">    ETag: &quot;173-5cb393aaefbf1&quot;\r\n</span><br><span class="line">    Accept-Ranges: bytes\r\n</span><br><span class="line">    Content-Length: 371\r\n</span><br><span class="line">    Keep-Alive: timeout=5, max=100\r\n</span><br><span class="line">    Connection: Keep-Alive\r\n</span><br><span class="line">    Content-Type: text/html; charset=UTF-8\r\n</span><br><span class="line">    \r\n</span><br><span class="line">    [HTTP response 1/2]</span><br><span class="line">    [Time since request: 0.264764000 seconds]</span><br><span class="line">    [Request in frame: 142]</span><br><span class="line">    [Next request in frame: 237]</span><br><span class="line">    [Next response in frame: 268]</span><br><span class="line">    [Request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html]</span><br><span class="line">    File Data: 371 bytes</span><br><span class="line">Line-based text data: text/html (10 lines)</span><br><span class="line">    \n</span><br><span class="line">    &lt;html&gt;\n</span><br><span class="line">    \n</span><br><span class="line">    Congratulations again!  Now you&apos;ve downloaded the file lab2-2.html. &lt;br&gt;\n</span><br><span class="line">    This file&apos;s last modification date will not change.  &lt;p&gt;\n</span><br><span class="line">    Thus  if you download this multiple times on your browser, a complete copy &lt;br&gt;\n</span><br><span class="line">    will only be sent once by the server due to the inclusion of the IN-MODIFIED-SINCE&lt;br&gt;\n</span><br><span class="line">    field in your browser&apos;s HTTP GET request to the server.\n</span><br><span class="line">    \n</span><br><span class="line">    &lt;/html&gt;\n</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Frame 237: 667 bytes on wire (5336 bits), 667 bytes captured (5336 bits) on interface \Device\NPF_&#123;0A0B317B-E1D8-4D27-9D8A-9E3EC63057D4&#125;, id 0</span><br><span class="line">Ethernet II, Src: Micro-St_06:62:ec (00:d8:61:06:62:ec), Dst: Fiberhom_35:92:b1 (74:5d:68:35:92:b1)</span><br><span class="line">Internet Protocol Version 4, Src: 192.168.1.3, Dst: 128.119.245.12</span><br><span class="line">Transmission Control Protocol, Src Port: 1053, Dst Port: 80, Seq: 502, Ack: 731, Len: 613</span><br><span class="line">Hypertext Transfer Protocol</span><br><span class="line">    GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1\r\n</span><br><span class="line">    Host: gaia.cs.umass.edu\r\n</span><br><span class="line">    Connection: keep-alive\r\n</span><br><span class="line">    Cache-Control: max-age=0\r\n</span><br><span class="line">    Upgrade-Insecure-Requests: 1\r\n</span><br><span class="line">    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.38\r\n</span><br><span class="line">    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n</span><br><span class="line">    Accept-Encoding: gzip, deflate\r\n</span><br><span class="line">    Accept-Language: en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7\r\n</span><br><span class="line">    If-None-Match: &quot;173-5cb393aaefbf1&quot;\r\n</span><br><span class="line">    If-Modified-Since: Sun, 05 Sep 2021 05:59:01 GMT\r\n</span><br><span class="line">    \r\n</span><br><span class="line">    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html]</span><br><span class="line">    [HTTP request 2/2]</span><br><span class="line">    [Prev request in frame: 142]</span><br><span class="line">    [Response in frame: 268]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Frame 268: 293 bytes on wire (2344 bits), 293 bytes captured (2344 bits) on interface \Device\NPF_&#123;0A0B317B-E1D8-4D27-9D8A-9E3EC63057D4&#125;, id 0</span><br><span class="line">Ethernet II, Src: Fiberhom_35:92:b1 (74:5d:68:35:92:b1), Dst: Micro-St_06:62:ec (00:d8:61:06:62:ec)</span><br><span class="line">Internet Protocol Version 4, Src: 128.119.245.12, Dst: 192.168.1.3</span><br><span class="line">Transmission Control Protocol, Src Port: 80, Dst Port: 1053, Seq: 731, Ack: 1115, Len: 239</span><br><span class="line">Hypertext Transfer Protocol</span><br><span class="line">    HTTP/1.1 304 Not Modified\r\n</span><br><span class="line">    Date: Sun, 05 Sep 2021 12:49:25 GMT\r\n</span><br><span class="line">    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.22 mod_perl/2.0.11 Perl/v5.16.3\r\n</span><br><span class="line">    Connection: Keep-Alive\r\n</span><br><span class="line">    Keep-Alive: timeout=5, max=99\r\n</span><br><span class="line">    ETag: &quot;173-5cb393aaefbf1&quot;\r\n</span><br><span class="line">    \r\n</span><br><span class="line">    [HTTP response 2/2]</span><br><span class="line">    [Time since request: 0.265593000 seconds]</span><br><span class="line">    [Prev request in frame: 142]</span><br><span class="line">    [Prev response in frame: 183]</span><br><span class="line">    [Request in frame: 237]</span><br><span class="line">    [Request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html]</span><br></pre></td></tr></table></figure>
+<p>Q&amp;As:</p>
+<ol start="8">
+<li><p>Inspect the contents of the first HTTP GET request from your browser to the server.  Do you see an “IF-MODIFIED-SINCE” line in the HTTP GET?<br>No.</p>
+</li>
+<li><p>Inspect the contents of the server response. Did the server explicitly return the contents of the file?   How can you tell?<br>Yes, in the File Data field of the response packet.</p>
+</li>
+<li><p>Now inspect the contents of the second HTTP GET request from your browser to the server.  Do you see an “IF-MODIFIED-SINCE:” line in the HTTP GET ? If so, what information follows the “IF-MODIFIED-SINCE:” header?<br>Yes,  “If-Modified-Since: Sun, 05 Sep 2021 05:59:01 GMT\r\n”.</p>
+</li>
+<li><p>What is the HTTP status code and phrase returned from the server in response to this second HTTP GET?  Did the server explicitly return the contents of the file?   Explain.<br>Status code is 304(Not Modified), server didn’t return the contents of the file explicitly,  because the browser keep a copy of this file last modified at  “Sun, 05 Sep 2021 05:59:01 GMT”, and put this timestamp in “IF-MODIFIED-SINCE:” header field to inform the server no need to return the file didn’t modified after the timestamp.</p>
+</li>
+</ol>
+<h3 id="Retrieving-Long-Documents"><a href="#Retrieving-Long-Documents" class="headerlink" title="Retrieving Long Documents"></a>Retrieving Long Documents</h3><p>Operations:</p>
+<ul>
+<li>Enter the following URL into your browser<br><a href="http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html" target="_blank" rel="noopener">http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html</a><br>Your browser should display the rather lengthy US Bill of Rights.</li>
+</ul>
+<p>Packets Captured:</p>
+<table>
+<thead>
+<tr>
+<th>“No.”</th>
+<th>“Time”</th>
+<th>“Source”</th>
+<th>“Destination”</th>
+<th>“Protocol”</th>
+<th>“Length”</th>
+<th>“Info”</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“146”</td>
+<td>“4.150099”</td>
+<td>“192.168.1.3”</td>
+<td>“128.119.245.12”</td>
+<td>“HTTP”</td>
+<td>“555”</td>
+<td>“GET /wireshark-labs/HTTP-wireshark-file3.html HTTP/1.1 “</td>
+</tr>
+<tr>
+<td>“176”</td>
+<td>“4.411527”</td>
+<td>“128.119.245.12”</td>
+<td>“192.168.1.3”</td>
+<td>“HTTP”</td>
+<td>“679”</td>
+<td>“HTTP/1.1 200 OK  (text/html)”</td>
+</tr>
+</tbody>
+</table>
+<p>Packets Details:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Frame 146: 555 bytes on wire (4440 bits), 555 bytes captured (4440 bits) on interface \Device\NPF_&#123;0A0B317B-E1D8-4D27-9D8A-9E3EC63057D4&#125;, id 0</span><br><span class="line">Ethernet II, Src: Micro-St_06:62:ec (00:d8:61:06:62:ec), Dst: Fiberhom_35:92:b1 (74:5d:68:35:92:b1)</span><br><span class="line">Internet Protocol Version 4, Src: 192.168.1.3, Dst: 128.119.245.12</span><br><span class="line">Transmission Control Protocol, Src Port: 1028, Dst Port: 80, Seq: 1, Ack: 1, Len: 501</span><br><span class="line">Hypertext Transfer Protocol</span><br><span class="line">    GET /wireshark-labs/HTTP-wireshark-file3.html HTTP/1.1\r\n</span><br><span class="line">        [Expert Info (Chat/Sequence): GET /wireshark-labs/HTTP-wireshark-file3.html HTTP/1.1\r\n]</span><br><span class="line">        Request Method: GET</span><br><span class="line">        Request URI: /wireshark-labs/HTTP-wireshark-file3.html</span><br><span class="line">        Request Version: HTTP/1.1</span><br><span class="line">    Host: gaia.cs.umass.edu\r\n</span><br><span class="line">    Connection: keep-alive\r\n</span><br><span class="line">    Upgrade-Insecure-Requests: 1\r\n</span><br><span class="line">    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.38\r\n</span><br><span class="line">    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n</span><br><span class="line">    Accept-Encoding: gzip, deflate\r\n</span><br><span class="line">    Accept-Language: en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7\r\n</span><br><span class="line">    \r\n</span><br><span class="line">    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html]</span><br><span class="line">    [HTTP request 1/1]</span><br><span class="line">    [Response in frame: 176]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Frame 176: 679 bytes on wire (5432 bits), 679 bytes captured (5432 bits) on interface \Device\NPF_&#123;0A0B317B-E1D8-4D27-9D8A-9E3EC63057D4&#125;, id 0</span><br><span class="line">Ethernet II, Src: Fiberhom_35:92:b1 (74:5d:68:35:92:b1), Dst: Micro-St_06:62:ec (00:d8:61:06:62:ec)</span><br><span class="line">    Destination: Micro-St_06:62:ec (00:d8:61:06:62:ec)</span><br><span class="line">    Source: Fiberhom_35:92:b1 (74:5d:68:35:92:b1)</span><br><span class="line">    Type: IPv4 (0x0800)</span><br><span class="line">Internet Protocol Version 4, Src: 128.119.245.12, Dst: 192.168.1.3</span><br><span class="line">Transmission Control Protocol, Src Port: 80, Dst Port: 1028, Seq: 4237, Ack: 502, Len: 625</span><br><span class="line">[4 Reassembled TCP Segments (4861 bytes): #172(1412), #173(1412), #175(1412), #176(625)]</span><br><span class="line">    [Frame: 172, payload: 0-1411 (1412 bytes)]</span><br><span class="line">    [Frame: 173, payload: 1412-2823 (1412 bytes)]</span><br><span class="line">    [Frame: 175, payload: 2824-4235 (1412 bytes)]</span><br><span class="line">    [Frame: 176, payload: 4236-4860 (625 bytes)]</span><br><span class="line">    [Segment count: 4]</span><br><span class="line">    [Reassembled TCP length: 4861]</span><br><span class="line">    [Reassembled TCP Data: 485454502f312e3120323030204f4b0d0a446174653a2053756e2c203035205365702032…]</span><br><span class="line">Hypertext Transfer Protocol</span><br><span class="line">    HTTP/1.1 200 OK\r\n</span><br><span class="line">        [Expert Info (Chat/Sequence): HTTP/1.1 200 OK\r\n]</span><br><span class="line">        Response Version: HTTP/1.1</span><br><span class="line">        Status Code: 200</span><br><span class="line">        [Status Code Description: OK]</span><br><span class="line">        Response Phrase: OK</span><br><span class="line">    Date: Sun, 05 Sep 2021 13:12:00 GMT\r\n</span><br><span class="line">    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.22 mod_perl/2.0.11 Perl/v5.16.3\r\n</span><br><span class="line">    Last-Modified: Sun, 05 Sep 2021 05:59:01 GMT\r\n</span><br><span class="line">    ETag: &quot;1194-5cb393aaeb1b8&quot;\r\n</span><br><span class="line">    Accept-Ranges: bytes\r\n</span><br><span class="line">    Content-Length: 4500\r\n</span><br><span class="line">    Keep-Alive: timeout=5, max=100\r\n</span><br><span class="line">    Connection: Keep-Alive\r\n</span><br><span class="line">    Content-Type: text/html; charset=UTF-8\r\n</span><br><span class="line">    \r\n</span><br><span class="line">    [HTTP response 1/1]</span><br><span class="line">    [Time since request: 0.261428000 seconds]</span><br><span class="line">    [Request in frame: 146]</span><br><span class="line">    [Request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html]</span><br><span class="line">    File Data: 4500 bytes</span><br><span class="line">Line-based text data: text/html (98 lines)</span><br></pre></td></tr></table></figure>
+<p>Q&amp;As:</p>
+<ol start="12">
+<li><p>How many HTTP GET request messages did your browser send?  Which packet number in the trace contains the GET message for the Bill or Rights?<br>Only one, packet 146.</p>
+</li>
+<li><p>Which packet number in the trace contains the status code and phrase associated with the response to the HTTP GET request?<br>Packet 176.</p>
+</li>
+<li><p>What is the status code and phrase in the response?<br>200(OK).</p>
+</li>
+<li><p>How many data-containing TCP segments were needed to carry the single HTTP response and the text of the Bill of Rights?<br>4.</p>
+</li>
+</ol>
+<h3 id="HTML-Documents-with-Embedded-Objects"><a href="#HTML-Documents-with-Embedded-Objects" class="headerlink" title="HTML Documents with Embedded Objects"></a>HTML Documents with Embedded Objects</h3><p>Operations:</p>
+<ul>
+<li>Enter the following URL into your browser<br><a href="http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html" target="_blank" rel="noopener">http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html</a><br>Your browser should display a short HTML file with two images. These two images are referenced in the base HTML file.  That is, the images themselves are not contained in the HTML; instead the URLs for the images are contained in the downloaded HTML file. As discussed in the textbook, your browser will have to retrieve these logos from the indicated web sites.   Our publisher’s logo is retrieved from the gaia.cs.umass.edu web site.   The image of our 8th edition cover (one of our favorite covers) is stored at a server in France. </li>
+</ul>
+<p>Packets Captured:</p>
+<table>
+<thead>
+<tr>
+<th>“No.”</th>
+<th>“Time”</th>
+<th>“Source”</th>
+<th>“Destination”</th>
+<th>“Protocol”</th>
+<th>“Length”</th>
+<th>“Info”</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“28”</td>
+<td>“2.033457”</td>
+<td>“192.168.1.3”</td>
+<td>“128.119.245.12”</td>
+<td>“HTTP”</td>
+<td>“581”</td>
+<td>“GET /wireshark-labs/HTTP-wireshark-file4.html HTTP/1.1 “</td>
+</tr>
+<tr>
+<td>“41”</td>
+<td>“2.304704”</td>
+<td>“128.119.245.12”</td>
+<td>“192.168.1.3”</td>
+<td>“HTTP”</td>
+<td>“1355”</td>
+<td>“HTTP/1.1 200 OK  (text/html)”</td>
+</tr>
+<tr>
+<td>“42”</td>
+<td>“2.338977”</td>
+<td>“192.168.1.3”</td>
+<td>“128.119.245.12”</td>
+<td>“HTTP”</td>
+<td>“501”</td>
+<td>“GET /pearson.png HTTP/1.1 “</td>
+</tr>
+<tr>
+<td>“47”</td>
+<td>“2.530706”</td>
+<td>“192.168.1.3”</td>
+<td>“178.79.137.164”</td>
+<td>“HTTP”</td>
+<td>“468”</td>
+<td>“GET /8E_cover_small.jpg HTTP/1.1 “</td>
+</tr>
+<tr>
+<td>“55”</td>
+<td>“2.609925”</td>
+<td>“128.119.245.12”</td>
+<td>“192.168.1.3”</td>
+<td>“HTTP”</td>
+<td>“841”</td>
+<td>“HTTP/1.1 200 OK  (PNG)”</td>
+</tr>
+<tr>
+<td>“58”</td>
+<td>“2.695694”</td>
+<td>“178.79.137.164”</td>
+<td>“192.168.1.3”</td>
+<td>“HTTP”</td>
+<td>“225”</td>
+<td>“HTTP/1.1 301 Moved Permanently “</td>
+</tr>
+</tbody>
+</table>
+<p>Packets Details:<br>…</p>
+<p>Q&amp;As:</p>
+<ol start="16">
+<li><p>How many HTTP GET request messages did your browser send?  To which Internet addresses were these GET requests sent?<br>Totally 3 GET requests, 2 to 128.119.245.12 to get html file and pearson.png, 1 to 178.79.137.164 for the 8E_cover_small.jpg.</p>
+</li>
+<li><p>Can you tell whether your browser downloaded the two images serially, or whether they were downloaded from the two web sites in parallel?  Explain.<br>In parallel.</p>
+</li>
+</ol>
+<pre class="mermaid" style="text-align: center;">
+            sequenceDiagram
+            participant Browser
+participant Server
+Browser ->> Server: GET /pearson.png time:2.338977
+Browser -->> Server: GET /8E_cover_small.jpg time:2.530706
+Server ->> Browser: pearson.png time:2.609925
+Server -->>Browser: 8E_cover_small.jpg time:2.695694
+          </pre>
+<h3 id="HTTP-Authentication"><a href="#HTTP-Authentication" class="headerlink" title="HTTP Authentication"></a>HTTP Authentication</h3><p>Operations:</p>
+<ul>
+<li>Enter the following URL into your browser<br><a href="http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html" target="_blank" rel="noopener">http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html</a><br>Type the requested user name and password into the pop up box.  The username is “wireshark-students” (without the quotes), and the password is “network” (again, without the quotes).</li>
+</ul>
+<p>Packets Captured:</p>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Time</th>
+<th>Source</th>
+<th>Destination</th>
+<th>Protocol</th>
+<th>Length</th>
+<th>Info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>125</td>
+<td>5.558621</td>
+<td>192.168.1.3</td>
+<td>128.119.245.12</td>
+<td>HTTP</td>
+<td>597</td>
+<td>GET /wireshark-labs/protected_pages/HTTP-wireshark-file5.html HTTP/1.1</td>
+</tr>
+<tr>
+<td>140</td>
+<td>5.823233</td>
+<td>128.119.245.12</td>
+<td>192.168.1.3</td>
+<td>HTTP</td>
+<td>771</td>
+<td>HTTP/1.1 401 Unauthorized  (text/html)</td>
+</tr>
+<tr>
+<td>726</td>
+<td>26.553076</td>
+<td>192.168.1.3</td>
+<td>128.119.245.12</td>
+<td>HTTP</td>
+<td>656</td>
+<td>GET /wireshark-labs/protected_pages/HTTP-wireshark-file5.html HTTP/1.1</td>
+</tr>
+<tr>
+<td>737</td>
+<td>26.823450</td>
+<td>128.119.245.12</td>
+<td>192.168.1.3</td>
+<td>HTTP</td>
+<td>544</td>
+<td>HTTP/1.1 200 OK  (text/html)</td>
+</tr>
+</tbody>
+</table>
+<p>Packets Details:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Frame 125: 597 bytes on wire (4776 bits), 597 bytes captured (4776 bits) on interface \Device\NPF_&#123;0A0B317B-E1D8-4D27-9D8A-9E3EC63057D4&#125;, id 0</span><br><span class="line">Ethernet II, Src: Micro-St_06:62:ec (00:d8:61:06:62:ec), Dst: Fiberhom_35:92:b1 (74:5d:68:35:92:b1)</span><br><span class="line">Internet Protocol Version 4, Src: 192.168.1.3, Dst: 128.119.245.12</span><br><span class="line">Transmission Control Protocol, Src Port: 28007, Dst Port: 80, Seq: 1, Ack: 1, Len: 543</span><br><span class="line">Hypertext Transfer Protocol</span><br><span class="line">    GET /wireshark-labs/protected_pages/HTTP-wireshark-file5.html HTTP/1.1\r\n</span><br><span class="line">        [Expert Info (Chat/Sequence): GET /wireshark-labs/protected_pages/HTTP-wireshark-file5.html HTTP/1.1\r\n]</span><br><span class="line">        Request Method: GET</span><br><span class="line">        Request URI: /wireshark-labs/protected_pages/HTTP-wireshark-file5.html</span><br><span class="line">        Request Version: HTTP/1.1</span><br><span class="line">    Host: gaia.cs.umass.edu\r\n</span><br><span class="line">    Connection: keep-alive\r\n</span><br><span class="line">    Cache-Control: max-age=0\r\n</span><br><span class="line">    Upgrade-Insecure-Requests: 1\r\n</span><br><span class="line">    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.38\r\n</span><br><span class="line">    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n</span><br><span class="line">    Accept-Encoding: gzip, deflate\r\n</span><br><span class="line">    Accept-Language: en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7\r\n</span><br><span class="line">    \r\n</span><br><span class="line">    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html]</span><br><span class="line">    [HTTP request 1/1]</span><br><span class="line">    [Response in frame: 140]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Frame 726: 656 bytes on wire (5248 bits), 656 bytes captured (5248 bits) on interface \Device\NPF_&#123;0A0B317B-E1D8-4D27-9D8A-9E3EC63057D4&#125;, id 0</span><br><span class="line">Ethernet II, Src: Micro-St_06:62:ec (00:d8:61:06:62:ec), Dst: Fiberhom_35:92:b1 (74:5d:68:35:92:b1)</span><br><span class="line">Internet Protocol Version 4, Src: 192.168.1.3, Dst: 128.119.245.12</span><br><span class="line">Transmission Control Protocol, Src Port: 1028, Dst Port: 80, Seq: 1, Ack: 1, Len: 602</span><br><span class="line">Hypertext Transfer Protocol</span><br><span class="line">    GET /wireshark-labs/protected_pages/HTTP-wireshark-file5.html HTTP/1.1\r\n</span><br><span class="line">        [Expert Info (Chat/Sequence): GET /wireshark-labs/protected_pages/HTTP-wireshark-file5.html HTTP/1.1\r\n]</span><br><span class="line">        Request Method: GET</span><br><span class="line">        Request URI: /wireshark-labs/protected_pages/HTTP-wireshark-file5.html</span><br><span class="line">        Request Version: HTTP/1.1</span><br><span class="line">    Host: gaia.cs.umass.edu\r\n</span><br><span class="line">    Connection: keep-alive\r\n</span><br><span class="line">    Cache-Control: max-age=0\r\n</span><br><span class="line">    Authorization: Basic d2lyZXNoYXJrLXN0dWRlbnRzOm5ldHdvcms=\r\n</span><br><span class="line">        Credentials: wireshark-students:network</span><br><span class="line">    Upgrade-Insecure-Requests: 1\r\n</span><br><span class="line">    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.38\r\n</span><br><span class="line">    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n</span><br><span class="line">    Accept-Encoding: gzip, deflate\r\n</span><br><span class="line">    Accept-Language: en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7\r\n</span><br><span class="line">    \r\n</span><br><span class="line">    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html]</span><br><span class="line">    [HTTP request 1/1]</span><br><span class="line">    [Response in frame: 737]</span><br></pre></td></tr></table></figure>
+<p>Q&amp;As:</p>
+<ol start="18">
+<li><p>What is the server’s response (status code and phrase) in response to the initial HTTP GET message from your browser?<br>401 Unauthorized.</p>
+</li>
+<li><p>When your browser’s sends the HTTP GET message for the second time, what new field is included in the HTTP GET message?<br>Authorization: Basic d2lyZXNoYXJrLXN0dWRlbnRzOm5ldHdvcms=\r\n</p>
+</li>
+</ol>
+<h1 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h1><p><div id="refer-anchor-1"></div></p>
+<ul>
+<li>[1] <a href="https://gaia.cs.umass.edu/kurose_ross/wireshark.php" target="_blank" rel="noopener">Umass Wireshark labs</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Computer Network</tag>
+      </tags>
+  </entry>
 </search>
