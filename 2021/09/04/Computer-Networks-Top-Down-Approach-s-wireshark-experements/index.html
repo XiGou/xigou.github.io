@@ -30,7 +30,7 @@
 <meta property="og:site_name" content="Land of Free">
 <meta property="og:description" content="intruduction                          “Tell me and I forget. Show me and I remember. Involve me and I understand.”Chinese proverb                           I read the Computer Networks: Top-Down Appro">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-09-10T17:10:40.268Z">
+<meta property="og:updated_time" content="2021-10-08T15:33:04.356Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Wireshark experements of &lt;i&gt;Computer Networks: Top-Down Approach&lt;&#x2F;i&gt;">
 <meta name="twitter:description" content="intruduction                          “Tell me and I forget. Show me and I remember. Involve me and I understand.”Chinese proverb                           I read the Computer Networks: Top-Down Appro">
@@ -216,7 +216,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-10 17:10:40" itemprop="dateModified" datetime="2021-09-10T17:10:40+00:00">2021-09-10</time>
+                <time title="Modified: 2021-10-08 15:33:04" itemprop="dateModified" datetime="2021-10-08T15:33:04+00:00">2021-10-08</time>
               </span>
 
           
@@ -579,11 +579,467 @@ Server -->>Browser: 8E_cover_small.jpg time:2.695694
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Frame 726: 656 bytes on wire (5248 bits), 656 bytes captured (5248 bits) on interface \Device\NPF_&#123;0A0B317B-E1D8-4D27-9D8A-9E3EC63057D4&#125;, id 0</span><br><span class="line">Ethernet II, Src: Micro-St_06:62:ec (00:d8:61:06:62:ec), Dst: Fiberhom_35:92:b1 (74:5d:68:35:92:b1)</span><br><span class="line">Internet Protocol Version 4, Src: 192.168.1.3, Dst: 128.119.245.12</span><br><span class="line">Transmission Control Protocol, Src Port: 1028, Dst Port: 80, Seq: 1, Ack: 1, Len: 602</span><br><span class="line">Hypertext Transfer Protocol</span><br><span class="line">    GET /wireshark-labs/protected_pages/HTTP-wireshark-file5.html HTTP/1.1\r\n</span><br><span class="line">        [Expert Info (Chat/Sequence): GET /wireshark-labs/protected_pages/HTTP-wireshark-file5.html HTTP/1.1\r\n]</span><br><span class="line">        Request Method: GET</span><br><span class="line">        Request URI: /wireshark-labs/protected_pages/HTTP-wireshark-file5.html</span><br><span class="line">        Request Version: HTTP/1.1</span><br><span class="line">    Host: gaia.cs.umass.edu\r\n</span><br><span class="line">    Connection: keep-alive\r\n</span><br><span class="line">    Cache-Control: max-age=0\r\n</span><br><span class="line">    Authorization: Basic d2lyZXNoYXJrLXN0dWRlbnRzOm5ldHdvcms=\r\n</span><br><span class="line">        Credentials: wireshark-students:network</span><br><span class="line">    Upgrade-Insecure-Requests: 1\r\n</span><br><span class="line">    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.38\r\n</span><br><span class="line">    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\n</span><br><span class="line">    Accept-Encoding: gzip, deflate\r\n</span><br><span class="line">    Accept-Language: en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7\r\n</span><br><span class="line">    \r\n</span><br><span class="line">    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html]</span><br><span class="line">    [HTTP request 1/1]</span><br><span class="line">    [Response in frame: 737]</span><br></pre></td></tr></table></figure>
 <p>Q&amp;As:</p>
 <ol start="18">
-<li><p>What is the server’s response (status code and phrase) in response to the initial HTTP GET message from your browser?<br>401 Unauthorized.</p>
-</li>
-<li><p>When your browser’s sends the HTTP GET message for the second time, what new field is included in the HTTP GET message?<br>Authorization: Basic d2lyZXNoYXJrLXN0dWRlbnRzOm5ldHdvcms=\r\n</p>
+<li>What is the server’s response (status code and phrase) in response to the initial HTTP GET message from your browser?</li>
+</ol>
+<p>401 Unauthorized.</p>
+<ol start="19">
+<li>When your browser’s sends the HTTP GET message for the second time, what new field is included in the HTTP GET message?<br>Authorization: Basic d2lyZXNoYXJrLXN0dWRlbnRzOm5ldHdvcms=\r\n</li>
+</ol>
+<h2 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h2><h3 id="Trace-DNS-from-web-browser"><a href="#Trace-DNS-from-web-browser" class="headerlink" title="Trace DNS from web browser"></a>Trace DNS from web browser</h3><p>Operations:</p>
+<ul>
+<li>Clear DNS cache by ‘ipconfig’ command</li>
+<li>Open the following URL into your browser<br><a href="http://gaia.cs.umass.edu/kurose_ross/index.php" target="_blank" rel="noopener">http://gaia.cs.umass.edu/kurose_ross/index.php</a></li>
+</ul>
+<p>Captured packets:</p>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Time</th>
+<th>Source</th>
+<th>Destination</th>
+<th>Protocol</th>
+<th>Length</th>
+<th>Info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td>4.898665</td>
+<td>fe80::604d:b1a2:55ef:5877</td>
+<td>fe80::1</td>
+<td>DNS</td>
+<td>97</td>
+<td>Standard query 0xcba9 A gaia.cs.umass.edu</td>
+</tr>
+<tr>
+<td>29</td>
+<td>4.908337</td>
+<td>fe80::1</td>
+<td>fe80::604d:b1a2:55ef:5877</td>
+<td>DNS</td>
+<td>113</td>
+<td>Standard query response 0xcba9 A gaia.cs.umass.edu A 128.119.245.12</td>
+</tr>
+</tbody>
+</table>
+<p>Detail of packets:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Frame 20: 97 bytes on wire (776 bits), 97 bytes captured (776 bits) on interface \Device\NPF_&#123;0A0B317B-E1D8-4D27-9D8A-9E3EC63057D4&#125;, id 0</span><br><span class="line">Ethernet II, Src: Micro-St_06:62:ec (00:d8:61:06:62:ec), Dst: Fiberhom_35:92:b1 (74:5d:68:35:92:b1)</span><br><span class="line">Internet Protocol Version 6, Src: fe80::604d:b1a2:55ef:5877, Dst: fe80::1</span><br><span class="line">User Datagram Protocol, Src Port: 61277, Dst Port: 53</span><br><span class="line">Domain Name System (query)</span><br><span class="line">    Transaction ID: 0xcba9</span><br><span class="line">    Flags: 0x0100 Standard query</span><br><span class="line">    Questions: 1</span><br><span class="line">    Answer RRs: 0</span><br><span class="line">    Authority RRs: 0</span><br><span class="line">    Additional RRs: 0</span><br><span class="line">    Queries</span><br><span class="line">        gaia.cs.umass.edu: type A, class IN</span><br><span class="line">            Name: gaia.cs.umass.edu</span><br><span class="line">            [Name Length: 17]</span><br><span class="line">            [Label Count: 4]</span><br><span class="line">            Type: A (Host Address) (1)</span><br><span class="line">            Class: IN (0x0001)</span><br><span class="line">    [Response In: 29]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Frame 29: 113 bytes on wire (904 bits), 113 bytes captured (904 bits) on interface \Device\NPF_&#123;0A0B317B-E1D8-4D27-9D8A-9E3EC63057D4&#125;, id 0</span><br><span class="line">Ethernet II, Src: Fiberhom_35:92:b1 (74:5d:68:35:92:b1), Dst: Micro-St_06:62:ec (00:d8:61:06:62:ec)</span><br><span class="line">Internet Protocol Version 6, Src: fe80::1, Dst: fe80::604d:b1a2:55ef:5877</span><br><span class="line">User Datagram Protocol, Src Port: 53, Dst Port: 61277</span><br><span class="line">Domain Name System (response)</span><br><span class="line">    Transaction ID: 0xcba9</span><br><span class="line">    Flags: 0x8180 Standard query response, No error</span><br><span class="line">    Questions: 1</span><br><span class="line">    Answer RRs: 1</span><br><span class="line">    Authority RRs: 0</span><br><span class="line">    Additional RRs: 0</span><br><span class="line">    Queries</span><br><span class="line">        gaia.cs.umass.edu: type A, class IN</span><br><span class="line">            Name: gaia.cs.umass.edu</span><br><span class="line">            [Name Length: 17]</span><br><span class="line">            [Label Count: 4]</span><br><span class="line">            Type: A (Host Address) (1)</span><br><span class="line">            Class: IN (0x0001)</span><br><span class="line">    Answers</span><br><span class="line">        gaia.cs.umass.edu: type A, class IN, addr 128.119.245.12</span><br><span class="line">    [Request In: 20]</span><br><span class="line">    [Time: 0.009672000 seconds]</span><br></pre></td></tr></table></figure>
+<p>Q&amp;As:</p>
+<ol>
+<li>Locate the first DNS query message resolving the name gaia.cs.umass.edu. What is the packet number  in the trace for the DNS query message?  Is this query message sent over UDP or TCP?</li>
+</ol>
+<p>20, UDP.</p>
+<ol start="2">
+<li>Now locate the corresponding DNS response to the initial DNS query. What is the packet number in the trace for the DNS response message?  Is this response message received via UDP or TCP?   </li>
+</ol>
+<p>29, UDP.</p>
+<ol start="3">
+<li>What is the destination port for the DNS query message? What is the source port of the DNS response message?</li>
+</ol>
+<p>53 .</p>
+<ol start="4">
+<li>To what IP address is the DNS query message sent? </li>
+</ol>
+<p>fe80::1.</p>
+<ol start="5">
+<li>Examine the DNS query message. How many “questions” does this DNS message contain? How many “answers” answers does it contain?</li>
+</ol>
+<p>Questions: 1<br>Answer RRs: 0</p>
+<ol start="6">
+<li>Examine the DNS response message to the initial query message. How many “questions” does this DNS message contain? How many “answers” answers does it contain?</li>
+</ol>
+<p>Questions: 1<br>Answer RRs: 1</p>
+<h3 id="Trace-DNS-from-nslookup"><a href="#Trace-DNS-from-nslookup" class="headerlink" title="Trace DNS from nslookup"></a>Trace DNS from nslookup</h3><p>Operations:</p>
+<ul>
+<li>Clear DNS cache by ‘ipconfig’ command</li>
+<li>Do an nslookup on <a href="http://www.cs.umass.edu" target="_blank" rel="noopener">www.cs.umass.edu</a></li>
+</ul>
+<p>Captured packets:</p>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Time</th>
+<th>Source</th>
+<th>Destination</th>
+<th>Protocol</th>
+<th>Length</th>
+<th>Info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>56</td>
+<td>10.981691</td>
+<td>fe80::604d:b1a2:55ef:5877</td>
+<td>fe80::1</td>
+<td>DNS</td>
+<td>96</td>
+<td>Standard query 0x7a54 A <a href="http://www.cs.umass.edu" target="_blank" rel="noopener">www.cs.umass.edu</a></td>
+</tr>
+<tr>
+<td>57</td>
+<td>10.981916</td>
+<td>fe80::604d:b1a2:55ef:5877</td>
+<td>fe80::1</td>
+<td>DNS</td>
+<td>96</td>
+<td>Standard query 0xd102 AAAA <a href="http://www.cs.umass.edu" target="_blank" rel="noopener">www.cs.umass.edu</a></td>
+</tr>
+<tr>
+<td>58</td>
+<td>11.232144</td>
+<td>fe80::1</td>
+<td>fe80::604d:b1a2:55ef:5877</td>
+<td>DNS</td>
+<td>96</td>
+<td>Standard query response 0xd102 AAAA <a href="http://www.cs.umass.edu" target="_blank" rel="noopener">www.cs.umass.edu</a></td>
+</tr>
+<tr>
+<td>59</td>
+<td>11.255062</td>
+<td>fe80::1</td>
+<td>fe80::604d:b1a2:55ef:5877</td>
+<td>DNS</td>
+<td>112</td>
+<td>Standard query response 0x7a54 A <a href="http://www.cs.umass.edu" target="_blank" rel="noopener">www.cs.umass.edu</a> A 128.119.240.84</td>
+</tr>
+</tbody>
+</table>
+<p>Detail of packets:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Frame 56: 96 bytes on wire (768 bits), 96 bytes captured (768 bits) on interface \Device\NPF_&#123;0A0B317B-E1D8-4D27-9D8A-9E3EC63057D4&#125;, id 0</span><br><span class="line">Ethernet II, Src: Micro-St_06:62:ec (00:d8:61:06:62:ec), Dst: Fiberhom_35:92:b1 (74:5d:68:35:92:b1)</span><br><span class="line">Internet Protocol Version 6, Src: fe80::604d:b1a2:55ef:5877, Dst: fe80::1</span><br><span class="line">User Datagram Protocol, Src Port: 51185, Dst Port: 53</span><br><span class="line">Domain Name System (query)</span><br><span class="line">    Transaction ID: 0x7a54</span><br><span class="line">    Flags: 0x0100 Standard query</span><br><span class="line">    Questions: 1</span><br><span class="line">    Answer RRs: 0</span><br><span class="line">    Authority RRs: 0</span><br><span class="line">    Additional RRs: 0</span><br><span class="line">    Queries</span><br><span class="line">        www.cs.umass.edu: type A, class IN</span><br><span class="line">            Name: www.cs.umass.edu</span><br><span class="line">            [Name Length: 16]</span><br><span class="line">            [Label Count: 4]</span><br><span class="line">            Type: A (Host Address) (1)</span><br><span class="line">            Class: IN (0x0001)</span><br><span class="line">    [Response In: 59]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Frame 59: 112 bytes on wire (896 bits), 112 bytes captured (896 bits) on interface \Device\NPF_&#123;0A0B317B-E1D8-4D27-9D8A-9E3EC63057D4&#125;, id 0</span><br><span class="line">Ethernet II, Src: Fiberhom_35:92:b1 (74:5d:68:35:92:b1), Dst: Micro-St_06:62:ec (00:d8:61:06:62:ec)</span><br><span class="line">Internet Protocol Version 6, Src: fe80::1, Dst: fe80::604d:b1a2:55ef:5877</span><br><span class="line">User Datagram Protocol, Src Port: 53, Dst Port: 51185</span><br><span class="line">Domain Name System (response)</span><br><span class="line">    Transaction ID: 0x7a54</span><br><span class="line">    Flags: 0x8180 Standard query response, No error</span><br><span class="line">    Questions: 1</span><br><span class="line">    Answer RRs: 1</span><br><span class="line">    Authority RRs: 0</span><br><span class="line">    Additional RRs: 0</span><br><span class="line">    Queries</span><br><span class="line">        www.cs.umass.edu: type A, class IN</span><br><span class="line">            Name: www.cs.umass.edu</span><br><span class="line">            [Name Length: 16]</span><br><span class="line">            [Label Count: 4]</span><br><span class="line">            Type: A (Host Address) (1)</span><br><span class="line">            Class: IN (0x0001)</span><br><span class="line">    Answers</span><br><span class="line">        www.cs.umass.edu: type A, class IN, addr 128.119.240.84</span><br><span class="line">    [Request In: 56]</span><br><span class="line">    [Time: 0.273371000 seconds]</span><br></pre></td></tr></table></figure>
+<p>Q&amp;As:</p>
+<ol start="7">
+<li>What is the destination port for the DNS query message? What is the source port of the DNS response message?</li>
+</ol>
+<p>53</p>
+<ol start="8">
+<li>To what IP address is the DNS query message sent? Is this the IP address of your default local DNS server?</li>
+</ol>
+<p>fe80::1, yes.</p>
+<ol start="9">
+<li>Examine the DNS query message. What “Type” of DNS query is it? Does the query message contain any “answers”?</li>
+</ol>
+<p>No.</p>
+<ol start="10">
+<li>Examine the DNS response message to the query message. How many “questions” does this DNS response message contain? How many “answers”?</li>
+</ol>
+<p>Questions: 1<br>Answer RRs: 1</p>
+<h3 id="Trace-DNS-from-nslookup-with-NS-type-record"><a href="#Trace-DNS-from-nslookup-with-NS-type-record" class="headerlink" title="Trace DNS from nslookup with NS type record"></a>Trace DNS from nslookup with NS type record</h3><p>Operations:</p>
+<ul>
+<li>Clear DNS cache by ‘ipconfig’ command</li>
+<li>Do an nslookup -type=NS umass.edu</li>
+</ul>
+<p>Captured packets:</p>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Time</th>
+<th>Source</th>
+<th>Destination</th>
+<th>Protocol</th>
+<th>Length</th>
+<th>Info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>37</td>
+<td>1.731935</td>
+<td>fe80::604d:b1a2:55ef:5877</td>
+<td>fe80::1</td>
+<td>DNS</td>
+<td>89</td>
+<td>Standard query 0x0002 NS umass.edu</td>
+</tr>
+<tr>
+<td>38</td>
+<td>1.738860</td>
+<td>fe80::1</td>
+<td>fe80::604d:b1a2:55ef:5877</td>
+<td>DNS</td>
+<td>143</td>
+<td>Standard query response 0x0002 NS umass.edu NS ns2.umass.edu NS ns1.umass.edu NS ns3.umass.edu</td>
+</tr>
+</tbody>
+</table>
+<p>Detail of packets:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Frame 37: 89 bytes on wire (712 bits), 89 bytes captured (712 bits) on interface \Device\NPF_&#123;0A0B317B-E1D8-4D27-9D8A-9E3EC63057D4&#125;, id 0</span><br><span class="line">Ethernet II, Src: Micro-St_06:62:ec (00:d8:61:06:62:ec), Dst: Fiberhom_35:92:b1 (74:5d:68:35:92:b1)</span><br><span class="line">Internet Protocol Version 6, Src: fe80::604d:b1a2:55ef:5877, Dst: fe80::1</span><br><span class="line">User Datagram Protocol, Src Port: 56756, Dst Port: 53</span><br><span class="line">Domain Name System (query)</span><br><span class="line">    Transaction ID: 0x0002</span><br><span class="line">    Flags: 0x0100 Standard query</span><br><span class="line">    Questions: 1</span><br><span class="line">    Answer RRs: 0</span><br><span class="line">    Authority RRs: 0</span><br><span class="line">    Additional RRs: 0</span><br><span class="line">    Queries</span><br><span class="line">        umass.edu: type NS, class IN</span><br><span class="line">            Name: umass.edu</span><br><span class="line">            [Name Length: 9]</span><br><span class="line">            [Label Count: 2]</span><br><span class="line">            Type: NS (authoritative Name Server) (2)</span><br><span class="line">            Class: IN (0x0001)</span><br><span class="line">    [Response In: 38]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Frame 38: 143 bytes on wire (1144 bits), 143 bytes captured (1144 bits) on interface \Device\NPF_&#123;0A0B317B-E1D8-4D27-9D8A-9E3EC63057D4&#125;, id 0</span><br><span class="line">Ethernet II, Src: Fiberhom_35:92:b1 (74:5d:68:35:92:b1), Dst: Micro-St_06:62:ec (00:d8:61:06:62:ec)</span><br><span class="line">Internet Protocol Version 6, Src: fe80::1, Dst: fe80::604d:b1a2:55ef:5877</span><br><span class="line">User Datagram Protocol, Src Port: 53, Dst Port: 56756</span><br><span class="line">Domain Name System (response)</span><br><span class="line">    Transaction ID: 0x0002</span><br><span class="line">    Flags: 0x8180 Standard query response, No error</span><br><span class="line">    Questions: 1</span><br><span class="line">    Answer RRs: 3</span><br><span class="line">    Authority RRs: 0</span><br><span class="line">    Additional RRs: 0</span><br><span class="line">    Queries</span><br><span class="line">        umass.edu: type NS, class IN</span><br><span class="line">            Name: umass.edu</span><br><span class="line">            [Name Length: 9]</span><br><span class="line">            [Label Count: 2]</span><br><span class="line">            Type: NS (authoritative Name Server) (2)</span><br><span class="line">            Class: IN (0x0001)</span><br><span class="line">    Answers</span><br><span class="line">        umass.edu: type NS, class IN, ns ns2.umass.edu</span><br><span class="line">        umass.edu: type NS, class IN, ns ns1.umass.edu</span><br><span class="line">        umass.edu: type NS, class IN, ns ns3.umass.edu</span><br><span class="line">    [Request In: 37]</span><br><span class="line">    [Time: 0.006925000 seconds]</span><br></pre></td></tr></table></figure>
+<p>Q&amp;As:</p>
+<ol start="11">
+<li>To what IP address is the DNS query message sent? Is this the IP address of your default local DNS server?</li>
+</ol>
+<p>fe80::1, yes.</p>
+<ol start="12">
+<li>Examine the DNS query message. How many questions does the query have? Does the query message contain any “answers”?</li>
+</ol>
+<p>No.</p>
+<ol start="13">
+<li>Examine the DNS response message.  How many answers does the response have?  What information is contained in the answers? </li>
+</ol>
+<p>3 answers, name servers of the name in query.</p>
+<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><h3 id="Upload-a-150-KB-file"><a href="#Upload-a-150-KB-file" class="headerlink" title="Upload a 150+ KB file"></a>Upload a 150+ KB file</h3><p>Captured data:</p>
+<p>Answer the following questions , either from your own live trace, or by opening the Wireshark captured packet file tcp-wireshark-trace1-1 in  <a href="http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces-8.1.zip" target="_blank" rel="noopener">http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces-8.1.zip</a>  </p>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Time</th>
+<th>Source</th>
+<th>Destination</th>
+<th>Protocol</th>
+<th>Length</th>
+<th>Info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.000000</td>
+<td>192.168.86.68</td>
+<td>128.119.245.12</td>
+<td>TCP</td>
+<td>78</td>
+<td>55639  &gt;  80 [SYN] Seq=0 Win=65535 Len=0 MSS=1460 WS=64 TSval=725607509 TSecr=0 SACK_PERM=1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.022414</td>
+<td>128.119.245.12</td>
+<td>192.168.86.68</td>
+<td>TCP</td>
+<td>74</td>
+<td>80  &gt;  55639 [SYN, ACK] Seq=0 Ack=1 Win=28960 Len=0 MSS=1460 SACK_PERM=1 TSval=3913851370 TSecr=725607509 WS=128</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.022505</td>
+<td>192.168.86.68</td>
+<td>128.119.245.12</td>
+<td>TCP</td>
+<td>66</td>
+<td>55639  &gt;  80 [ACK] Seq=1 Ack=1 Win=131712 Len=0 TSval=725607531 TSecr=3913851370</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0.024047</td>
+<td>192.168.86.68</td>
+<td>128.119.245.12</td>
+<td>TCP</td>
+<td>1514</td>
+<td>55639  &gt;  80 [ACK] Seq=1 Ack=1 Win=131712 Len=1448 TSval=725607532 TSecr=3913851370 [TCP segment of a reassembled PDU]</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0.024048</td>
+<td>192.168.86.68</td>
+<td>128.119.245.12</td>
+<td>TCP</td>
+<td>1514</td>
+<td>55639  &gt;  80 [ACK] Seq=1449 Ack=1 Win=131712 Len=1448 TSval=725607532 TSecr=3913851370 [TCP segment of a reassembled PDU]</td>
+</tr>
+<tr>
+<td>6</td>
+<td>0.024049</td>
+<td>192.168.86.68</td>
+<td>128.119.245.12</td>
+<td>TCP</td>
+<td>1514</td>
+<td>55639  &gt;  80 [ACK] Seq=2897 Ack=1 Win=131712 Len=1448 TSval=725607532 TSecr=3913851370 [TCP segment of a reassembled PDU]</td>
+</tr>
+<tr>
+<td>7</td>
+<td>0.052671</td>
+<td>128.119.245.12</td>
+<td>192.168.86.68</td>
+<td>TCP</td>
+<td>66</td>
+<td>80  &gt;  55639 [ACK] Seq=1 Ack=1449 Win=31872 Len=0 TSval=3913851399 TSecr=725607532</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0.052676</td>
+<td>128.119.245.12</td>
+<td>192.168.86.68</td>
+<td>TCP</td>
+<td>66</td>
+<td>80  &gt;  55639 [ACK] Seq=1 Ack=2897 Win=34816 Len=0 TSval=3913851400 TSecr=725607532</td>
+</tr>
+<tr>
+<td>9</td>
+<td>0.052774</td>
+<td>192.168.86.68</td>
+<td>128.119.245.12</td>
+<td>TCP</td>
+<td>1514</td>
+<td>55639  &gt;  80 [ACK] Seq=4345 Ack=1 Win=131712 Len=1448 TSval=725607560 TSecr=3913851399 [TCP segment of a reassembled PDU]</td>
+</tr>
+<tr>
+<td>10</td>
+<td>0.052775</td>
+<td>192.168.86.68</td>
+<td>128.119.245.12</td>
+<td>TCP</td>
+<td>1514</td>
+<td>55639  &gt;  80 [ACK] Seq=5793 Ack=1 Win=131712 Len=1448 TSval=725607560 TSecr=3913851399 [TCP segment of a reassembled PDU]</td>
+</tr>
+<tr>
+<td>11</td>
+<td>0.052854</td>
+<td>192.168.86.68</td>
+<td>128.119.245.12</td>
+<td>TCP</td>
+<td>1514</td>
+<td>55639  &gt;  80 [ACK] Seq=7241 Ack=1 Win=131712 Len=1448 TSval=725607560 TSecr=3913851400 [TCP segment of a reassembled PDU]</td>
+</tr>
+<tr>
+<td>12</td>
+<td>0.052855</td>
+<td>192.168.86.68</td>
+<td>128.119.245.12</td>
+<td>TCP</td>
+<td>1514</td>
+<td>55639  &gt;  80 [ACK] Seq=8689 Ack=1 Win=131712 Len=1448 TSval=725607560 TSecr=3913851400 [TCP segment of a reassembled PDU]</td>
+</tr>
+<tr>
+<td>13</td>
+<td>0.053626</td>
+<td>128.119.245.12</td>
+<td>192.168.86.68</td>
+<td>TCP</td>
+<td>66</td>
+<td>80  &gt;  55639 [ACK] Seq=1 Ack=4345 Win=37760 Len=0 TSval=3913851400 TSecr=725607532</td>
+</tr>
+<tr>
+<td>14</td>
+<td>0.053710</td>
+<td>192.168.86.68</td>
+<td>128.119.245.12</td>
+<td>TCP</td>
+<td>1514</td>
+<td>55639  &gt;  80 [ACK] Seq=10137 Ack=1 Win=131712 Len=1448 TSval=725607560 TSecr=3913851400 [TCP segment of a reassembled PDU]</td>
+</tr>
+<tr>
+<td>15</td>
+<td>0.053711</td>
+<td>192.168.86.68</td>
+<td>128.119.245.12</td>
+<td>TCP</td>
+<td>1514</td>
+<td>55639  &gt;  80 [ACK] Seq=11585 Ack=1 Win=131712 Len=1448 TSval=725607560 TSecr=3913851400 [TCP segment of a reassembled PDU]</td>
+</tr>
+<tr>
+<td>16</td>
+<td>0.080768</td>
+<td>128.119.245.12</td>
+<td>192.168.86.68</td>
+<td>TCP</td>
+<td>66</td>
+<td>80  &gt;  55639 [ACK] Seq=1 Ack=5793 Win=40576 Len=0 TSval=3913851421 TSecr=725607560</td>
+</tr>
+<tr>
+<td>17</td>
+<td>0.080771</td>
+<td>128.119.245.12</td>
+<td>192.168.86.68</td>
+<td>TCP</td>
+<td>66</td>
+<td>80  &gt;  55639 [ACK] Seq=1 Ack=7241 Win=43520 Len=0 TSval=3913851422 TSecr=725607560</td>
+</tr>
+<tr>
+<td>18</td>
+<td>0.080772</td>
+<td>128.119.245.12</td>
+<td>192.168.86.68</td>
+<td>TCP</td>
+<td>66</td>
+<td>80  &gt;  55639 [ACK] Seq=1 Ack=8689 Win=46336 Len=0 TSval=3913851422 TSecr=725607560</td>
+</tr>
+<tr>
+<td>19</td>
+<td>0.080772</td>
+<td>128.119.245.12</td>
+<td>192.168.86.68</td>
+<td>TCP</td>
+<td>66</td>
+<td>80  &gt;  55639 [ACK] Seq=1 Ack=10137 Win=49280 Len=0 TSval=3913851422 TSecr=725607560</td>
+</tr>
+<tr>
+<td>20</td>
+<td>0.080845</td>
+<td>192.168.86.68</td>
+<td>128.119.245.12</td>
+<td>TCP</td>
+<td>1514</td>
+<td>55639  &gt;  80 [ACK] Seq=13033 Ack=1 Win=131712 Len=1448 TSval=725607588 TSecr=3913851421 [TCP segment of a reassembled PDU]</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Frame 1: 78 bytes on wire (624 bits), 78 bytes captured (624 bits) on interface en0, id 0</span><br><span class="line">Ethernet II, Src: Apple_98:d9:27 (78:4f:43:98:d9:27), Dst: Google_89:0e:c8 (3c:28:6d:89:0e:c8)</span><br><span class="line">Internet Protocol Version 4, Src: 192.168.86.68, Dst: 128.119.245.12</span><br><span class="line">Transmission Control Protocol, Src Port: 55639, Dst Port: 80, Seq: 0, Len: 0</span><br><span class="line">    Source Port: 55639</span><br><span class="line">    Destination Port: 80</span><br><span class="line">    [Stream index: 0]</span><br><span class="line">    [TCP Segment Len: 0]</span><br><span class="line">    Sequence Number: 0    (relative sequence number)</span><br><span class="line">    Sequence Number (raw): 4236649187</span><br><span class="line">    [Next Sequence Number: 1    (relative sequence number)]</span><br><span class="line">    Acknowledgment Number: 0</span><br><span class="line">    Acknowledgment number (raw): 0</span><br><span class="line">    1011 .... = Header Length: 44 bytes (11)</span><br><span class="line">    Flags: 0x002 (SYN)</span><br><span class="line">    Window: 65535</span><br><span class="line">    [Calculated window size: 65535]</span><br><span class="line">    Checksum: 0xa1e4 [unverified]</span><br><span class="line">    [Checksum Status: Unverified]</span><br><span class="line">    Urgent Pointer: 0</span><br><span class="line">    Options: (24 bytes), Maximum segment size, No-Operation (NOP), Window scale, No-Operation (NOP), No-Operation (NOP), Timestamps, SACK permitted, End of Option List (EOL)</span><br><span class="line">        TCP Option - Maximum segment size: 1460 bytes</span><br><span class="line">        TCP Option - No-Operation (NOP)</span><br><span class="line">        TCP Option - Window scale: 6 (multiply by 64)</span><br><span class="line">        TCP Option - No-Operation (NOP)</span><br><span class="line">        TCP Option - No-Operation (NOP)</span><br><span class="line">        TCP Option - Timestamps: TSval 725607509, TSecr 0</span><br><span class="line">        TCP Option - SACK permitted</span><br><span class="line">        TCP Option - End of Option List (EOL)</span><br><span class="line">    [Timestamps]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Frame 2: 74 bytes on wire (592 bits), 74 bytes captured (592 bits) on interface en0, id 0</span><br><span class="line">Ethernet II, Src: Google_89:0e:c8 (3c:28:6d:89:0e:c8), Dst: Apple_98:d9:27 (78:4f:43:98:d9:27)</span><br><span class="line">Internet Protocol Version 4, Src: 128.119.245.12, Dst: 192.168.86.68</span><br><span class="line">Transmission Control Protocol, Src Port: 80, Dst Port: 55639, Seq: 0, Ack: 1, Len: 0</span><br><span class="line">    Source Port: 80</span><br><span class="line">    Destination Port: 55639</span><br><span class="line">    [Stream index: 0]</span><br><span class="line">    [TCP Segment Len: 0]</span><br><span class="line">    Sequence Number: 0    (relative sequence number)</span><br><span class="line">    Sequence Number (raw): 1068969752</span><br><span class="line">    [Next Sequence Number: 1    (relative sequence number)]</span><br><span class="line">    Acknowledgment Number: 1    (relative ack number)</span><br><span class="line">    Acknowledgment number (raw): 4236649188</span><br><span class="line">    1010 .... = Header Length: 40 bytes (10)</span><br><span class="line">    Flags: 0x012 (SYN, ACK)</span><br><span class="line">    Window: 28960</span><br><span class="line">    [Calculated window size: 28960]</span><br><span class="line">    Checksum: 0x47b4 [unverified]</span><br><span class="line">    [Checksum Status: Unverified]</span><br><span class="line">    Urgent Pointer: 0</span><br><span class="line">    Options: (20 bytes), Maximum segment size, SACK permitted, Timestamps, No-Operation (NOP), Window scale</span><br><span class="line">        TCP Option - Maximum segment size: 1460 bytes</span><br><span class="line">        TCP Option - SACK permitted</span><br><span class="line">        TCP Option - Timestamps: TSval 3913851370, TSecr 725607509</span><br><span class="line">        TCP Option - No-Operation (NOP)</span><br><span class="line">        TCP Option - Window scale: 7 (multiply by 128)</span><br><span class="line">    [SEQ/ACK analysis]</span><br><span class="line">    [Timestamps]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Frame 4: 1514 bytes on wire (12112 bits), 1514 bytes captured (12112 bits) on interface en0, id 0</span><br><span class="line">Ethernet II, Src: Apple_98:d9:27 (78:4f:43:98:d9:27), Dst: Google_89:0e:c8 (3c:28:6d:89:0e:c8)</span><br><span class="line">Internet Protocol Version 4, Src: 192.168.86.68, Dst: 128.119.245.12</span><br><span class="line">Transmission Control Protocol, Src Port: 55639, Dst Port: 80, Seq: 1, Ack: 1, Len: 1448</span><br><span class="line">    Source Port: 55639</span><br><span class="line">    Destination Port: 80</span><br><span class="line">    [Stream index: 0]</span><br><span class="line">    [TCP Segment Len: 1448]</span><br><span class="line">    Sequence Number: 1    (relative sequence number)</span><br><span class="line">    Sequence Number (raw): 4236649188</span><br><span class="line">    [Next Sequence Number: 1449    (relative sequence number)]</span><br><span class="line">    Acknowledgment Number: 1    (relative ack number)</span><br><span class="line">    Acknowledgment number (raw): 1068969753</span><br><span class="line">    1000 .... = Header Length: 32 bytes (8)</span><br><span class="line">    Flags: 0x010 (ACK)</span><br><span class="line">    Window: 2058</span><br><span class="line">    [Calculated window size: 131712]</span><br><span class="line">    [Window size scaling factor: 64]</span><br><span class="line">    Checksum: 0xbd21 [unverified]</span><br><span class="line">    [Checksum Status: Unverified]</span><br><span class="line">    Urgent Pointer: 0</span><br><span class="line">    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps</span><br><span class="line">        TCP Option - No-Operation (NOP)</span><br><span class="line">        TCP Option - No-Operation (NOP)</span><br><span class="line">        TCP Option - Timestamps: TSval 725607532, TSecr 3913851370</span><br><span class="line">    [SEQ/ACK analysis]</span><br><span class="line">    [Timestamps]</span><br><span class="line">    TCP payload (1448 bytes)</span><br><span class="line">    [Reassembled PDU in frame: 153]</span><br><span class="line">    TCP segment data (1448 bytes)</span><br></pre></td></tr></table></figure>
+<p>Q&amp;As:</p>
+<ol>
+<li>What is the sequence number of the TCP SYN segment that is used to initiate the TCP connection between the client computer and gaia.cs.umass.edu? (Note: this is the “raw” sequence number carried in the TCP segment itself; it is NOT the packet # in the “No.” column in the Wireshark window.  Remember there is no such thing as a “packet number” in TCP or UDP; as you know, there are sequence numbers in TCP and that’s what we’re after here.  Also note that this is not the relative sequence number with respect to the starting sequence number of this TCP session.). What is it in this TCP segment that identifies the segment as a SYN segment? Will the TCP receiver in this session be able to use Selective Acknowledgments (allowing TCP to function a bit more like a “selective repeat” receiver, see section 3.4.5 in the text)?</li>
+</ol>
+<p>Sequence Number (raw): 4236649187. </p>
+<p>The ‘Flags: 0x002 (SYN)’ identifies the segment as a SYN segment.</p>
+<p>Yes, there is an option ‘SACK permitted’.</p>
+<ol start="2">
+<li>What is the sequence number of the SYNACK segment sent by gaia.cs.umass.edu to the client computer in reply to the SYN? What is it in the segment that identifies the segment as a SYNACK segment? What is the value of the Acknowledgement field in the SYNACK segment? How did gaia.cs.umass.edu determine that value? </li>
+</ol>
+<p>Sequence Number (raw): 1068969752</p>
+<p>Flags: 0x012 (SYN, ACK) identifies the segment as a SYNACK segment.</p>
+<p>Acknowledgment number (raw): 4236649188</p>
+<p>Ack = Seq<sub>(peer)</sub> + 1.</p>
+<ol start="3">
+<li>What is the sequence number of the TCP segment containing the header of the HTTP POST command?  Note that in order to find the POST message header, you’ll need to dig into the packet content field at the bottom of the Wireshark window, looking for a segment with the ASCII text “POST” within its DATA field , .  How many bytes of data are contained in the payload (data) field of this TCP segment? Did all of the data in the transferred file alice.txt fit into this single segment?</li>
+</ol>
+<p>Sequence Number (raw): 4236649188. </p>
+<p>TCP payload (1448 bytes).</p>
+<p>No.</p>
+<ol start="4">
+<li>Consider the TCP segment containing the HTTP “POST” as the first segment in the data transfer part of the TCP connection.<br>•    At what time was the first segment (the one containing the HTTP POST) in the<br>data-transfer part of the TCP connection sent?  </li>
+</ol>
+<p>0.024047s.</p>
+<p>•    At what time was the ACK for this first data-containing segment received?  </p>
+<p>0.052671s.</p>
+<p>•    What is the RTT for this first data-containing segment? </p>
+<p>[The RTT to ACK the segment was: 0.028624000 seconds]</p>
+<p>•    What is the RTT value the second data-carrying TCP segment and its ACK? </p>
+<p>[The RTT to ACK the segment was: 0.028628000 seconds]</p>
+<p>•    What is the EstimatedRTT value (see Section 3.5.3, in the text) after the ACK for the second data-carrying segment is received? Assume that in making this calculation after the received of the ACK for the second segment, that the initial value of EstimatedRTT is equal to the measured RTT for the first segment, and then is computed using the EstimatedRTT equation on page 242, and a value of $\alpha$ = 0.125.<br>Note: Wireshark has a nice feature that allows you to plot the RTT for each of the TCP segments sent.  Select a TCP segment in the “listing of captured packets” window that is being sent from the client to the gaia.cs.umass.edu server.  Then select: Statistics-&gt;TCP Stream Graph-&gt;Round Trip Time Graph.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># mesured RTT for these two packets.</span><br><span class="line">[The RTT to ACK the segment was: 0.028624000 seconds]</span><br><span class="line">[The RTT to ACK the segment was: 0.028628000 seconds]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">EstimatedRTT = (1 – α) • EstimatedRTT + α • SampleRTT</span><br><span class="line"></span><br><span class="line">So EstimatedRTT is $0.875*0.028624000 + 0.125*0.028628000 = 0.02862449s$.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">5.	What is the length (header plus payload) of each of the first four data-carrying TCP segments?</span><br></pre></td></tr></table></figure>
+<p>Transmission Control Protocol, Src Port: 55639, Dst Port: 80, Seq: 1, Ack: 1, Len: 1448<br>    TCP segment data (1448 bytes)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1448 Bytes.</span><br><span class="line"></span><br><span class="line">6.	What is the minimum amount of available buffer space advertised to the client by gaia.cs.umass.edu among these first four data-carrying TCP segments ?  Does the lack of receiver buffer space ever throttle the sender for these first four data-carrying segments?</span><br></pre></td></tr></table></figure></p>
+<p>[Calculated window size: 31872]<br>[Calculated window size: 34816]<br>[Calculated window size: 37760]<br>[Calculated window size: 40576]<br><code>`</code><br>The lack of receiver buffer space <strong>never</strong> throttle the sender for these first four data-carrying segments</p>
+<ol start="7">
+<li><p>Are there any retransmitted segments in the trace file? What did you check for (in the trace) in order to answer this question?</p>
+<p>In the TimeSequence-Graph (Stevens) of this trace (if it’s a straight line, click the reset direction button), all sequence numbers are incresing monotonically.</p>
 </li>
 </ol>
+<ol start="8">
+<li>How much data does the receiver typically acknowledge in an ACK among the first ten data-carrying segments sent from the client to gaia.cs.umass.edu?  Can you identify cases where the receiver is ACKing every other received segment (see Table 3.2 in the text) among these first ten data-carrying segments?</li>
+</ol>
+<p>1448 bytes, No.8 packet Ack=2897, and No.7 Ack=1449, it is Acking 1448 bytes.</p>
+<ol start="9">
+<li>What is the throughput (bytes transferred per unit time) for the TCP connection?  Explain how you calculated this value.</li>
+</ol>
+<p>The last Ack is 153426, time is 0.191496s, and the first data carrying packet’s time is 0.024047, so $bandwidth = 153426 byte / (0.191496s -  0.024047s) \approx 916255 byte/s$</p>
+<ol start="10">
+<li>Use the Time-Sequence-Graph(Stevens) plotting tool to view the sequence number versus time plot of segments being sent from the client to the gaia.cs.umass.edu server.  Consider the “fleets” of packets sent around t = 0.025, t = 0.053, t = 0.082 and t = 0.1. Comment on whether this looks as if TCP is in its slow start phase, congestion avoidance phase or some other phase. Figure 6 shows a slightly different view of this data.</li>
+</ol>
+<p>Yes, in $t=0.025$ about 4 packets received, $t=0.053$ about 6 packets received, $t=0.082$ about 12 packets received, $t=0.1$ about 24 packets received, It is ‘slow start’ mechanism of TCP, the window size grows up exponentially.</p>
+<ol start="11">
+<li>These “fleets” of segments appear to have some periodicity. What can you say about the period?</li>
+</ol>
+<p>The period is close to the RTT, because the TCP need a RTT time at averange to calculate the new Esitimated RTT and decides how many packets will be sent.</p>
 <h1 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h1><p><div id="refer-anchor-1"></div></p>
 <ul>
 <li>[1] <a href="https://gaia.cs.umass.edu/kurose_ross/wireshark.php" target="_blank" rel="noopener">Umass Wireshark labs</a></li>
@@ -686,7 +1142,7 @@ Server -->>Browser: 8E_cover_small.jpg time:2.695694
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#intruduction"><span class="nav-number">1.</span> <span class="nav-text">intruduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">2.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-skill-capturing-packets-using-Wireshark"><span class="nav-number">2.1.</span> <span class="nav-text">Basic skill: capturing packets using Wireshark</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP"><span class="nav-number">2.2.</span> <span class="nav-text">HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Basic-HTTP-GET-response-interaction"><span class="nav-number">2.2.1.</span> <span class="nav-text">The Basic HTTP GET/response interaction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-HTTP-CONDITIONAL-GET-response-interaction"><span class="nav-number">2.2.2.</span> <span class="nav-text">The HTTP CONDITIONAL GET/response interaction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Retrieving-Long-Documents"><span class="nav-number">2.2.3.</span> <span class="nav-text">Retrieving Long Documents</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-Documents-with-Embedded-Objects"><span class="nav-number">2.2.4.</span> <span class="nav-text">HTML Documents with Embedded Objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-Authentication"><span class="nav-number">2.2.5.</span> <span class="nav-text">HTTP Authentication</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Refs"><span class="nav-number">3.</span> <span class="nav-text">Refs</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#intruduction"><span class="nav-number">1.</span> <span class="nav-text">intruduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">2.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-skill-capturing-packets-using-Wireshark"><span class="nav-number">2.1.</span> <span class="nav-text">Basic skill: capturing packets using Wireshark</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP"><span class="nav-number">2.2.</span> <span class="nav-text">HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Basic-HTTP-GET-response-interaction"><span class="nav-number">2.2.1.</span> <span class="nav-text">The Basic HTTP GET/response interaction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-HTTP-CONDITIONAL-GET-response-interaction"><span class="nav-number">2.2.2.</span> <span class="nav-text">The HTTP CONDITIONAL GET/response interaction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Retrieving-Long-Documents"><span class="nav-number">2.2.3.</span> <span class="nav-text">Retrieving Long Documents</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-Documents-with-Embedded-Objects"><span class="nav-number">2.2.4.</span> <span class="nav-text">HTML Documents with Embedded Objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-Authentication"><span class="nav-number">2.2.5.</span> <span class="nav-text">HTTP Authentication</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS"><span class="nav-number">2.3.</span> <span class="nav-text">DNS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Trace-DNS-from-web-browser"><span class="nav-number">2.3.1.</span> <span class="nav-text">Trace DNS from web browser</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Trace-DNS-from-nslookup"><span class="nav-number">2.3.2.</span> <span class="nav-text">Trace DNS from nslookup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Trace-DNS-from-nslookup-with-NS-type-record"><span class="nav-number">2.3.3.</span> <span class="nav-text">Trace DNS from nslookup with NS type record</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP"><span class="nav-number">2.4.</span> <span class="nav-text">TCP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Upload-a-150-KB-file"><span class="nav-number">2.4.1.</span> <span class="nav-text">Upload a 150+ KB file</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Refs"><span class="nav-number">3.</span> <span class="nav-text">Refs</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
