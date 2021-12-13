@@ -5,13 +5,17 @@
     <url>/2017/04/10/2017-04-10-jzm_and_weather/</url>
     <content><![CDATA[<p>气象学是一门极其困难的科学，究其原因，主要是气象学模型复杂，扰动条件相当多，导致时常有不符合模型的情况出现，这在专业上称作‘奇点’。<br>今天我们讲讲中国气象学上几个著名的奇点。</p>
 <a id="more"></a>
-<p>1985年5月，戈尔巴乔夫访华，国家主席杨尚昆和未来的总书记江先生一同接见了这位苏共总书记。<br>江主席亲切的说：“由于您的到来，上海的天气好转了。”戈尔巴乔夫回应：“特别令人高兴的是，中苏关系好转了”。<br><img src="http://upload.ouliu.net/i/20170410233443ihv0i.jpeg" alt="戈尔巴乔夫访华"></p>
+<p>1985年5月，戈尔巴乔夫访华，国家主席杨尚昆和未来的总书记江先生一同接见了这位苏共总书记。<br>江主席亲切的说：“由于您的到来，上海的天气好转了。”戈尔巴乔夫回应：“特别令人高兴的是，中苏关系好转了”。<br><img src="https://imgur.com/Wjyl0b5" alt="戈尔巴乔夫访华"></p>
 <p>2009年，江主席视察旧部国机二院。会议中，中国著名气象专家徐嘉诰笑着说：“天气预报本来说今天有雨，结果江主席一来，天气晴朗”。</p>
-<p><img src="http://upload.ouliu.net/i/20170410233720bdiro.jpeg" alt="二院天气变化"></p>
-<p>科学研究需要敏锐的嗅觉，通过对以上两个案例的分析，很多人发现两个事件中共同点就是有他在场，于是做出结论，他拥有气象操控术这样一种失传已久的秘技，上一次这个秘技展示在众人眼前，还是东汉末年。</p>
+<p><img src="https://imgur.com/XEjuXps" alt="二院天气变化"></p>
+<p>科学研究需要敏锐的嗅觉，通过对以上两个案例的分析，很多人发现两个事件中共同点就是有他在场，于是便草率做出结论：他拥有“气象操控术”这样一种失传已久的秘技，上一次这个秘技展示在众人眼前，还是东汉末年。</p>
 <p>斗转星移，到了2017年，我看到这样一篇新闻报道：</p>
-<p><img src="http://upload.ouliu.net/i/2017041023375122g4j.jpeg" alt="芬兰天气转变"></p>
-<p>之前网友盛传他拥有秘技的谣言不攻自破，倘若真是秘技重现江湖，就目前的情形来看，他并不是唯一掌握这种秘技的人，至少他那位胖嘟嘟的继任者也拥有同样的能力。<br>历史的脉搏是这么的有力，在波澜壮阔的长河里一次又一次不紧不慢的展示出自己的迷人之处。无论真相如何，我们作为芸芸众生中微不足道的一员，只能感叹：历史总是惊人的相似！</p>
+<blockquote>
+<p>中新社记者 孙宇挺<br>中国国家副主席习近平15日到访美国艾奥瓦州东部小镇马斯卡廷，与27年前的老友聚面。<br>习近平当日下午抵达马斯卡廷兰迪夫人家门口时，阴雨天气短暂放晴。今天的老友聚会将在兰迪家举行。14名当地高中生用中文向习近平致意。<br>“我喜欢你的笑容。”兰迪夫人对走进屋子的习近平说。她今天穿了一袭中国红的中式上衣。<br>兰迪家今天打扮得有点中国风，墙上挂起了中国书法，角落摆着中国瓷器，甚至桌上餐巾纸也是印着孔雀的图案。<br>习近平在起居室火炉边的沙发上落座，左右两侧坐着兰迪夫妇俩。习近平落座以后，双手放在膝盖上。他的身后和面前围坐着当年的那些老友，有些人甚至站着。<br>当兰迪夫人开场白结束后，习近平站到火炉前，面对左右两侧的老朋友们开始发言。</p>
+</blockquote>
+<p><img src="https://imgur.com/xKEHF89" alt="习近平主席在马斯卡廷兰迪夫人家"></p>
+<p>之前网友盛传他拥有秘技的谣言不攻自破，倘若真是秘技重现江湖，就目前的情形来看，他并不是唯一掌握这种秘技的人，至少他那位超凡的继任者也拥有同样的能力。<br>历史的脉搏是这么的有力，在波澜壮阔的长河里一次又一次不紧不慢的展示出自己的迷人之处。</p>
+<p>无论真相如何，我们作为芸芸众生中微不足道的一员，只能感叹一句：历史就像是抽着兰州的董小姐，她不是一个没有故事的女同学，嘴上一笔带过，心里却一直重复。</p>
 ]]></content>
       <categories>
         <category>幽默</category>
@@ -91,7 +95,7 @@ s=socket.socket(socket.AF_INET,socket.SOCK_RAW,icmp)
 send_packet(s, addr)
 
 do(&quot;220.181.57.217&quot;)
-</code></pre><p>这就是程序的入口了，运行效果就不贴了，反正就是打印出一个浮点数。</p>
+</code></pre><p>这就是程序的入口了，运行效果就不贴了，反正就是打印出一个浮点数，其含义是收到的首个icmp回复报文耗费的时间。</p>
 <p>与ping相似的另一个traceroute，实现原理也类似，它利用的是ip头部的TTL,通过构造指向目的主机的ttl从1递增的数据包，就能获得源主机到目的主机之间所有经过的路由，这可以在网上找到不少资料，此处不再赘述。</p>
 <p>参考:[1]:<a href="https://bbs.ichunqiu.com/thread-8970-1-1.html" target="_blank" rel="noopener">https://bbs.ichunqiu.com/thread-8970-1-1.html</a></p>
 ]]></content>
@@ -213,7 +217,7 @@ do(&quot;220.181.57.217&quot;)
   <entry>
     <title>[Group testing]群组测试：毒药谜题</title>
     <url>/2019/04/28/2019-04-28-Group-testing/</url>
-    <content><![CDATA[<h5 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h5><p>这个问题在统计学和组合数学领域被称为群组测试问题(Group testing),问题源于二战时期，美国需要通过血样检测美军是否携带梅毒，但是当时血液检测耗时耗钱，将每个士兵的血液都检查一遍效率很低。考虑到携带梅毒的总归是少数，Rosenblatt和Dorfman提出将全部待检测士兵的血样分组混合后再检测，如果混合后的血样没有病毒，可以推定整个组都没有病毒，如此便能够减少不必要的检测。</p>
+    <content><![CDATA[<h5 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h5><p>这个问题在统计学和组合数学领域被称为群组测试问题(Group testing),问题源于二战时期，美国需要通过血样检测美军是否携带梅毒，但是血液检测耗时耗钱，将每个士兵的血液都检查一遍效率很低。考虑到携带梅毒的总归是少数，Rosenblatt和Dorfman提出将全部待检测士兵的血样分组混合后再检测，如果混合后的血样没有病毒，可以推定整个组都没有病毒，如此便能够减少不必要的检测。</p>
 <a id="more"></a>
 <p>  将以上问题标准化描述如下：</p>
 <ul>
@@ -243,8 +247,20 @@ do(&quot;220.181.57.217&quot;)
       </tags>
   </entry>
   <entry>
+    <title>&lt;i&gt;[Literature Reading]&lt;/i&gt; Modern Code Review: A Case Study at Google</title>
+    <url>/2021/12/14/Modern-Code-Review:-A-Case-Study-at-Google/</url>
+    <content><![CDATA[<h1 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h1><p><div id="refer-anchor-1"></div></p>
+<ul>
+<li>[1] Caitlin Sadowski, Emma Söderberg,<br>Luke Church, Michal Sipko and Alberto Bacchelli. 2018. Modern<br>Code Review: A Case Study at Google. In Proceedings of 40th<br>International Conference on Software Engineering: Software Engineering in Practice Track, Gothenburg, Sweden, May 27-June 3,<br>2018 (ICSE-SEIP ’18), 10 pages.<br>DOI: 10.1145/3183519.3183525</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Computer Network</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Wireshark experements of &lt;i&gt;Computer Networks: Top-Down Approach&lt;/i&gt;</title>
-    <url>/2021/09/04/Computer-Networks-Top-Down-Approach-s-wireshark-experements/</url>
+    <url>/2021/09/04/Computer-Networks-Top-Down-Approach-s-wireshark-experements%20copy/</url>
     <content><![CDATA[<h1 id="intruduction"><a href="#intruduction" class="headerlink" title="intruduction"></a>intruduction</h1><blockquote class="blockquote-center">
             <i class="fa fa-quote-left"></i>
             <p>“Tell me and I forget. Show me and I remember. Involve me and I understand.”<br><em>Chinese proverb</em></p>

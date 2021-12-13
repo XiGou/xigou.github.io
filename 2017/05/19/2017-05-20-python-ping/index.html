@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Land of Free">
 <meta property="og:description" content="小时候不太会玩电脑，一般自己玩的时候流程是：开始–附加功能–游戏与娱乐。 倘若旁边有妹子在围观，我便会win+R—–cmd—-ping baidu.com.然后看着屏幕上跳出一行行数字，假装自己看得懂的样子，过一会儿再慢悠悠地打开太空弹球玩起来">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-10-24T17:09:17.678Z">
+<meta property="og:updated_time" content="2021-12-13T23:56:11.818Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自己实现一个ping程序">
 <meta name="twitter:description" content="小时候不太会玩电脑，一般自己玩的时候流程是：开始–附加功能–游戏与娱乐。 倘若旁边有妹子在围观，我便会win+R—–cmd—-ping baidu.com.然后看着屏幕上跳出一行行数字，假装自己看得懂的样子，过一会儿再慢悠悠地打开太空弹球玩起来">
@@ -215,7 +215,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-24 17:09:17" itemprop="dateModified" datetime="2021-10-24T17:09:17+00:00">2021-10-24</time>
+                <time title="Modified: 2021-12-13 23:56:11" itemprop="dateModified" datetime="2021-12-13T23:56:11+00:00">2021-12-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -287,7 +287,7 @@ s=socket.socket(socket.AF_INET,socket.SOCK_RAW,icmp)
 send_packet(s, addr)
 
 do(&quot;220.181.57.217&quot;)
-</code></pre><p>这就是程序的入口了，运行效果就不贴了，反正就是打印出一个浮点数。</p>
+</code></pre><p>这就是程序的入口了，运行效果就不贴了，反正就是打印出一个浮点数，其含义是收到的首个icmp回复报文耗费的时间。</p>
 <p>与ping相似的另一个traceroute，实现原理也类似，它利用的是ip头部的TTL,通过构造指向目的主机的ttl从1递增的数据包，就能获得源主机到目的主机之间所有经过的路由，这可以在网上找到不少资料，此处不再赘述。</p>
 <p>参考:[1]:<a href="https://bbs.ichunqiu.com/thread-8970-1-1.html" target="_blank" rel="noopener">https://bbs.ichunqiu.com/thread-8970-1-1.html</a></p>
 
@@ -401,7 +401,7 @@ do(&quot;220.181.57.217&quot;)
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

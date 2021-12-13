@@ -22,18 +22,20 @@
     var CONFIG = {"hostname":"xigou.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="一个不愿意透露姓名的粉丝">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Land of Free">
-<meta property="og:url" content="https://xigou.github.io/archives/2017/index.html">
+  <meta name="description" content="Refs  [1] Caitlin Sadowski, Emma Söderberg,Luke Church, Michal Sipko and Alberto Bacchelli. 2018. ModernCode Review: A Case Study at Google. In Proceedings of 40thInternational Conference on Software">
+<meta name="keywords" content="Computer Network">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&lt;i&gt;[Literature Reading]&lt;&#x2F;i&gt; Modern Code Review: A Case Study at Google">
+<meta property="og:url" content="https://xigou.github.io/2021/12/14/Modern-Code-Review:-A-Case-Study-at-Google/index.html">
 <meta property="og:site_name" content="Land of Free">
-<meta property="og:description" content="一个不愿意透露姓名的粉丝">
+<meta property="og:description" content="Refs  [1] Caitlin Sadowski, Emma Söderberg,Luke Church, Michal Sipko and Alberto Bacchelli. 2018. ModernCode Review: A Case Study at Google. In Proceedings of 40thInternational Conference on Software">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2021-12-13T23:56:11.818Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Land of Free">
-<meta name="twitter:description" content="一个不愿意透露姓名的粉丝">
+<meta name="twitter:title" content="&lt;i&gt;[Literature Reading]&lt;&#x2F;i&gt; Modern Code Review: A Case Study at Google">
+<meta name="twitter:description" content="Refs  [1] Caitlin Sadowski, Emma Söderberg,Luke Church, Michal Sipko and Alberto Bacchelli. 2018. ModernCode Review: A Case Study at Google. In Proceedings of 40thInternational Conference on Software">
 
-<link rel="canonical" href="https://xigou.github.io/archives/2017/">
+<link rel="canonical" href="https://xigou.github.io/2021/12/14/Modern-Code-Review:-A-Case-Study-at-Google/">
 
 
 <script id="page-configurations">
@@ -41,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Archive | Land of Free</title>
+  <title><i>[Literature Reading]</i> Modern Code Review: A Case Study at Google | Land of Free</title>
   
 
 
@@ -177,136 +179,113 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 8 posts in total. Keep on posting.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xigou.github.io/2021/12/14/Modern-Code-Review:-A-Case-Study-at-Google/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John.Jersey">
+      <meta itemprop="description" content="一个不愿意透露姓名的粉丝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Land of Free">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          <i>[Literature Reading]</i> Modern Code Review: A Case Study at Google
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-12-14 21:35:04" itemprop="dateCreated datePublished" datetime="2021-12-14T21:35:04+00:00">2021-12-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-13 23:56:11" itemprop="dateModified" datetime="2021-12-13T23:56:11+00:00">2021-12-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2017</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2017-06-04T17:14:31+00:00"
-              content="2017-06-04">
-          06-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2017/06/04/2017-06-5-sort_agrithon/" itemprop="url">
-            <span itemprop="name">（大合集）各种排序算法的介绍与实现</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2017-05-24T17:14:31+00:00"
-              content="2017-05-24">
-          05-24
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2017/05/24/2017-05-25-RBT/" itemprop="url">
-            <span itemprop="name">徒手(加上Wikipedia)实现一颗红黑树</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2017-05-19T17:14:31+00:00"
-              content="2017-05-19">
-          05-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2017/05/19/2017-05-20-python-ping/" itemprop="url">
-            <span itemprop="name">自己实现一个ping程序</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2017-05-02T17:14:31+00:00"
-              content="2017-05-02">
-          05-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2017/05/02/2017-05-03-hufmantree/" itemprop="url">
-            <span itemprop="name">huffman树及编码的实现</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2017-04-10T13:14:32+00:00"
-              content="2017-04-10">
-          04-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2017/04/10/2017-04-10-jzm_and_weather/" itemprop="url">
-            <span itemprop="name">秘技---------气象操控术！！</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <h1 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h1><p><div id="refer-anchor-1"></div></p>
+<ul>
+<li>[1] Caitlin Sadowski, Emma Söderberg,<br>Luke Church, Michal Sipko and Alberto Bacchelli. 2018. Modern<br>Code Review: A Case Study at Google. In Proceedings of 40th<br>International Conference on Software Engineering: Software Engineering in Practice Track, Gothenburg, Sweden, May 27-June 3,<br>2018 (ICSE-SEIP ’18), 10 pages.<br>DOI: 10.1145/3183519.3183525</li>
+</ul>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>John.Jersey
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://xigou.github.io/2021/12/14/Modern-Code-Review:-A-Case-Study-at-Google/" title="<i>[Literature Reading]</i> Modern Code Review: A Case Study at Google">https://xigou.github.io/2021/12/14/Modern-Code-Review:-A-Case-Study-at-Google/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Computer-Network/" rel="tag"># Computer Network</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/04/Computer-Networks-Top-Down-Approach-s-wireshark-experements copy/" rel="prev" title="Wireshark experements of <i>Computer Networks: Top-Down Approach</i>">
+      <i class="fa fa-chevron-left"></i> Wireshark experements of <i>Computer Networks: Top-Down Approach</i>
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -353,6 +332,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Refs"><span class="nav-number">1.</span> <span class="nav-text">Refs</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -416,11 +396,11 @@
     </label>
     <select class="lang-select" data-canonical="">
       
-        <option value="en" data-href="/archives/2017/index.html" selected="">
+        <option value="en" data-href="/2021/12/14/Modern-Code-Review:-A-Case-Study-at-Google/" selected="">
           English
         </option>
       
-        <option value="zh-CN" data-href="/zh-CN/archives/2017/index.html" selected="">
+        <option value="zh-CN" data-href="/zh-CN/2021/12/14/Modern-Code-Review:-A-Case-Study-at-Google/" selected="">
           简体中文
         </option>
       
@@ -552,6 +532,25 @@ if (document.querySelectorAll('pre.mermaid').length) {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '75f656cc2df38ffe043e',
+      clientSecret: 'c0c01f2edb6850982db45a4591280de7114bbf76',
+      repo        : 'xigou.github.io',
+      owner       : 'XiGou',
+      admin       : ['XiGou'],
+      id          : '697f3daaf70e0fa5da96539b5cc07fa0',
+        language: 'en,zh-CN,zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
