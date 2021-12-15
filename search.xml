@@ -229,6 +229,7 @@ do(&quot;220.181.57.217&quot;)
     <title>&lt;i&gt;[Literature Reading]&lt;/i&gt; Modern Code Review: A Case Study at Google</title>
     <url>/2021/12/14/Modern-Code-Review:-A-Case-Study-at-Google/</url>
     <content><![CDATA[<p>Recently, after called some code review meetings in my daily work, I got interested about code review practice, so I read this excellent article on the weekend. </p>
+<a id="more"></a>
 <h2 id="Hisroty-of-code-review-practice"><a href="#Hisroty-of-code-review-practice" class="headerlink" title="Hisroty of code review practice"></a>Hisroty of code review practice</h2><ol>
 <li>Code Inspections</li>
 </ol>
