@@ -228,9 +228,45 @@ do(&quot;220.181.57.217&quot;)
   <entry>
     <title>&lt;i&gt;[Literature Reading]&lt;/i&gt; Modern Code Review: A Case Study at Google</title>
     <url>/2021/12/14/Modern-Code-Review:-A-Case-Study-at-Google/</url>
-    <content><![CDATA[<h1 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h1><p><div id="refer-anchor-1"></div></p>
+    <content><![CDATA[<p>Recently, after called some code review in my working, I get interested about code review practice, so I read this excellent article on weekend. </p>
+<h2 id="Hisroty-of-code-review-practice"><a href="#Hisroty-of-code-review-practice" class="headerlink" title="Hisroty of code review practice"></a>Hisroty of code review practice</h2><ol>
+<li>Code Inspections</li>
+</ol>
+<p>It’s a very  structured process style code review, when developers finished code, they shoud working on planning, overview, preparation, inspection meeting, reworking, and follow-up for code review, reviewers and code authors will sitting in the same room, and they can talk with the author face to face to understand the code and find the defects.</p>
+<ol start="2">
+<li>Asynchronous review via email</li>
+</ol>
+<p>Until the late 2000s, most large OSS projects adopted a form of remote, asynchronous reviews, relying on patches sent to communication channels such as mailing lists and issue tracking systems. So this method broke the limitations of “sitting toghter” and authors don’t need to do a presentation to explain the code, instead they should explain the code in the length of one email.</p>
+<ol start="3">
+<li>Tool-based review</li>
+</ol>
+<p>The main-streamd code review practice nowdays is tool-based, the representative of review systems are Gerrit, CodeFlow, ReviewBoard and Phabricator.</p>
+<p><em>Typical workflow of tool-based review</em>:</p>
+<pre><code>1. author submit code patch to review system,
+2. reviewers review code and post comment on specific lines of code,
+3. authors reply comments or submit new patch to review system,
+4. repeat step 2-3 until all reviewers or specific role of your team think the patch is ready for testing or merging.
+</code></pre><ol start="4">
+<li>Pull-based development model</li>
+</ol>
+<p>Mainly used in Github or similar code repo website, very similar to Tool-based review.</p>
+<h2 id="This-research-answered-three-Research-Questions-about-code-review"><a href="#This-research-answered-three-Research-Questions-about-code-review" class="headerlink" title="This research answered three Research Questions about code review:"></a>This research answered three Research Questions about code review:</h2><h3 id="RQ1-What-are-the-motivations-for-code-review-at-Google"><a href="#RQ1-What-are-the-motivations-for-code-review-at-Google" class="headerlink" title="RQ1: What are the motivations for code review at Google?"></a>RQ1: What are the motivations for code review at Google?</h3><blockquote>
+<p>Finding 1. Expectations for code review at Google do not center around problem solving. Reviewing was introduced at Google to ensure code readability and maintainability. Today’s developers also perceive this educational aspect, in addition to maintaining norms, tracking history, gatekeeping, and accident prevention. Defect finding is welcomed but not the only focus.</p>
+</blockquote>
+<p>This is in line with my daily experience, when fixing bug it very useful to search for a similar bugfix patch in review system, and the review system contains some auto process to do static check and testing.</p>
+<p>Besides, The most important aim in business view is to grab out the knowledge out of the brain of the developer and make others easy to learn it, this makes every piece of code at least read by 2-3 employee inside organization, when some empolyee leave the organization, negative impact will be small.</p>
+<h3 id="RQ2-What-is-the-practice-of-code-review-at-Google"><a href="#RQ2-What-is-the-practice-of-code-review-at-Google" class="headerlink" title="RQ2: What is the practice of code review at Google?"></a>RQ2: What is the practice of code review at Google?</h3><blockquote>
+<p>Finding 3. The Google code review process is aligned with the convergent practice of being lightweight and flexible. In contrast to other studied systems, however, ownership and readability are explicit and play a key role. The review tool includes reviewer recommendation and code analysis result</p>
+</blockquote>
+<p>The most impressive part for me is: In Google, every code directory has owner(a set of people), when you change the code of that directory, owner should review and approve the code. </p>
+<h2 id="Something-interesting"><a href="#Something-interesting" class="headerlink" title="Something interesting"></a>Something interesting</h2><blockquote>
+<p>At Google, over 35% of<br>the changes under consideration modify only a single file and<br>about 90% modify fewer than 10 files. Over 10% of changes<br>modify only a single line of code, and the median number of<br>lines modified is 24. The median change size is significantly<br>lower than reported by Rigby and Bird for companies such as<br>AMD (44 lines), Lucent (263 lines), and Bing, Office and SQL<br>Server at Microsoft (somewhere between those boundaries),<br>but in line for change sizes in open source projects.</p>
+</blockquote>
+<p>Even in big and fast-developing company like Google, most of the code modification is “small”, when you usually need to change hundreds lines of code, that means something wrong with your company, please start to post your resume as soon as possible. </p>
+<h2 id="Write-at-the-end"><a href="#Write-at-the-end" class="headerlink" title="Write at the end"></a>Write at the end</h2><p>In my team now, I’d rather define the code review process as “Tool-based Code Inspections”, we are using Gerrit to track code patch for review, but almost nobody will post comments or reply on it,  the reviewer have no interest to read others’ code, developer should call a meeting and do a presentation to explain the code to reviewers, then reviewers will propose some comments in the meeting. </p>
+<h1 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h1><p><div id="refer-anchor-1"></div></p>
 <ul>
-<li>[1] Caitlin Sadowski, Emma Söderberg,<br>Luke Church, Michal Sipko and Alberto Bacchelli. 2018. Modern<br>Code Review: A Case Study at Google. In Proceedings of 40th<br>International Conference on Software Engineering: Software Engineering in Practice Track, Gothenburg, Sweden, May 27-June 3,<br>2018 (ICSE-SEIP ’18), 10 pages.<br>DOI: 10.1145/3183519.3183525</li>
+<li>[1] Caitlin Sadowski, Emma Söderberg, Luke Church, Michal Sipko and Alberto Bacchelli. 2018. Modern Code Review: A Case Study at Google. In Proceedings of 40th International Conference on Software Engineering: Software Engineering in Practice Track, Gothenburg, Sweden, May 27-June 3, 2018 (ICSE-SEIP ’18), 10 pages. DOI: 10.1145/3183519.3183525</li>
 </ul>
 ]]></content>
       <tags>
