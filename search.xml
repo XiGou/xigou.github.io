@@ -318,7 +318,7 @@
 <p>That’s all we need to do, we now have a docker image provide our Command Line as-a Service. We can run a container from this image as a daemon server through command bellow:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d -p 8000:8000 cmd2web_wooey:latest</span><br></pre></td></tr></table></figure>
 <p>Now we can assess our Command Line WebUI in browser through <a href="http://IP:8008" target="_blank" rel="noopener">http://IP:8008</a></p>
-<p><img src="https://imgur.com/JlRaGqx.png" alt="Imgur">)</p>
+<p><img src="https://imgur.com/JlRaGqx.png" alt="Imgur"></p>
 <p>Click the “wooey_entry_cmd” script, that is the name of our python command line script, then set the arguments through the WebUI, click “submit” to run the command.</p>
 <p><img src="https://imgur.com/OiGSCKa.png" alt="Imgur"></p>
 <p>Wait a moment, and we can get the console output and the generated empty file from the result.</p>
