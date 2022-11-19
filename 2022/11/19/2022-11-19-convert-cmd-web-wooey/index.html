@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en,zh-CN,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-material.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"xigou.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="There is a problem always annoying the software developer: How to deliver your software to your user?  Recently, I wrote a tool for internal use,  It is implemented in Python , and packaged as a comma">
+<meta name="keywords" content="Software Practice">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Open Source Project Review: Convert command line to Web App with Wooey">
+<meta property="og:url" content="https://xigou.github.io/2022/11/19/2022-11-19-convert-cmd-web-wooey/index.html">
+<meta property="og:site_name" content="Land of Free">
+<meta property="og:description" content="There is a problem always annoying the software developer: How to deliver your software to your user?  Recently, I wrote a tool for internal use,  It is implemented in Python , and packaged as a comma">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://imgur.com/JlRaGqx.png">
+<meta property="og:image" content="https://imgur.com/OiGSCKa.png">
+<meta property="og:image" content="https://imgur.com/ykgGckZ.png">
+<meta property="og:updated_time" content="2022-11-19T15:41:57.333Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Open Source Project Review: Convert command line to Web App with Wooey">
+<meta name="twitter:description" content="There is a problem always annoying the software developer: How to deliver your software to your user?  Recently, I wrote a tool for internal use,  It is implemented in Python , and packaged as a comma">
+<meta name="twitter:image" content="https://imgur.com/JlRaGqx.png">
+
+<link rel="canonical" href="https://xigou.github.io/2022/11/19/2022-11-19-convert-cmd-web-wooey/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Open Source Project Review: Convert command line to Web App with Wooey | Land of Free</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-86SDENS4RC"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-86SDENS4RC');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Land of Free" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Land of Free</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Joker's Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xigou.github.io/2022/11/19/2022-11-19-convert-cmd-web-wooey/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xi Gou">
+      <meta itemprop="description" content="Pursuing Love And Freedom All My Life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Land of Free">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Open Source Project Review: Convert command line to Web App with Wooey
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-19 09:35:04 / Modified: 15:41:57" itemprop="dateCreated datePublished" datetime="2022-11-19T09:35:04+00:00">2022-11-19</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>There is a problem always annoying the software developer: How to deliver your software to your user? </p>
+<p>Recently, I wrote a tool for internal use,  It is implemented in Python , and packaged as a command line program, I think it is esay enough for me to use, but the reality is cruel,  not all the target user have technical background, the feedback is they all think it is hard to use it. when they need to use it, they would definitely asking me to support them again and again,  so the software I developed became a nightmare of mine.<br><a id="more"></a><br>I have to think about what is best way to deliver software to end user, if you are working om a big project you don’t need to think about this, because their softwares are complicated and have a very mature deploy or delivery pipeline, you just working on a narrow stage of this  pipeline. But I have to, now.</p>
+<h1 id="What-Makes-Command-Line-Tool-Hard-to-Use"><a href="#What-Makes-Command-Line-Tool-Hard-to-Use" class="headerlink" title="What Makes Command Line Tool Hard to Use?"></a>What Makes Command Line Tool Hard to Use?</h1><h2 id="Complicated-Dependencies"><a href="#Complicated-Dependencies" class="headerlink" title="Complicated Dependencies"></a>Complicated Dependencies</h2><p>Some colleagues cannot even install it, because the user enviroment are different, and my tool depends on a Python3.7 and some Pypi packages, cause Python3.7 is not the default python version for most linux distributions, so the user need to install it by themselves, it is a hard task for user without a technical background.<br>This issue is easy to resolve, docker is a powerful weapon deal with the dependencies, I packaged my tool into a docker image with all the dependencies in, then I just need to told the user how to download the image and run it.</p>
+<h2 id="Has-No-Graphical-User-Interface"><a href="#Has-No-Graphical-User-Interface" class="headerlink" title="Has No Graphical User Interface"></a>Has No Graphical User Interface</h2><p>It’s already 21st century now, Most people living in this century don’t have a chance to use the command line. Many software deliver with a cross platform and user-friendly GUI, Software as-a Service is the main-stream delivery pattern, you don’t even need to install a software, you can just open a Web page and start to use it.  So the best choice is to provide a GUI with my command line tool, It would be better to provide my Command Line as-a Service.</p>
+<h1 id="How-to-Convert-Command-Line-to-Web-App"><a href="#How-to-Convert-Command-Line-to-Web-App" class="headerlink" title="How to Convert Command Line to Web App"></a>How to Convert Command Line to Web App</h1><p>So what we need to do now is clear: Convert command line to Web App.</p>
+<p>But how to do it? As experienced software engineer, you may open your flowchart drawing software and the start to design the architecture of a backend and front-end separated software architecture, you should choose a database: relational or documentary oriented, you must choose a backend programming language: Node.js or Python, you need to write a restful API by youself, finally you also need to implement a GUI As a Single-paged WebApp or Desktop GUI.</p>
+<p>It sounds like a struggling work, and I refuse to do this, I need to find an easy way to achieve this goal: convert our command line to a web application, and the user can just click to set the arguments of the command line and the click submit button to run the tool. The most important thing is we don’t need to write too much code.</p>
+<h1 id="Wooey-A-Script-Server-Matches-All-Our-Needs"><a href="#Wooey-A-Script-Server-Matches-All-Our-Needs" class="headerlink" title="Wooey: A Script Server Matches All Our Needs"></a>Wooey: A Script Server Matches All Our Needs</h1><p>I searched for the internet and tried many projects. Finally I found it, it’s Wooey.</p>
+<p><a href="https://github.com/wooey/wooey" target="_blank" rel="noopener">https://github.com/wooey/wooey</a></p>
+<p>The command line tool is something like this, you can run it through the shell with specified arguments, and you can press Enter to execute it, the program will run for sometime and generate some file or print something to the console.</p>
+<p>Firstly we package it into a docker image, just makes the command line can run anywhere, and the user don’t need to worry about the dependencies</p>
+<p>The Wooey introduced itself as “a simple web interface to run command line Python scripts”, through Python we have the ability to run any command line program which installed inside operating system, if we write a script as wrapper for our command line and upload it to the wooey server, it will automatically transform our script to a Web App, that is what we all need!</p>
+<h1 id="Step-By-Step-Solution"><a href="#Step-By-Step-Solution" class="headerlink" title="Step By Step Solution"></a>Step By Step Solution</h1><p>To keep things simple, assume your command line tool is equivalent to shell commands below:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sleep 10</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$text</span></span><br><span class="line">touch <span class="variable">$file</span></span><br></pre></td></tr></table></figure>
+<p>the arguments are text and file, this “command line” will sleep 10 second, then echo the text and create an empty file.</p>
+<p>We write a simple script to wrap it as a Python command line program:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># file name is wooey_entry_cmd.py</span></span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser(description=<span class="string">"my cmd tool."</span>)</span><br><span class="line">parser.add_argument(<span class="string">"--text"</span>, help=<span class="string">"anything"</span>, type=str, default=<span class="string">"nothing"</span>)</span><br><span class="line">parser.add_argument(<span class="string">"--output"</span>, help=<span class="string">"file name"</span>, type=str, default=<span class="string">"output"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    args = parser.parse_args()</span><br><span class="line">    subprocess.run([<span class="string">"sleep"</span>, <span class="string">"10"</span>])</span><br><span class="line">    subprocess.run([<span class="string">"echo"</span>, args.text])</span><br><span class="line">    subprocess.run([<span class="string">"touch"</span>, args.output])</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    sys.exit(main())</span><br></pre></td></tr></table></figure>
+<p>Then we write the Dockerfile to package our command line tool and the wooey project toghter as a docker image, and convert our Python script to a Web App through the wooey provided tool.</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> python:<span class="number">3.7</span> as <span class="keyword">cmd</span><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># install you command tool here</span></span></span><br><span class="line"><span class="bash"><span class="comment"># we use linux pre installed command, skip this</span></span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">FROM cmd as wooey_ui</span></span><br><span class="line"><span class="bash">WORKDIR /cmd2web_wooey</span></span><br><span class="line"><span class="bash">RUN pip3.7 install wooey \</span></span><br><span class="line"><span class="bash">    &amp;&amp; wooify -p cmd2web_wooey</span></span><br><span class="line"><span class="bash">COPY ./wooey_entry_cmd.py ./cmd2web_wooey/wooey_entry_cmd.py</span></span><br><span class="line"><span class="bash">COPY ./start_wooey.sh ./cmd2web_wooey/start_wooey.sh</span></span><br><span class="line"><span class="bash">RUN <span class="built_in">cd</span> cmd2web_wooey \</span></span><br><span class="line"><span class="bash">    &amp;&amp; sed -i <span class="string">"s/ALLOWED_HOSTS = \[\]/ALLOWED_HOSTS = \[\'\*\'\]/"</span> ./cmd2web_wooey/settings/django_settings.py \</span></span><br><span class="line"><span class="bash">    &amp;&amp; python3.7 manage.py addscript ./wooey_entry_cmd.py</span></span><br><span class="line"><span class="bash">WORKDIR /cmd2web_wooey/cmd2web_wooey</span></span><br><span class="line"><span class="bash">ENTRYPOINT ./start_wooey.sh</span></span><br><span class="line"><span class="bash"><span class="comment"># port 8000 listening inside container</span></span></span><br></pre></td></tr></table></figure>
+<p>In the Dockerfile, we specified the entrypoint as ./start_wooey.sh, and it is used to start the wooey project, it is just copied from the wooey document. The content of it is below:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line">nohup celery -A cmd2web_wooey worker -c 3 --beat -l info &amp;</span><br><span class="line">python3.7 manage.py runserver 0.0.0.0:8000</span><br></pre></td></tr></table></figure>
+<p>I must point out that I run celery inside the same docker container with the wooey server, and I changed the setting of Django project to accept any host, these are all bad practices and not safe at all. Considering my command line tool is for internal use, I don’t care about security issues.  </p>
+<p>The docker image building command is:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -f Dockerfile --target wooey_ui -t cmd2web_wooey .</span><br></pre></td></tr></table></figure>
+<p>That’s all we need to do, we now have a docker image provide our Command Line as-a Service. We can run a container from this image as a daemon server through command bellow:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8000:8000 cmd2web_wooey:latest</span><br></pre></td></tr></table></figure>
+<p>Now we can assess our Command Line WebUI in browser through <a href="http://IP:8008" target="_blank" rel="noopener">http://IP:8008</a></p>
+<p><img src="https://imgur.com/JlRaGqx.png" alt="Imgur">)</p>
+<p>Click the “wooey_entry_cmd” script, that is the name of our python command line script, then set the arguments through the WebUI, click “submit” to run the command.</p>
+<p><img src="https://imgur.com/OiGSCKa.png" alt="Imgur"></p>
+<p>Wait a moment, and we can get the console output and the generated empty file from the result.</p>
+<p><img src="https://imgur.com/ykgGckZ.png" alt="Imgur"></p>
+<p>code of this post are published on: </p>
+<p><a href="https://github.com/XiGou/cmd2web_wooey" target="_blank" rel="noopener">https://github.com/XiGou/cmd2web_wooey</a></p>
+<p>Refs:</p>
+<ol>
+<li><a href="https://wooey.readthedocs.io/en/latest/running_wooey.html" target="_blank" rel="noopener">https://wooey.readthedocs.io/en/latest/running_wooey.html</a></li>
+<li><a href="https://github.com/adamkewley/jobson" target="_blank" rel="noopener">https://github.com/adamkewley/jobson</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Xi Gou
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://xigou.github.io/2022/11/19/2022-11-19-convert-cmd-web-wooey/" title="Open Source Project Review: Convert command line to Web App with Wooey">https://xigou.github.io/2022/11/19/2022-11-19-convert-cmd-web-wooey/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Software-Practice/" rel="tag"># Software Practice</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/13/2022-11-13-finish-5-covid-test-in-one-day/" rel="prev" title="真正的核酸爱好者：一天做五次">
+      <i class="fa fa-chevron-left"></i> 真正的核酸爱好者：一天做五次
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-Makes-Command-Line-Tool-Hard-to-Use"><span class="nav-number">1.</span> <span class="nav-text">What Makes Command Line Tool Hard to Use?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Complicated-Dependencies"><span class="nav-number">1.1.</span> <span class="nav-text">Complicated Dependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Has-No-Graphical-User-Interface"><span class="nav-number">1.2.</span> <span class="nav-text">Has No Graphical User Interface</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-Convert-Command-Line-to-Web-App"><span class="nav-number">2.</span> <span class="nav-text">How to Convert Command Line to Web App</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Wooey-A-Script-Server-Matches-All-Our-Needs"><span class="nav-number">3.</span> <span class="nav-text">Wooey: A Script Server Matches All Our Needs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-By-Step-Solution"><span class="nav-number">4.</span> <span class="nav-text">Step By Step Solution</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Xi Gou</p>
+  <div class="site-description" itemprop="description">Pursuing Love And Freedom All My Life</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/XiGou" title="GitHub → https://github.com/XiGou" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:gouxivae@gmail.com" title="E-Mail → mailto:gouxivae@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/xi-gou-2639b8172/" title="Linkedin → https://www.linkedin.com/in/xi-gou-2639b8172/" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>Linkedin</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+  <div class="languages">
+    <label class="lang-select-label">
+      <i class="fa fa-language"></i>
+      <span>English</span>
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </label>
+    <select class="lang-select" data-canonical="">
+      
+        <option value="en" data-href="/2022/11/19/2022-11-19-convert-cmd-web-wooey/" selected="">
+          English
+        </option>
+      
+        <option value="zh-CN" data-href="/zh-CN/2022/11/19/2022-11-19-convert-cmd-web-wooey/" selected="">
+          简体中文
+        </option>
+      
+    </select>
+  </div>
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xi Gou</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'neutral',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '75f656cc2df38ffe043e',
+      clientSecret: 'c0c01f2edb6850982db45a4591280de7114bbf76',
+      repo        : 'xigou.github.io',
+      owner       : 'XiGou',
+      admin       : ['XiGou'],
+      id          : '0b3dfd7fc172ab712267743871ace537',
+        language: 'en,zh-CN,zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
