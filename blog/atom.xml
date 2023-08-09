@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xigou.github.io/blog</id>
-    <title>你好, 我是一个乐子人 Blog</title>
+    <title>你好, 我是乐子人 Blog</title>
     <updated>2023-04-14T01:11:04.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xigou.github.io/blog"/>
-    <subtitle>你好, 我是一个乐子人 Blog</subtitle>
+    <subtitle>你好, 我是乐子人 Blog</subtitle>
     <icon>https://xigou.github.io/img/water-wave_1f30a.png</icon>
     <entry>
         <title type="html"><![CDATA[Generate Single Page HTML Data Report Using Plotly in Python]]></title>
