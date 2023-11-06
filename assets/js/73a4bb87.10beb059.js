@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpersonal_blog=self.webpackChunkpersonal_blog||[]).push([[5587],{3442:l=>{l.exports=JSON.parse('{"label":"law","permalink":"/blog/tags/law","allTagsPath":"/blog/tags","count":1}')}}]);
