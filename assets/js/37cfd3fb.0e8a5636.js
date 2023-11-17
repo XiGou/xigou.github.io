@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpersonal_blog=self.webpackChunkpersonal_blog||[]).push([[604],{9728:l=>{l.exports=JSON.parse('{"label":"lezi","permalink":"/blog/tags/lezi","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
