@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpersonal_blog=self.webpackChunkpersonal_blog||[]).push([[8013],{2064:l=>{l.exports=JSON.parse('{"label":"Politics","permalink":"/zh-CN/blog/tags/politics","allTagsPath":"/zh-CN/blog/tags","count":1,"unlisted":false}')}}]);
