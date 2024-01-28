@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpersonal_blog=self.webpackChunkpersonal_blog||[]).push([[5316],{41845:a=>{a.exports=JSON.parse('{"label":"Software Practice","permalink":"/zh-CN/blog/tags/software-practice","allTagsPath":"/zh-CN/blog/tags","count":1,"unlisted":false}')}}]);
