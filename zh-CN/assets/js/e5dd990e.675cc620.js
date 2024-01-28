@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpersonal_blog=self.webpackChunkpersonal_blog||[]).push([[5582],{1575:e=>{e.exports=JSON.parse('{"permalink":"/zh-CN/blog/tags/joke","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Pursuing Love And Freedom All My Life!","blogTitle":"Joker\'s blog!"}')}}]);
