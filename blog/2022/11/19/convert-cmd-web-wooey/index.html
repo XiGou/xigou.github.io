@@ -27,7 +27,7 @@
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.c3461637.css">
-<script src="/assets/js/runtime~main.44081c72.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.041c9084.js" defer="defer"></script>
 <script src="/assets/js/main.1409fca8.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -68,11 +68,11 @@ This issue is easy to resolve, docker is a powerful weapon deal with the depende
 <p>That’s all we need to do, we now have a docker image provide our Command Line as-a Service. We can run a container from this image as a daemon server through command bellow:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">docker</span><span class="token plain"> run </span><span class="token parameter variable" style="color:rgb(189, 147, 249);font-style:italic">-d</span><span class="token plain"> </span><span class="token parameter variable" style="color:rgb(189, 147, 249);font-style:italic">-p</span><span class="token plain"> </span><span class="token number">8000</span><span class="token plain">:8000 cmd2web_wooey:latest</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p>Now we can assess our Command Line WebUI in browser through <a href="http://IP:8000" target="_blank" rel="noopener noreferrer">http://IP:8000</a></p>
-<p><img decoding="async" loading="lazy" alt="Imgur" src="/assets/images/JlRaGqx-60f1724810b4b502b1a529bb13739161.png" width="2000" height="578" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Imgur" src="/assets/images/JlRaGqx-a0d200aa295a7b146f34fd017691bcb9.png" width="1024" height="296" class="img_ev3q"></p>
 <p>Click the “wooey_entry_cmd” script, that is the name of our python command line script, then set the arguments through the WebUI, click “submit” to run the command.</p>
-<p><img decoding="async" loading="lazy" alt="Imgur" src="/assets/images/OiGSCKa-52130a2cb5a041a3000ae887a6303d49.png" width="2000" height="886" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Imgur" src="/assets/images/OiGSCKa-209b573a9a0aec3bbe63972c8c919569.png" width="1024" height="454" class="img_ev3q"></p>
 <p>Wait a moment, and we can get the console output and the generated empty file from the result.</p>
-<p><img decoding="async" loading="lazy" alt="Imgur" src="/assets/images/ykgGckZ-5f5bdfd5b826acc1201fbf5a829c8c2e.png" width="2000" height="674" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Imgur" src="/assets/images/ykgGckZ-9f87fa58234a9a84c342e84ffed09b49.png" width="1024" height="346" class="img_ev3q"></p>
 <p>code of this post are published on:</p>
 <p><a href="https://github.com/XiGou/cmd2web_wooey" target="_blank" rel="noopener noreferrer">https://github.com/XiGou/cmd2web_wooey</a></p>
 <p>Refs:</p>
