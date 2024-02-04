@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpersonal_blog=self.webpackChunkpersonal_blog||[]).push([[7039],{44920:e=>{e.exports=JSON.parse('{"permalink":"/zh-CN/blog/tags/lezi","page":1,"postsPerPage":10,"totalPages":1,"totalCount":3,"blogDescription":"Pursuing Love And Freedom All My Life!","blogTitle":"Joker\'s blog!"}')}}]);

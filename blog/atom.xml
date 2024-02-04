@@ -52,8 +52,8 @@
             <name>XiGou</name>
             <uri>https://github.com/XiGou</uri>
         </author>
-        <category label="reading" term="reading"/>
-        <category label="philosophy" term="philosophy"/>
+        <category label="Reading" term="Reading"/>
+        <category label="Philosophy" term="Philosophy"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[网友对话: 谈底层赛里斯人的规训]]></title>
@@ -90,8 +90,8 @@
             <name>XiGou</name>
             <uri>https://github.com/XiGou</uri>
         </author>
-        <category label="philosophy" term="philosophy"/>
-        <category label="lezi" term="lezi"/>
+        <category label="Philosophy" term="Philosophy"/>
+        <category label="Lezi" term="Lezi"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[赛里斯生存指南：如何证明我妈是我妈]]></title>

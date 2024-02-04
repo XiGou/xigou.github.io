@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpersonal_blog=self.webpackChunkpersonal_blog||[]).push([[400],{1216:s=>{s.exports=JSON.parse('{"label":"society","permalink":"/zh-CN/blog/tags/society","allTagsPath":"/zh-CN/blog/tags","count":1,"unlisted":false}')}}]);
