@@ -2,12 +2,59 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xigou.github.io/blog</id>
     <title>Joker's Bolg</title>
-    <updated>2023-11-25T17:53:41.000Z</updated>
+    <updated>2024-02-06T01:14:31.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xigou.github.io/blog"/>
     <subtitle>Joker's Bolg</subtitle>
     <icon>https://xigou.github.io/https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f605.png</icon>
     <rights>Joker</rights>
+    <entry>
+        <title type="html"><![CDATA[我如何构建我的数字花园]]></title>
+        <id>https://xigou.github.io/blog/How I build my digital garden</id>
+        <link href="https://xigou.github.io/blog/How I build my digital garden"/>
+        <updated>2024-02-06T01:14:31.000Z</updated>
+        <summary type="html"><![CDATA[在web2.0早期的时代，我想第一次打开互联网的人都会有一个想法：我如何才能让我的信息发布在网络上？]]></summary>
+        <content type="html"><![CDATA[<p>在web2.0早期的时代，我想第一次打开互联网的人都会有一个想法：我如何才能让我的信息发布在网络上？</p>
+<p>所以我们开始使用贴吧去和孙笑川争论，使用土豆网发布诺基亚手机录制的无聊的视频。这些信息在发布以后，都会在互联网上被搜索引擎收录，所有人都有可能看见。</p>
+<p>随着移动互联网时代的到来，这种情况有了改变，由于人们发现了这些普通用户发布的信息背后巨大的商业价值，所以逐渐让这些信息变得封闭，你发送的信息会被审核，会被无缘无故的删除（百度贴吧删除了实名认证之前的所有信息），同时也不可能在公开的搜索引擎上被检索，不能在其他的网页上被引用。这个时候我们才发现，原来我发送的这些信息不属于我自己。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="什么是数字花园">什么是数字花园？<a href="https://xigou.github.io/blog/How%20I%20build%20my%20digital%20garden#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E5%AD%97%E8%8A%B1%E5%9B%AD" class="hash-link" aria-label="Direct link to 什么是数字花园？" title="Direct link to 什么是数字花园？">​</a></h2>
+<p>所以这个时候技术圈里面又开始流行起了web1.0时代的东西，就是每一个人自己开办一个博客网站，然后在网站上发布信息。而在这个过程当中就产生了一种新的个人网站的形式：数字花园。关于它到底是一个什么东西，我想没有什么比下面这一篇文章讲的更透彻。</p>
+<p><a href="https://pmthinking.notion.site/Digital-Garden-effa3aa294af4d07ac279e74aec69602" target="_blank" rel="noopener noreferrer">产品沉思录-什么是数字花园（Digital Garden）</a></p>
+<p>文章里提到了“溪流”和“花园”两个隐喻，我们当今使用了大部分的服务，例如小红书，今日头条，推特，包括个人博客，都是一种线性的信息流，信息流经你的脑袋，然后就被遗忘，并且永远不会再提起，因为这些信息之间只通过一个与信息本身毫不相关的时间轴串联在一起。而花园则是由许多的元素构成，而你会不断的在花园里面种植新的花朵，修剪老去的叶片，你会修建很多错综复杂的小路，方便你在花园里观赏每一朵花。如果以比较抽象的计算机理论来描述这两种形式，信息流就是由链表表达，而数字花园则是一个图（ Graph）。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="笔记软件的和数字花园">笔记软件的和数字花园<a href="https://xigou.github.io/blog/How%20I%20build%20my%20digital%20garden#%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%92%8C%E6%95%B0%E5%AD%97%E8%8A%B1%E5%9B%AD" class="hash-link" aria-label="Direct link to 笔记软件的和数字花园" title="Direct link to 笔记软件的和数字花园">​</a></h2>
+<p>这些年笔记软件是软件领域一个非常活跃的类目，这几年时间涌现了非常多各有特色的笔记产品。有北欧左人公司开发的anytype，网红开源项目Logseq, 美国创业公司推出的 SaaS笔记服务 Notion, 赛里斯创业公司开发的 AFFiNE, 基于 Markdown 格式文件的 Obsidian等等。这些笔记软件和传统的笔记软件最大的区别就是都支持很方便的互相引用功能，这使得本来像溪流一样线性流动的笔记，变得像花园一样通过一些错综复杂的小路连接起来。这也就更加方便了数字花园的构建, 这些笔记软件都有一些官方的或者社区支持的工具，可以将你的笔记很轻松地发布在互联网上，这样你的笔记就和互联网上的一个网站一一对应起来，你通过编辑笔记来更新网站内容，而你所有的信息都在你的笔记里文件里面，不再属于任何大型技术公司。</p>
+<p>在这些笔记软件之中，我是 Obsidian 的忠实用户，他虽然不开源，但是提供免费版本，且该软件用户体验较好，有丰富的插件生态。最关键的是他基于 Markdown 格式，通过操作系统的文件夹组织你的数据，不会将你的文件了转换成特殊格式存入专用的数据库内。这样一来，就算某天不再使用这个软件，你只需要把它用于保存应用数据的那个文件夹删掉，你的笔记文件依然是可以用通用的文本编辑器打开操作的。相比而言其他开源产品有些是使用了自己的特殊数据格式，有些则是客户端用户体验奇差无比，有些是无法做到全平台通用，还有很大的进步空间。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="溪流旁边的花园">溪流旁边的花园<a href="https://xigou.github.io/blog/How%20I%20build%20my%20digital%20garden#%E6%BA%AA%E6%B5%81%E6%97%81%E8%BE%B9%E7%9A%84%E8%8A%B1%E5%9B%AD" class="hash-link" aria-label="Direct link to 溪流旁边的花园" title="Direct link to 溪流旁边的花园">​</a></h2>
+<p>溪流和花园之间并不是东风压倒西风，也不是西风压倒东风，而是各有其优势和侧重点。当你在使用溪流类的互联网媒体的时候，你主要是在发布自己的观点和见解、阅读新鲜有趣的内容; 而当你开始构建一个花园，你更加倾向于去学习互联网上有用的的知识，收集有价值的信息。在此之前我有一个个人的静态博客，是通过Docusaurus搭建的, 这个框架本来是一个文档网站生成工具, 自带一个博客插件，而我则主要使用了它的博客功能。如果同时将其文档功能充分利用，那么由树形结构管理的文档，实际上就已经有了一些花园的雏形。因此，我基于这个博客构建了一个溪流旁边的花园。</p>
+<p>这个花园实际上离真正的花园还有一定的距离，因为Docusaurus这个工具并没有实现构建花园比较需要的双向链接功能，也许在某一天会被官方实现，但是在这之前，我只能减少对双向链接的依赖。如果页面上出现了双链语法，则不能正常跳转，可以使用双层方括号中的关键字对站点进行搜索到达目标页面。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="使用-quartz-构建全功能的数字花园">使用 Quartz 构建全功能的数字花园<a href="https://xigou.github.io/blog/How%20I%20build%20my%20digital%20garden#%E4%BD%BF%E7%94%A8-quartz-%E6%9E%84%E5%BB%BA%E5%85%A8%E5%8A%9F%E8%83%BD%E7%9A%84%E6%95%B0%E5%AD%97%E8%8A%B1%E5%9B%AD" class="hash-link" aria-label="Direct link to 使用 Quartz 构建全功能的数字花园" title="Direct link to 使用 Quartz 构建全功能的数字花园">​</a></h2>
+<p><a href="https://github.com/jackyzha0/quartz" target="_blank" rel="noopener noreferrer">Quartz</a>是一个专用的数字花园构建工具，你只需要提供一个用文件夹组织好的 Markdown 笔记，存入 Quartz 的指定目录下，然后对它进行一定的个性化设置，就可以通过一条命令构建出一个静态网页形式的数字花园，然后你就可以将这些构建出来的静态网页部署到任何地方去。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="构建和部署">构建和部署<a href="https://xigou.github.io/blog/How%20I%20build%20my%20digital%20garden#%E6%9E%84%E5%BB%BA%E5%92%8C%E9%83%A8%E7%BD%B2" class="hash-link" aria-label="Direct link to 构建和部署" title="Direct link to 构建和部署">​</a></h2>
+<p>为了同时支持Quartz和Docusaurus，我在一个Github Repo里面同时存储了这两个静态网站生成程序的代码，然后将自己的笔记文件夹推送到Github Repo, 将笔记Repo添加为程序Repo的子模块，通过一些构建脚本，将目录文件进行合理的映射和转换，拷贝到两个项目所需要的对应目录下面，然后两者就都可以正常的构建出静态网页文件。
+然后我选择将两者都部署到 Cloudflare，因为这样可以利用其提供的CDN能力，增强网站可访问性。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="图片问题">图片问题<a href="https://xigou.github.io/blog/How%20I%20build%20my%20digital%20garden#%E5%9B%BE%E7%89%87%E9%97%AE%E9%A2%98" class="hash-link" aria-label="Direct link to 图片问题" title="Direct link to 图片问题">​</a></h2>
+<p>实际上你的笔记库如果只有文本信息的话，体积会非常小巧，大约为几十MB级别，但是如果加上了图片，很容易就会扩大到数百兆甚至GB级别。在个人网站当中保存图片，一般会使用到对象存储系统，但是对象存储系统是需要定期付费的， 虽然费用不多，但是对于一个不以盈利为目的网站来讲，还是有点不合算。而国外也有免费的图像存储和分享网站（图床）Imgur，所以我选择将自己的所有可以公开的图片都存储在这个网站上面, 然后在笔记内只存储这个图片的超链接, 这样笔记库总体会非常的小巧, 也不会影响阅读体验，因为Obsidian本身是可以解析图片超链接的，阅读起来和在本地存储图片没有任何区别。
+但是这里就会有一个严重的问题，Imgur 这个网站在赛里斯是不可访问的, 如果不使用特殊的网络链路的话，用户看到的网页就会没有任何图片。</p>
+<p>为了解决这一个问题，我写了一个简单的小脚本，在文本当中抽取出了所有图片链接，将其下载到我的一个闲置的小服务器上面，使用 Caddy 开了一个HTTP文件服务器, 在网站构建的过程当中, 会通过这个缓存服务器下载所有的图片，然后构建一个包含静态图片资源的网站专供赛里斯访问。之所以要使用这个缓存服务器，是因为Imgur对于下载请求是有频率限制的，大约是一分钟20次，如果完全通过Imgur下载静态图片构建网站，那构建时间就会因为下载而变得很长，同时构建失败概率也会大大增加。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="架构图">架构图<a href="https://xigou.github.io/blog/How%20I%20build%20my%20digital%20garden#%E6%9E%B6%E6%9E%84%E5%9B%BE" class="hash-link" aria-label="Direct link to 架构图" title="Direct link to 架构图">​</a></h2>
+<!-- -->
+<p>以上就是这个项目的整体架构图，通过一个工作流，简单解释它的运作过程:</p>
+<ul>
+<li>我写了一篇新的笔记</li>
+<li>然后将笔记文件夹推送到Github上面的笔记仓库</li>
+<li>笔记仓库接收到更新以后自动触发Github Action开始构建新版本的网站，在这个仓库当中，我在Action当中定义的行为是让他触发代码仓库进行多版本同时构建</li>
+<li>代码仓库接收到Action执行命令以后，就会拉取最新的笔记，并行的开始构建，分别构建一个Quartz站点，一个有静态图的Docusaurus站点，一个普通的Docusaurus站点。构建完成以后，静态网站的文件将会就会推送到发布仓库。</li>
+<li>发布仓库内有一个分支会直接公开发布在在github pages服务，同时我对这个仓库配置了 Cloudflare发布服务, 这个服务分别会取出Quartz和Docusaurus with Images 分支的静态文件发布在Cloudflare服务上面。</li>
+</ul>
+<p>至此三个网站全部都完成了更新，并且已经成功发布在互联网上。</p>
+<p>值得注意的是，在这个过程当中，我手动完成的事情就是编辑Obsidian 笔记，并且将它推送到 GitHub上面，剩下的过程全都是自动化完成的，网站的更新工作流已经变得足够简单。同时整个过程中，需要付费的只有我自己为了解决图片问题配置的缓存服务器，如果你直接在笔记中存储图片，那么这个缓存服务器也是没有存在必要的，所以这个方案是可以做到完全免费运行的。</p>
+<p>至此这个数字花园就已经完全搭建完成了，接下来需要做的事情就是常常的去更新完善，用自己的一生去装点这个花园。</p>]]></content>
+        <author>
+            <name>XiGou</name>
+            <uri>https://github.com/XiGou</uri>
+        </author>
+        <category label="Productivity" term="Productivity"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[福柯《性经验史》读后感]]></title>
         <id>https://xigou.github.io/blog/2023/11/25/foucault-sex-experience-history-reading-notes</id>
@@ -30,7 +77,7 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="快感享用">快感享用<a href="https://xigou.github.io/blog/2023/11/25/foucault-sex-experience-history-reading-notes#%E5%BF%AB%E6%84%9F%E4%BA%AB%E7%94%A8" class="hash-link" aria-label="Direct link to 快感享用" title="Direct link to 快感享用">​</a></h3>
 <p>如果排除掉前述的对于性经验的各种限制性的因素，那么人的性行为一个最纯粹的目的就是享用快感。</p>
 <p>古希腊人认为如果不考虑生育的目的，纯粹地去享用快感，则可以推知对男性来讲最完美的性伴侣是年轻的男性，年轻男性的身体健美而富有活力，而女性则很“丑陋”:她们的身体“毫不体面”，她们的脸庞像猴脸一样不讨人喜欢，为了掩盖这一事实，她们不得不费尽心机地使用化妆、洗手间、美发、首饰来打扮。而如果不受压抑和养生学的控制，人就会无节制地去寻求性欲的满足，生产品类丰富的色情内容、商品和服务，乐此不疲地探索体验各种稀奇古怪的性行为的模式，比如虐待、恋物癖、娈童、在不当的时间和地点进行性行为等。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="本书对现代社会的指导意义">本书对现代社会的指导意义<a href="https://xigou.github.io/blog/2023/11/25/foucault-sex-experience-history-reading-notes#%E6%9C%AC%E4%B9%A6%E5%AF%B9%E7%8E%B0%E4%BB%A3%E7%A4%BE%E4%BC%9A%E7%9A%84%E6%8C%87%E5%AF%BC%E6%84%8F%E4%B9%89" class="hash-link" aria-label="Direct link to 本书对现代社会的指�导意义" title="Direct link to 本书对现代社会的指导意义">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="本书对现代社会的指导意义">本书对现代社会的指导意义<a href="https://xigou.github.io/blog/2023/11/25/foucault-sex-experience-history-reading-notes#%E6%9C%AC%E4%B9%A6%E5%AF%B9%E7%8E%B0%E4%BB%A3%E7%A4%BE%E4%BC%9A%E7%9A%84%E6%8C%87%E5%AF%BC%E6%84%8F%E4%B9%89" class="hash-link" aria-label="Direct link to 本书对现代社会的指导意义" title="Direct link to 本书对现代社会的指导意义">​</a></h2>
 <p>萨特曾经讥讽福柯的作品是“将历史生硬地划分为多个静态的画面，假装成一部动态的电影”，我部分认同萨特的观点，但是换个角度来看会有不一样的结果。这个世界的此时此刻，在历史上是电影的一帧，但是你用放大镜仔细观察就会发现此刻的世界每一部分都是不同的历史阶段：有些国家在研究生成式人工智能，而有些国家却在研究是否应该允许人们访问外国的网站；有些城市在保护流浪动物，而有些城市则在讨论捡拾别人地里的农作物是不是偷窃；有的人在讨论普世价值，而有的人依然固执地认为女人不能上桌吃饭。我必须提起一个从朋友那里捡来的令我高度赞同的论断：“一个单独的人是历史的最小单位”。所以福柯描写的这些割裂的历史阶段，实际上也可以当成对于此时此刻的世界进行了以个人为单位的空间上的分割，这些人处于不同的历史阶段。</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="婚姻">婚姻<a href="https://xigou.github.io/blog/2023/11/25/foucault-sex-experience-history-reading-notes#%E5%A9%9A%E5%A7%BB" class="hash-link" aria-label="Direct link to 婚姻" title="Direct link to 婚姻">​</a></h3>
 <p>在塞里斯来讲，大部分人对于性的认识还是在家政论的框架之下的，在这里婚姻是一个唯一正确享受性快感的途径，构建一个稳定的家庭完成生育的任务也是个人成功的标志。所以赛里斯人又对家政论进行了发展：</p>
@@ -81,7 +128,7 @@
 <p>偏序集合（英語：Partially ordered set，简写Poset）是数学中，特别是序理论中，<strong>指配备了偏序关系的集合</strong>。 这个理论将对集合的元素进行排序、顺序或排列等直觉概念抽象化。 这种排序不必是全部的，就是说不需要保证此集合内的所有对象的相互可比较性。</p>
 </blockquote>
 <p>酒桌上所有人组成一个集合，每一次一对一的敬酒则会在两个人之间形成一个上下关系，主动敬酒的人对接受敬酒的人表达服从，由于有桌子上一整圈的观众围观，这个上下级关系同时也得到了公开的认证。而一对多的敬酒则往往相反，主动敬酒并且开启长篇大论的人，则是在宣示：“我是你们的爹”。在一次又一次的酒局中，整个社会形成了一个巨大的偏序集合，这种氛围令我厌烦，而在偏序集合中，并不是任意两个元素都存在偏序关系，所以我很少请客吃饭或者接受别人的邀请去吃饭，不是 AA 制的局我几乎不参加，不去完成这样的偏序关系认证仪式，可以让自己一定程度和这个巨大的结构保持距离。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="节日问候">节日问候<a href="https://xigou.github.io/blog/2023/11/18/syris-lower-level-discipline#%E8%8A%82%E6%97%A5%E9%97%AE%E5%80%99" class="hash-link" aria-label="Direct link to 节日问候" title="Direct link to 节日问候">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="��节日问候">节日问候<a href="https://xigou.github.io/blog/2023/11/18/syris-lower-level-discipline#%E8%8A%82%E6%97%A5%E9%97%AE%E5%80%99" class="hash-link" aria-label="Direct link to 节日问候" title="Direct link to 节日问候">​</a></h2>
 <p>赛里斯虽然声称有五千年的历史，但是这些历史中有两千多年不可考证，有数百年分裂混战，有数百年异族入主，还有近代的社会结构和文化的数次暴力改变，所以赛里斯的文化实际上有很多断层现象，真正流传下来的并不多。最近这些年这个民族时常绞尽脑汁想挖出一些自己历史悠久的符号，例如山东曹县不久之前刚发明的化学纤维汉服的流行则体现了这样的期盼。而赛里斯的节日也是一样，两大长假节日劳动节和国庆节都是舶来品，端午、中秋、春节是祖宗流传下来的，但是实际上它们的含义早已被忘得一干二净。所以在赛里斯我总觉得过节是一个特别无聊的事情，我时常不知道自己为什么要过节，也不知道我为什么要给其他人发一句虚情假意毫无用处的节日问候，赛里斯的节日这么无趣，不可能因为我的一句群发的“xx节快乐”就变得充满趣味。</p>
 <p>对赛里斯人来讲，不管过什么节，节日问候是必不可少的经典节目。这个抽象的问候，在端午节是炒作成天价的粽子礼盒，在中秋是月饼礼盒，在春节是拜年活动。这些礼盒里面装的都是一些黑厂制作的垃圾食品，但是赛里斯人依旧热衷于送来送去，是因为每一次送礼都是一次人与人之间等级关系的宣告与强化。</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="结语">结语<a href="https://xigou.github.io/blog/2023/11/18/syris-lower-level-discipline#%E7%BB%93%E8%AF%AD" class="hash-link" aria-label="Direct link to 结语" title="Direct link to 结语">​</a></h2>
@@ -188,7 +235,7 @@
 <p>归根结底李然殿下的老公依然勉强算是个贵族，她也通过结婚这一古老的技术实现了人生阶级的跨越，确实是可喜可贺。</p>
 <p>赛里斯人接力吹牛逼把人家吹成了“比利时王妃”、“利涅王妃”，简直是抽象至极。这也能从侧面反映出赛里斯人特别是梅州人那种刻在骨子里的自卑，梅州临近富庶的潮汕地区，但却因为地处山区而成为国家级的贫困地区，他们太想要通过嫁给王子来实现一朝飞上枝头变凤凰的春秋大梦了！李然殿下的人生已然成为了这个地区的一种集体精神和意识，成为了他们的精神支柱。</p>
 <p>这个世界上有骁勇善战的北欧人、彬彬有礼的日本人、自由放浪的美国人、求索真理的欧洲人，但是我都不佩服，我只佩服看见一坨狗屎都要尝尝咸淡的赛里斯人。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="给我们的人生启示">给我们的人生启示<a href="https://xigou.github.io/blog/2023/11/03/news-fact-check-made-in-china-princess-liran-back#%E7%BB%99%E6%88%91%E4%BB%AC%E7%9A%84%E4%BA%BA%E7%94%9F%E5%90%AF%E7%A4%BA" class="hash-link" aria-label="Direct link to 给我们的人生启示" title="Direct link to 给我们的人生启示">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="给我们的人生启示">给我们的人生启示<a href="https://xigou.github.io/blog/2023/11/03/news-fact-check-made-in-china-princess-liran-back#%E7%BB%99%E6%88%91%E4%BB%AC%E7%9A%84%E4%BA%BA%E7%94%9F%E5%90%AF%E7%A4%BA" class="hash-link" aria-label="Direct link to 给我们的人生启示" title="Direct link to 给我们的人生启�示">​</a></h2>
 <p>老老实实打工是没有出路的，去金钱聚集的地方工作更容易实现阶级跨越，典型的例子：</p>
 <ul>
 <li>高档小区的健身房教练、瑜伽老师</li>
@@ -230,7 +277,7 @@
 <p>对对方不进行行政处罚，则未有任何明确说明，但是依据口述，办案晶哥曾表示对方是残疾人，所以不予处罚。</p>
 <p>再考虑到对方实际上受伤较重，在打架中属于打输的一方，我方实际上一定程度上认可对方应该承担较轻责任，但不认可对方无责任。</p>
 <p>总体来看此案的处理是一个相对较为公平但是略有瑕疵的行政行为，其中部分细节仍然值得思考。</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="第一点因为对方是残疾人而对我方处以加重处罚是否合理">第一点：因为对方是残疾人而对我方处以加重处罚是否合理？<a href="https://xigou.github.io/blog/2023/10/21/fight-in-law#%E7%AC%AC%E4%B8%80%E7%82%B9%E5%9B%A0%E4%B8%BA%E5%AF%B9%E6%96%B9%EF%BF%BD%E6%98%AF%E6%AE%8B%E7%96%BE%E4%BA%BA%E8%80%8C%E5%AF%B9%E6%88%91%E6%96%B9%E5%A4%84%E4%BB%A5%E5%8A%A0%E9%87%8D%E5%A4%84%E7%BD%9A%E6%98%AF%E5%90%A6%E5%90%88%E7%90%86" class="hash-link" aria-label="Direct link to 第一点：因为对方是残疾人而对我方处以加重处罚是否合理？" title="Direct link to 第一点：因为对方是残疾人而对我方处以加重处罚是否合理？">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="第一点因为对方是残疾人而对我��方处以加重处罚是否合理">第一点：因为对方是残疾人而对我方处以加重处罚是否合理？<a href="https://xigou.github.io/blog/2023/10/21/fight-in-law#%E7%AC%AC%E4%B8%80%E7%82%B9%E5%9B%A0%E4%B8%BA%E5%AF%B9%E6%96%B9%E6%98%AF%E6%AE%8B%E7%96%BE%E4%BA%BA%E8%80%8C%E5%AF%B9%E6%88%91%E6%96%B9%E5%A4%84%E4%BB%A5%E5%8A%A0%E9%87%8D%E5%A4%84%E7%BD%9A%E6%98%AF%E5%90%A6%E5%90%88%E7%90%86" class="hash-link" aria-label="Direct link to 第一点：因为对方是残疾人而对我方处以加重处罚是否合理？" title="Direct link to 第一点：因为对方是残疾人而对我方处以加重处罚是否合理？">​</a></h3>
 <p>"主客统一"是刑法的基本原则，也就是在适用法条的时候，任何一项犯罪行为主客是否统一，都会对最终的处罚造成天差地别的影响。当然今天讨论的案件并未达到刑事案件的程度，但是我们今天的行政处罚使用的是《中华人民共和国治安管理处罚法》, 在阅读此法的时候，是否应该遵循主客统一的原则呢？作为赛里斯公民，其实我至今未能从任何权威渠道获得这个回答是肯定的还是否定的。</p>
 <p>但是我认为主客统一是应该作为任何法条适用的基本原则的。对于殴打残疾人应该从重处罚，我很认可，因为欺凌弱势群体主观上恶意是很大的。但是在此案中，对方的残疾是听力下降，我方主管不知道对方有此残疾，且这类残疾和四肢缺失这样子的残疾又不一样，不属于一般人可以默认明知的事实，事实上我方并无欺凌残疾人的主观恶意，应当不适用四十三条第二款第二项。从客观事实来讲，对方与我方是因为争吵进而发生互殴，一个人在争吵时 "对答如流，堪比隆中绝对", 我方无论如何也无法想象到对方是一个听力残疾人，其听力残疾亦不影响其打架能力，在打架过程中我们是完全权力对等的两个个体，最终却认为我方在"欺凌"他，确实令人难以认可。</p>
 <p>举一个例子便可以更清晰了解到此判罚的不合理性，美国拳王霍利菲尔德曾经被泰森咬掉耳朵，也应当属于听力残疾人，如果霍哥走到你的面前与你对打，你也会被判定欺凌弱小。残疾人的确应当照顾，但是我认为不影响打架的残疾实际上在打架案子中应当不考虑。所以四十三条应当细化，指明被殴打者是何种残疾应当从重处罚。</p>
@@ -493,7 +540,7 @@ tmd，一脚踩进稀泥
 <p><strong>贝克勒尔</strong>（法语：<strong>Becquerel</strong>，符号为：<strong>Bq</strong>），简称<strong>贝克</strong><a href="https://zh.wikipedia.org/zh-sg/%E8%B4%9D%E5%85%8B%E5%8B%92%E5%B0%94#cite_note-1" target="_blank" rel="noopener noreferrer">1</a>&nbsp;<a href="https://zh.wikipedia.org/zh-sg/%E8%B4%9D%E5%85%8B%E5%8B%92%E5%B0%94#cite_note-2" target="_blank" rel="noopener noreferrer">2</a>。是<a href="https://zh.wikipedia.org/wiki/%E6%94%BE%E5%B0%84%E6%80%A7%E6%B4%BB%E5%BA%A6" target="_blank" rel="noopener noreferrer">放射性活度</a>的<a href="https://zh.wikipedia.org/wiki/%E5%9B%BD%E9%99%85%E5%8D%95%E4%BD%8D%E5%88%B6%E5%AF%BC%E5%87%BA%E5%8D%95%E4%BD%8D" target="_blank" rel="noopener noreferrer">国际单位制导出单位</a>，用于衡量<a href="https://zh.wikipedia.org/wiki/%E6%94%BE%E5%B0%84%E6%80%A7" target="_blank" rel="noopener noreferrer">放射性</a>物质或<strong>放射源</strong>的计量单位<a href="https://zh.wikipedia.org/zh-sg/%E8%B4%9D%E5%85%8B%E5%8B%92%E5%B0%94#cite_note-%E6%96%B0-3" target="_blank" rel="noopener noreferrer">3</a>。贝克勒尔的<a href="https://zh.wikipedia.org/wiki/%E5%9B%BD%E9%99%85%E5%8D%95%E4%BD%8D%E5%88%B6" target="_blank" rel="noopener noreferrer">国际单位制</a>量纲为[s-1]，同<a href="https://zh.wikipedia.org/wiki/%E9%A2%91%E7%8E%87" target="_blank" rel="noopener noreferrer">频率</a>单位<a href="https://zh.wikipedia.org/wiki/%E8%B5%AB%E5%85%B9" target="_blank" rel="noopener noreferrer">赫兹</a>相同，但意义完全不一样。一定量的放射性核素，若每秒有一个<a href="https://zh.wikipedia.org/wiki/%E5%8E%9F%E5%AD%90" target="_blank" rel="noopener noreferrer">原子</a><a href="https://zh.wikipedia.org/wiki/%E6%94%BE%E5%B0%84%E6%80%A7%E8%A1%B0%E8%AE%8A" target="_blank" rel="noopener noreferrer">衰变</a>，其放射性活度即为1贝克，例如，一克的<a href="https://zh.wikipedia.org/wiki/%E9%95%AD" target="_blank" rel="noopener noreferrer">镭</a>-226放射性活度有3.7×10^10Bq。这是个相当庞大的数值，因此常用千贝克（kBq）甚至百万贝克（MBq）来表示<a href="https://zh.wikipedia.org/zh-sg/%E8%B4%9D%E5%85%8B%E5%8B%92%E5%B0%94#cite_note-%E6%96%B0-3" target="_blank" rel="noopener noreferrer">3</a>。 放射性射线对人体具有危害，毫无防护下长期接触放射物质，会使健康受到严重损害<a href="https://zh.wikipedia.org/zh-sg/%E8%B4%9D%E5%85%8B%E5%8B%92%E5%B0%94#cite_note-%E6%98%9F-4" target="_blank" rel="noopener noreferrer">4</a>。</p>
 <p>给予固定质量的放射性物质，其贝克数值会随着时间的演进而改变。因此，对于短寿命同位素，必需标明其放射性衰变率与时间戳在一起，有时候，这衰变率还会调整至某特定日期（过去日期或未来日期）。例如，安全组织时常会标明出一个十日调整数目，即十日后的放射性活度。在这时间间隔内，短寿命同位素的数量可能会大幅降低。</p>
 <p>简而言之，贝克表现了放射源在某一时刻的放射性活度。如果放射源不变，由于自然衰变的作用放射性活度会随时间逐渐变小。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="受辐射等效生物当量的单位西弗">受辐射等效生物当量的单位：西弗<a href="https://xigou.github.io/blog/2023/08/27/some-facts-and-argue-of-fudao-nuc-water#%E5%8F%97%E8%BE%90%E5%B0%84%E7%AD%89%E6%95%88%E7%94%9F%E7%89%A9%E5%BD%93%EF%BF%BD%E9%87%8F%E7%9A%84%E5%8D%95%E4%BD%8D%E8%A5%BF%E5%BC%97" class="hash-link" aria-label="Direct link to 受辐射等效生物当量的单位：西弗" title="Direct link to 受辐射等效生物当量的单位：西弗">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="受辐射等效生物当量的单位西弗">受辐射等效生物当量的单位：西弗<a href="https://xigou.github.io/blog/2023/08/27/some-facts-and-argue-of-fudao-nuc-water#%E5%8F%97%E8%BE%90%E5%B0%84%E7%AD%89%E6%95%88%E7%94%9F%E7%89%A9%E5%BD%93%E9%87%8F%E7%9A%84%E5%8D%95%E4%BD%8D%E8%A5%BF%E5%BC%97" class="hash-link" aria-label="Direct link to 受辐射等效生物当量的单位：西弗" title="Direct link to 受辐射等效生物当量的单位：西弗">​</a></h2>
 <p><strong>希沃特</strong>（英语：sievert，符号：<strong>Sv</strong>；又称<strong>西弗</strong>，简称<strong>希</strong>）。是一个用来衡量<a href="https://zh.wikipedia.org/wiki/%E6%94%BE%E5%B0%84%E6%80%A7" target="_blank" rel="noopener noreferrer">辐射剂量</a>对生物组织的影响程度的<a href="https://zh.wikipedia.org/wiki/%E5%9B%BD%E9%99%85%E5%8D%95%E4%BD%8D%E5%88%B6%E5%AF%BC%E5%87%BA%E5%8D%95%E4%BD%8D" target="_blank" rel="noopener noreferrer">国际单位制导出单位</a>，为受辐射等效生物当量的单位<a href="https://zh.wikipedia.org/wiki/%E8%A5%BF%E5%BC%97#cite_note-%E4%B8%8A-1" target="_blank" rel="noopener noreferrer">1</a>。</p>
 <p>在地球上都存在<a href="https://zh.wikipedia.org/w/index.php?title=%E5%A4%A9%E7%84%B6%E8%BC%BB%E5%B0%84&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener noreferrer">天然辐射</a>，有些源自<a href="https://zh.wikipedia.org/wiki/%E5%9C%B0%E7%90%83%E5%A4%A7%E6%B0%A3%E5%B1%A4" target="_blank" rel="noopener noreferrer">地球大气层</a>外界，有些可在土壤、矿石中发现些微的天然放射性核素，而空气及水中亦存在天然放射性<a href="https://zh.wikipedia.org/wiki/%E6%B0%A1%E6%B0%94" target="_blank" rel="noopener noreferrer">氡气</a>，而人体中也含有天然放射性核素<a href="https://zh.wikipedia.org/wiki/%E9%92%BE-40" target="_blank" rel="noopener noreferrer">钾-40</a>等，因此人类生活随时都会接受到一些辐射<a href="https://zh.wikipedia.org/wiki/%E8%A5%BF%E5%BC%97#cite_note-N-2" target="_blank" rel="noopener noreferrer">2</a>。</p>
 <p>如果按照<a href="https://zh.wikipedia.org/wiki/%E5%9B%BD%E9%99%85%E6%94%BE%E5%B0%84%E9%98%B2%E6%8A%A4%E5%A7%94%E5%91%98%E4%BC%9A" target="_blank" rel="noopener noreferrer">国际放射防护委员会</a>的标准，来自非背景辐射的游离辐射，一般人为造成之辐射<strong>年剂量规定是不超过 1毫希沃特</strong>（1 mSv/<a href="https://zh.wikipedia.org/wiki/%E5%B9%B4" target="_blank" rel="noopener noreferrer">a</a>），换算就是<strong>每小时0.1微希沃特</strong>（0.1 µSv/<a href="https://zh.wikipedia.org/wiki/%E5%B0%8F%E6%99%82" target="_blank" rel="noopener noreferrer">h</a>）。放射性职业工作者一年累积全身受职业照射的上限是20 mSv/<a href="https://zh.wikipedia.org/wiki/%E5%B9%B4" target="_blank" rel="noopener noreferrer">a</a>（<a href="https://zh.wikipedia.org/wiki/%E5%9B%BD%E9%99%85%E6%94%BE%E5%B0%84%E9%98%B2%E6%8A%A4%E5%A7%94%E5%91%98%E4%BC%9A" target="_blank" rel="noopener noreferrer">国际放射防护委员会</a>推荐）。但是侦测环境如果超过20微希沃特，就是紧急状况。如果人体瞬间接受辐射量超过250毫希沃特，身体就会造成不可见的伤害，超过2希沃特则有致死的可能，超过6希沃特而未经适当医护，死亡率为百分之百<a href="https://zh.wikipedia.org/wiki/%E8%A5%BF%E5%BC%97#cite_note-%E6%A0%B8-3" target="_blank" rel="noopener noreferrer">3</a>。</p>
@@ -660,31 +707,5 @@ AI Pre/Doc/Webpage 生成软件 gamma 的界面</p>
             <uri>https://github.com/XiGou</uri>
         </author>
         <category label="AI" term="AI"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[圆圈正义：你的互联网冲浪指南]]></title>
-        <id>https://xigou.github.io/blog/2023/04/30/circle-justice-reading-notes</id>
-        <link href="https://xigou.github.io/blog/2023/04/30/circle-justice-reading-notes"/>
-        <updated>2023-04-30T01:14:31.000Z</updated>
-        <summary type="html"><![CDATA[罗翔爆红是在b站的视频区，很多人说罗翔的爆红是塞里斯法治精神的一次跳跃，但是事实上却并非如此。他的粉丝实际上大多是被他讲述的那些刑事案件当中离奇的剧情所吸引，因为无论罗翔发布了什么视频，他们大多数只会反复刷着“法外狂徒张三”这样一个烂梗，在他们眼里，根本没有理性和法治的光辉，因为这些人嬉皮笑脸的说出这个梗，实际上暗含着他们认为用很脑洞大开的的手段犯了罪并且被判无罪，是一种很酷的行为。]]></summary>
-        <content type="html"><![CDATA[<p>罗翔爆红是在b站的视频区，很多人说罗翔的爆红是塞里斯法治精神的一次跳跃，但是事实上却并非如此。他的粉丝实际上大多是被他讲述的那些刑事案件当中离奇的剧情所吸引，因为无论罗翔发布了什么视频，他们大多数只会反复刷着“法外狂徒张三”这样一个烂梗，在他们眼里，根本没有理性和法治的光辉，因为这些人嬉皮笑脸的说出这个梗，实际上暗含着他们认为用很脑洞大开的的手段犯了罪并且被判无罪，是一种很酷的行为。</p>
-<p><img decoding="async" loading="lazy" src="https://i.imgur.com/Pw3nfjm.jpg" alt="s33544846" class="img_ev3q"></p>
-<p>在罗翔最火的时候，我还在大学的校园里，在某个无聊的晚上，我们附近几个宿舍的同学蹲在一起指点江山，到口干舌燥的时候，聊起了当时的现象级up主罗翔。当时我就下了断言，如果普罗大众真的读懂了罗翔的思想，按照当时的舆论环境，他很快就会被批倒批臭，被判定为和CIA联系密切的间谍. 后来某天，某一伙人正在歌舞升平的庆祝某个光荣的胜利的时候，罗老师正在家里认真的读书，他在微博分享了一句读书的感言:“要珍惜德行，却不要成为荣誉的奴隶，因为前者是永恒的 ”，这是他最接近于被批倒批臭的一次。</p>
-<p>首先这本书读起来是很轻松的，因为他是一本畅销书，更确切的说是网络博客文集，没有太多深奥的东西。我读了过后非常开心的，因为我发现罗老师写的东西比我其实高明不了多少，这给了我下笔的勇气，同时我也读出了罗老师的理想和现实之间的挣扎，我读出了他反反复复的自省，这多少让我产生了一些共鸣。</p>
-<p>圆圈是对于正义的隐喻，圆是一个数学上的对象，它可以由解析几何的方程式精确的描述，但是现实当中你却无论如何也画不出一个真正的圆。即使你用圆规在纸面上画了一个看上去很圆的圆，如果你用放大镜显微镜去看这个圆，你就会发现纸面几微米的起伏也会导致这个圆变成一个扭曲的圆。当然你可以投入巨大的精力去研究更加先进的圆规和更加平整的纸，但无论如何努力，你也画不出圆，因为在数学当中定义的那个圆是由没有宽度的线构成的，而这个没有宽度的线是由无穷多个没有大小的点构成的，这些无穷的无形的东西在实际当中永远都不会存在。</p>
-<p>使用圆圈作为正义的隐喻强调的是一种理想和现实之间无法逾越的鸿沟，或者按照罗老师反复强调的说法，是知道和做到之间的鸿沟。</p>
-<h1>关于罗翔本人</h1>
-<p>他是一个活在矛盾中的人。
-他的刑法相关的思想和立场偏向于西方，他认同刑法不光是为了保护正义，同时也是为了限制有无穷野心的权力。而在他自己所接触的司法实践当中，却经常面临着被领导的好恶决定当事人是否有罪的情况，法律规定模糊不清以留下人治的空间， 有诸多法律之外的处罚比如长达两年的无条件羁押、在媒体公布嫌疑人隐私等都在迫使嫌疑人认罪换取较轻的惩罚。</p>
-<p>他强调了法律只是人的行为准则的底线，人应该用道德来约束自己才能构建一个更加美好的社会；但是他又不断的强调每个人都是邪恶的，如果没有法律正面的约束，整个社会很快就会堕落崩坏。这些充满着邪恶的人，如何才能够用道德去约束自己，构建一个美好的社会？这道题也许他知道永远都不会有答案，所以社会永远都不会自发地朝着更好的方向发展，塞里斯没有变成索多玛就应该谢天谢地了。</p>
-<p>他痛恨卖淫嫖娼的行为，因为他认为这是上层阶级对底层女性的赤裸裸的剥削，虽然卖淫嫖娼这个行为当中没有任何人受害，但从功利主义的角度来讲，它没有为社会创造良性的价值，至少是不应该被鼓励的。但是在现实当中，对卖淫嫖娼的惩治行为，是违法执法发生的重灾区。他只是一个行政处罚，所以它的定义非常的不清晰，只有依靠某些部门给出了一个解释作为参考，按照这种解释，联系卖淫女、讲价、搭乘交通工具前往目的地，都可以被处罚，这在刑法学人的眼中，就是一种非常邪恶的惩罚思想、意图和未遂的法令；钓鱼执法也被允许，罚款私了是常有的事，所以这成为很多地方执法机构创收的手段，这当中最具代表性的事件就是人大硕士雷洋在北京市的一次集中扫黄大行动当中的非正常死亡。但如果你一次性付清一个月的嫖资，那这就是一场不符合伦理的恋爱，完全合法不会受到任何的惩罚，所以这个社会上的剥削可以批发，但不可以零售，多少有些荒诞。</p>
-<h1>为什么说这本书是互联网冲浪指南？</h1>
-<p>因为这本书当中很多内容都是罗老师亲自网络冲浪的时候发表的见解，其中对于这些年非常具有争议性的事件，都做出了有价值的评论。</p>
-<p>比如江歌案，作为一个没有法学背景的普通人，我对于刘鑫也是充满了愤怒，认为她应该为这起完全由她引起的凶杀负责。但看完了罗翔老师的观点之后，我接受了他的说法，刑法根本就不惩罚见死不救，同时刑法又是一个底线非常低的东西，我们不能以超高的道德标准来要求当事人。我们最应该做的就是自省和换位思考，如果我处在那个场景下，我会勇敢的站出来被男朋友杀死来承担自己的责任吗？相信没有人会给出肯定的回答。</p>
-<p>在书中也讨论了在互联网管理当中的一些问题，罗翔关于互联网的言论自由问题的立场是非常激进的，他认为互联网的言论自由应该得到非常充分的保障，即使是那些相互攻击、恶意炒作营销的言论的自由也应该得到保障。因为打着让网络空间更加干净的旗号，而进行各种各样的言论屏蔽，实际上会将整个言论环境带向极权的方向。言论相关的问题，不应该上升到刑法的层面，而这当中如果产生了其他的民事性的违法行为，要遵循民法的一般原则来处理。</p>]]></content>
-        <author>
-            <name>XiGou</name>
-            <uri>https://github.com/XiGou</uri>
-        </author>
     </entry>
 </feed>
