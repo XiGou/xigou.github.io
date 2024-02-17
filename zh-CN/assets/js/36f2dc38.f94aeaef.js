@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpersonal_blog=self.webpackChunkpersonal_blog||[]).push([[7428],{80200:l=>{l.exports=JSON.parse('{"label":"Life","permalink":"/zh-CN/blog/tags/life","allTagsPath":"/zh-CN/blog/tags","count":1,"unlisted":false}')}}]);
