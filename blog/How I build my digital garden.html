@@ -28,8 +28,8 @@
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.180b33c9.css">
-<script src="/assets/js/runtime~main.050eaf4b.js" defer="defer"></script>
-<script src="/assets/js/main.1030d573.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.6cf7853f.js" defer="defer"></script>
+<script src="/assets/js/main.8d5bfc5b.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-NM2G657" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -50,12 +50,12 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="使用-quartz-构建全功能的数字花园">使用 Quartz 构建全功能的数字花园<a href="#使用-quartz-构建全功能的数字花园" class="hash-link" aria-label="Direct link to 使用 Quartz 构建全功能的数字花园" title="Direct link to 使用 Quartz 构建全功能的数字花园">​</a></h2>
 <p><a href="https://github.com/jackyzha0/quartz" target="_blank" rel="noopener noreferrer">Quartz</a>是一个专用的数字花园构建工具，你只需要提供一个用文件夹组织好的 Markdown 笔记，存入 Quartz 的指定目录下，然后对它进行一定的个性化设置，就可以通过一条命令构建出一个静态网页形式的数字花园，然后你就可以将这些构建出来的静态网页部署到任何地方去。</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="构建和部署">构建和部署<a href="#构建和部署" class="hash-link" aria-label="Direct link to 构建和部署" title="Direct link to 构建和部署">​</a></h2>
-<p>为了同时支持Quartz和Docusaurus，我在一个Github Repo里面同时存储了这两个静态网站生成程序的代码，然后将自己的笔记文件夹推送 到Github Repo, 将笔记Repo添加为程序Repo的子模块，通过一些构建脚本，将目录文件进行合理两者就都可以正常的构建出静态网页文件。
+<p>为了同时支持Quartz和Docusaurus，我在一个Github Repo里面同时存储了这两个静态网站生成程序的代码，然后将自己的笔记文件夹推送 到Github Repo, 将笔记Repo添加为程序Repo的子模块，通过一些构建脚本，将目录文件进行合理转换，两者就都可以正常的构建出静态网页文件。
 然后我选择将两者都部署到 Cloudflare，因为这样可以利用其提供的CDN能力，增强网站可访问性。</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="图片问题">图片问题<a href="#图片问题" class="hash-link" aria-label="Direct link to 图片问题" title="Direct link to 图片问题">​</a></h2>
 <p>实际上你的笔记库如果只有文本信息的话，体积会非常小巧，大约为几十MB级别，但是如果加上了图片，很容易就会扩大到数百兆甚至GB级别。在个人网站当中保存图片，一般会使用到对象存储系统，而是对象存储系统是需要定期付费的， 虽然费用不多，但对于一个不以盈利为目的网站来讲，还是有点不合算。而国外也有免费的图像存储和分享网站（图床）Imgur，所以我选择将自己的所有可以公开的图片都存储在这个网站上面, 然后在笔记内只存储这个图片的超链接, 这样笔记库总体会非常的小巧, 也不会影响阅读体验，因为Obsidian本身是可以解析图片超链接的，阅读起来和在本地存储图片没有任何区别。
 但是这里就会有一个严重的问题，Imgur 这个网站在赛里斯是不可访问的, 如果不使用特殊的网络链路的话，用户看到的网页就会没有任何图片。</p>
-<p>为了解决这一个问题，我写了一个简单的小脚本，在文本当中抽取出了所有图片链接，将其下载到我的一个闲置的小服务器上面，使用 Caddy 开了一个HTTP文件服务器, 在网站构建的过程当中, 会通过这个缓存服务器下载所有的图片，然后构建一个包含静态图片资源的网站专供赛里斯访问。之所以要使用这个缓存服务器，是因为Imgur对于下载请求是有频率限制的，大约是一分钟20次，如果完全通过Imgur下  载静态图片构建网站，那构建时间就会因为下载而变得很长，同时构建失败概率也会大大增加。</p>
+<p>为了解决这一个问题，我写了一个简单的小脚本，在文本当中抽取出了所有图片链接，将其下载到我的一个闲置的小服务器上面，使用 Caddy 开了一个HTTP文件服务器, 在网站构建的过程当中, 会通过这个缓存服务器下载所有的图片，然后构建一个包含静态图片资源的网站专供赛里斯访问。之所以要使用这个缓存服务器，是因为Imgur对于下载请求是有频率限制的，大约是一分钟20次，如果完全通过Imgur下载静态图片构建网站，那构建时间就会因为下载而变得很长，同时构建失败概率也会大大增加。</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="架构图">架构图<a href="#架构图" class="hash-link" aria-label="Direct link to 架构图" title="Direct link to 架构图">​</a></h2>
 <!-- -->
 <p>以上就是这个项目的整体架构图，通过一个工作流，简单解释它的运作过程:</p>
@@ -67,7 +67,12 @@
 <li>发布仓库内有一个分支会直接公开发布在在github pages服务，同时我对这个仓库配置了 Cloudflare发布服务, 这个服务分别会取出Quartz和Docusaurus with Images 分支的静态文件发布在Cloudflare服务上面。</li>
 </ul>
 <p>至此三个网站全部都完成了更新，并且已经成功发布在互联网上。</p>
-<p>值得注意的是，在这个过程当中，我手动完成的事情就是编辑Obsidian 笔记，并且将它推送到 GitHub上面，剩下的过程全都是自动化完成的，网站的更新工作流已经变得足够简单。同时整个过程中，需要付费的只有我自己为了解决图片问题配置的缓存服务器，如果你直接在笔记中存储图片，那么这个缓存服务器也是没有存在必要的，所以这个方案是可以做到完全免费运行的。</p>
+<p>值得注意的是，在这个过程当中，我手动完成的事情就是编辑 Obsidian 笔记，并且将它推送到 GitHub上面，剩下的过程全都是自动化完成的，网站的更新工作流已经变得足够简单。同时整个过程中，需要付费的只有我自己为了解决图片问题配置的缓存服务器，如果你直接在笔记中存储图片，那么这个缓存服务器也是没有存在必要的，所以这个方案是可以做到完全免费运行的。</p>
+<p>这个方案也有如下一些特性:</p>
+<ul>
+<li>网站的内容和生成逻辑实现分库存放，因为内 容是频繁变动更新的，而生成逻辑变化频率较低</li>
+<li>内容仓库和网站生成逻辑的更新均能触发网站重新构建</li>
+</ul>
 <p>至此这个数字花园就已经完全搭建完成了，接下来需要做的事情就是常常的去更新完善，用自己的一生去装点这个花园。</p></div><footer class="row docusaurus-mt-lg blogPostFooterDetailsFull_mRVl"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/blog/tags/productivity">Productivity</a></li></ul></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Blog post page navigation"><a class="pagination-nav__link pagination-nav__link--prev" href="/blog/The First Blind Date of a Young Man"><div class="pagination-nav__sublabel">Newer Post</div><div class="pagination-nav__label">年轻人的第一次相亲</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/blog/2023/11/18/syris-lower-level-discipline"><div class="pagination-nav__sublabel">Older Post</div><div class="pagination-nav__label">网友对话: 谈底层赛里斯人的规训</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#什么是数字花园" class="table-of-contents__link toc-highlight">什么是数字花园？</a></li><li><a href="#笔记软件和数字花园" class="table-of-contents__link toc-highlight">笔记软件和数字花园</a></li><li><a href="#溪流旁边的花园" class="table-of-contents__link toc-highlight">溪流旁边的花园</a></li><li><a href="#使用-quartz-构建全功能的数字花园" class="table-of-contents__link toc-highlight">使用 Quartz 构建全功能的数字花园</a></li><li><a href="#构建和部署" class="table-of-contents__link toc-highlight">构建和部署</a></li><li><a href="#图片问题" class="table-of-contents__link toc-highlight">图片问题</a></li><li><a href="#架构图" class="table-of-contents__link toc-highlight">架构图</a></li></ul></div></div></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/about">About</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/users/10871150/xi-gou" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discord.com/channels/815825491562725386/815825492467777538" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.linkedin.com/in/xi-gou-2639b8172/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Linkedin<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="mailto:gouxivae@gmail.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">Mail<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 Xi. 
         Licensed Under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</a>,
         Built with Docusaurus.</div></div></div></footer></div>
