@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpersonal_blog=self.webpackChunkpersonal_blog||[]).push([[6292],{76180:e=>{e.exports=JSON.parse('{"permalink":"/blog","page":1,"postsPerPage":10,"totalPages":4,"totalCount":32,"nextPage":"/blog/page/2","blogDescription":"Pursuing Love And Freedom All My Life!","blogTitle":"Joker\'s blog!"}')}}]);
