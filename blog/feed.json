@@ -15,7 +15,10 @@
                 "name": "XiGou",
                 "url": "https://github.com/XiGou"
             },
-            "tags": []
+            "tags": [
+                "Reading",
+                "Movie"
+            ]
         },
         {
             "id": "https://xigou.github.io/blog/2024/03/17/Reading-The-Book-of-Sand-",
@@ -28,7 +31,9 @@
                 "name": "XiGou",
                 "url": "https://github.com/XiGou"
             },
-            "tags": []
+            "tags": [
+                "Reading"
+            ]
         },
         {
             "id": "https://xigou.github.io/blog/Reading Death Fugue-Paul Celan",

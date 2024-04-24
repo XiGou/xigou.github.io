@@ -43,6 +43,8 @@
             <name>XiGou</name>
             <uri>https://github.com/XiGou</uri>
         </author>
+        <category label="Reading" term="Reading"/>
+        <category label="Movie" term="Movie"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[读博尔赫斯《沙之书》]]></title>
@@ -101,6 +103,7 @@
             <name>XiGou</name>
             <uri>https://github.com/XiGou</uri>
         </author>
+        <category label="Reading" term="Reading"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[读「死亡赋格」-保罗·策兰]]></title>
