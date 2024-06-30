@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpersonal_blog=self.webpackChunkpersonal_blog||[]).push([[3964],{30848:l=>{l.exports=JSON.parse('{"label":"keyboard politics","permalink":"/blog/tags/keyboard-politics","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
