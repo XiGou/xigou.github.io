@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpersonal_blog=self.webpackChunkpersonal_blog||[]).push([[4572],{28474:e=>{e.exports=JSON.parse('{"tag":{"label":"Media","permalink":"/collections/tags/media","allTagsPath":"/collections/tags","count":1,"items":[{"id":"Bookmarks/Media","title":"Media","description":"---","permalink":"/collections/Bookmarks/Media"}],"unlisted":false}}')}}]);
