@@ -17,7 +17,7 @@
             <description><![CDATA[Recently I am working with an issue that complains about etcd WAL fsync met high P99 Latency.]]></description>
             <content:encoded><![CDATA[<p>Recently I am working with an issue that complains about <code>etcd</code> WAL fsync met high P99 Latency.</p>
 <p>Then a question appeared on my head: How the IO of etcd looks like? Is it unfriendly to our storage device?</p>
-<p>Then I used the biosnoop in (bcc-tools)[<a href="https://github.com/iovisor/bcc" target="_blank" rel="noopener noreferrer">https://github.com/iovisor/bcc</a>],<!-- --> and recorded the IO of etcd about one hour.</p>
+<p>Then I used the biosnoop in <a href="https://github.com/iovisor/bcc" target="_blank" rel="noopener noreferrer">bcc-tools</a> to recorded the IO of etcd about one hour.</p>
 <p>That is the result:</p>
 <ul>
 <li>most IO size are 4KB aligned;<br>
