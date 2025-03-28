@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xigou.github.io/blog</id>
-    <title>Joker's Bolg</title>
+    <title>Jorge's Bolg</title>
     <updated>2025-03-07T23:14:31.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xigou.github.io/blog"/>
-    <subtitle>Joker's Bolg</subtitle>
+    <subtitle>Jorge's Bolg</subtitle>
     <icon>https://xigou.github.io/https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f605.png</icon>
-    <rights>Joker</rights>
+    <rights>Jorge</rights>
     <entry>
         <title type="html"><![CDATA[How Etcd IO Looks Like?]]></title>
         <id>https://xigou.github.io/blog/2025/03/07/how-etcd-io-looks-like</id>
