@@ -1,8 +1,8 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "Joker's Bolg",
+    "title": "Jorge's Bolg",
     "home_page_url": "https://xigou.github.io/zh-CN/blog",
-    "description": "Joker's Bolg",
+    "description": "Jorge's Bolg",
     "items": [
         {
             "id": "https://xigou.github.io/zh-CN/blog/2025/03/07/how-etcd-io-looks-like",
