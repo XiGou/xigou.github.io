@@ -2,12 +2,74 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xigou.github.io/zh-CN/blog</id>
     <title>Jorge's Bolg</title>
-    <updated>2025-10-26T00:00:00.000Z</updated>
+    <updated>2025-12-16T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xigou.github.io/zh-CN/blog"/>
     <subtitle>Jorge's Bolg</subtitle>
     <icon>https://xigou.github.io/zh-CN/https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f605.png</icon>
     <rights>Jorge</rights>
+    <entry>
+        <title type="html"><![CDATA[”剩菜不能吃“是立场之争还是科学之争？]]></title>
+        <id>https://xigou.github.io/zh-CN/blog/2025/12/16/Leftovers-a-Matter-of-Stance-or-Science</id>
+        <link href="https://xigou.github.io/zh-CN/blog/2025/12/16/Leftovers-a-Matter-of-Stance-or-Science"/>
+        <updated>2025-12-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[@laixingtao 一直质疑吃剩饭的意义。剩饭之所以被剩下，原因要么是都吃饱了，要么是不好吃。至少，所有人身体需要的能量都够了，不然不会剩下。（与挑食分开） 所以强行吃完的意义是什么？ （仅讨论，其实我也是强行吃完也不浪费的人）]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p><a href="https://x.com/laixintao" target="_blank" rel="noopener noreferrer" class="">@laixingtao</a> 一直质疑吃剩饭的意义。剩饭之所以被剩下，原因要么是都吃饱了，要么是不好吃。至少，所有人身体需要的能量都够了，不然不会剩下。（与挑食分开） 所以强行吃完的意义是什么？ （仅讨论，其实我也是强行吃完也不浪费的人）</p>
+</blockquote>
+<p>吃剩饭的主要原因就是穷啊（包括穷习惯），这个问题对城市小资来讲很难理解， 但是中国许多底层人人均日生活费仍然不过 1 美元，中国人做菜时不会精准计量食物的分量，买一块肉炒一锅菜，但是吃着吃着就因为某几个人少吃了一点剩下 30% 是无法避免的。 如果是因为能量够了，那么下一次能量不够可以继续吃； 如果是因为不好吃，那么穷人不会因为不好吃而丢弃食物。</p>
+<p>推特上隔一段时间总会有某个批判某种习惯的话题被推上热搜，比如要买苹果手机、要为 App 付费、要去山姆购物、不吃带骨头的肉，包括这次的不要吃剩饭... 这一切都是针对"穷人习惯"的围剿，虽然我们没法购买劳斯莱斯、住进波托菲诺纯水岸、真正的与穷人划清界限，但是我们可以先从不吃剩饭、逛山姆开始让自己贴上富人标签。</p>
+<p>如果还有别的原因，那就是知识的欠缺，大多数人不知道剩菜剩饭有多大危害，当然更确切地讲，是祖祖辈辈的经验让他们相信剩菜是可以吃的，几乎没有闹出人命的例子。可以看到许多自认为懂科学讲理性的人，一提到剩菜都会提到：剩菜会产生亚硝酸盐，吃了会中毒。</p>
+<p>所以我下面简单搜集一些资料分析一下这个说法吧。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="亚硝酸盐的安全摄入剂量">亚硝酸盐的安全摄入剂量<a href="https://xigou.github.io/zh-CN/blog/2025/12/16/Leftovers-a-Matter-of-Stance-or-Science#%E4%BA%9A%E7%A1%9D%E9%85%B8%E7%9B%90%E7%9A%84%E5%AE%89%E5%85%A8%E6%91%84%E5%85%A5%E5%89%82%E9%87%8F" class="hash-link" aria-label="亚硝酸盐的安全摄入剂量的直接链接" title="亚硝酸盐的安全摄入剂量的直接链接" translate="no">​</a></h2>
+<p><strong>ADI（Acceptable Daily Intake）</strong> 指可每天长期摄入而不会出现明显健康风险的剂量（终生暴露评估）。它是基于毒性试验的 NOAEL/LOAEL 再除以安全系数得出的标准。</p>
+<p>硝酸盐 ADI 为 3.7 mg/kg 体重/天。</p>
+<p>欧洲食品安全局（EFSA）对亚硝酸盐（E249/E250）作为食品添加剂进行了最新重评。
+ADI 为： 0–0.07 mg nitrite ion/kg 体重/日。这个值是基于对甲血红蛋白形成的毒性数据推导出来的。
+所以一个 60 KG 的人，每日亚硝酸盐安全摄入量是 4.2 mg， 硝酸盐的安全摄入量为 222 mg ， 相对要安全许多。
+<a href="https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2017.4786" target="_blank" rel="noopener noreferrer" class=""># Re-evaluation of potassium nitrite (E&nbsp;249) and sodium nitrite (E&nbsp;250) as food additives</a></p>
+<p>广西疾控指出，<strong>摄入约 0.3–0.5 g（300–500 mg）nitrite</strong> 即可能出现中毒症状，<strong>1–3 g 可致死</strong>。这是基于已观察中毒案例与医疗急救经验总结的急性暴露量级（不是长期膳食标准）。
+<a href="https://www.gxcdc.org.cn/html/2024/jkts2015_0206/14636.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="">自治区疾控中心关于预防亚硝酸盐中毒的风险提示 - 健康提示 - 广西壮族自治区疾病预防控制中心</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="亚硝酸盐在食物中的生成机制">亚硝酸盐在食物中的生成机制<a href="https://xigou.github.io/zh-CN/blog/2025/12/16/Leftovers-a-Matter-of-Stance-or-Science#%E4%BA%9A%E7%A1%9D%E9%85%B8%E7%9B%90%E5%9C%A8%E9%A3%9F%E7%89%A9%E4%B8%AD%E7%9A%84%E7%94%9F%E6%88%90%E6%9C%BA%E5%88%B6" class="hash-link" aria-label="亚硝酸盐在食物中的生成机制的直接链接" title="亚硝酸盐在食物中的生成机制的直接链接" translate="no">​</a></h2>
+<p>若食物中本身硝酸盐（nitrate, NO₃⁻）含量高，尤其是绿叶蔬菜，亚硝酸盐可由两种途径产生：</p>
+<ol>
+<li class=""><strong>植物自身 enzyme（硝酸还原酶）</strong> 在细胞损伤时可能将硝酸盐还原成亚硝酸盐。</li>
+<li class=""><strong>环境与细菌作用（微生物还原）</strong> 在蔬菜/熟菜中最主要 — 尤其存放条件适合细菌生长时，环境细菌的硝酸还原酶会把 nitrate → nitrite。</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="主要的亚硝酸盐来源和数量">主要的亚硝酸盐来源和数量<a href="https://xigou.github.io/zh-CN/blog/2025/12/16/Leftovers-a-Matter-of-Stance-or-Science#%E4%B8%BB%E8%A6%81%E7%9A%84%E4%BA%9A%E7%A1%9D%E9%85%B8%E7%9B%90%E6%9D%A5%E6%BA%90%E5%92%8C%E6%95%B0%E9%87%8F" class="hash-link" aria-label="主要的亚硝酸盐来源和数量的直接链接" title="主要的亚硝酸盐来源和数量的直接链接" translate="no">​</a></h2>
+<p><strong>蔬菜是主要的硝酸盐来源</strong>，多数膳食 nitrate 来自蔬菜（高达 ~80%），特别是叶菜类如菠菜、莴苣等。</p>
+<p><strong>水源和加工肉品、食品是次要来源</strong>，在加工肉类中，nitrite 是食品添加剂，因此存在明确添加上限（国标/各国法规规定）。</p>
+<p>一项希腊全国营养调查显示加工肉中的 nitrite 摄入量中位数约在 0.003–0.02 mg/kg bw/day，占 ADI 的一部分。</p>
+<p>中国对亚硝酸盐的添加有严格规定，主要用于肉制品护色防腐，最大允许残留量通常在&nbsp;<strong>30-70mg/kg</strong>（万分之三至万分之七）之间，酱腌菜限量是&nbsp;<strong>20mg/kg</strong>，并且禁止餐饮业直接使用，只能用复合添加剂，目标是&nbsp;<strong>用少量亚硝酸盐（小风险）来防范肉毒杆菌（大风险）</strong>。</p>
+<p>所以你（60KG）每日摄入超过 50g 加工肉类或者 250g 酱菜就会超过亚硝酸盐 ADI。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="熟菜剩菜中亚硝酸盐的变化规律">熟菜（剩菜）中亚硝酸盐的变化规律<a href="https://xigou.github.io/zh-CN/blog/2025/12/16/Leftovers-a-Matter-of-Stance-or-Science#%E7%86%9F%E8%8F%9C%E5%89%A9%E8%8F%9C%E4%B8%AD%E4%BA%9A%E7%A1%9D%E9%85%B8%E7%9B%90%E7%9A%84%E5%8F%98%E5%8C%96%E8%A7%84%E5%BE%8B" class="hash-link" aria-label="熟菜（剩菜）中亚硝酸盐的变化规律的直接链接" title="熟菜（剩菜）中亚硝酸盐的变化规律的直接链接" translate="no">​</a></h2>
+<p>Ref 1: <a href="https://www.cfs.gov.hk/english/programme/programme_rafs/files/programme_rafs_fc_01_46_1.pdf?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="">Changes in Nitrate and Nitrite Levels of Cooked Vegetables during Storage</a>
+香港食品安全中心实测数据</p>
+<p>Table 1. Nitrate contents of vegetables and soup before and immediately after cooking
+（引用自 Ref 1）</p>
+<table><thead><tr><th>Level of nitrate (mg/kg)</th><th>Amaranth</th><th>Pak-choi</th><th>Flowering white cabbage</th><th>Chinese lettuce</th><th style="text-align:left">Zucchini</th><th>Soup</th></tr></thead><tbody><tr><td>Before cooking</td><td>5700</td><td>5000</td><td>2400</td><td>1100</td><td style="text-align:left">650</td><td>NA</td></tr><tr><td>After boiling</td><td>3000</td><td>3000</td><td>2000</td><td>760</td><td style="text-align:left">390</td><td>955</td></tr><tr><td>After stir-frying</td><td>3700</td><td>3800</td><td>2350</td><td>1300</td><td style="text-align:left">680</td><td>NA</td></tr><tr><td>表中可以看到，常见蔬菜的硝酸盐含量是很高的，吃 200g 生菜或者 50g 苋菜就会超过 ADI，但是烹饪后就会降低 40%，因为部分流失了（比如溶解到汤里）。考虑到大家一般不会吃很多蔬菜，所以在食物内主要还是硝酸盐的时候，这个剂量总体是安全的。</td><td></td><td></td><td></td><td></td><td style="text-align:left"></td><td></td></tr></tbody></table>
+<p>但是煮熟后，硝酸盐与细菌作用被转化为 ADI 低 50 倍的亚硝酸盐，就变得容易超标了。</p>
+<p>根据 Ref 1 23 页开始的实验数据图表， 给出了不同条件下 cooked vegetables (熟菜) 的 nitrate 和 nitrite 随时间的变化数据，有以下<strong>关键结论</strong>：</p>
+<ul>
+<li class="">在 室温（约 20–25°C） 保存时，nitrite 自约 12–20 小时后开始出现并逐渐升高（nitrate 同时下降）。</li>
+<li class="">冰箱冷藏（0–4°C） 下存放，即使存放 72 小时，大多数蔬菜中 nitrite 仍然很低或未检测到。</li>
+<li class="">冷冻下基本不发生 nitrite 形成。</li>
+</ul>
+<p>所以最后给出的公众建议是：</p>
+<ul>
+<li class="">剩菜可以吃，但是要尽快放进冰箱</li>
+<li class="">冷藏的剩菜最多可以存 72 小时，亚硝酸盐没有任何明显升高</li>
+<li class="">不能反复热菜，因为会多次等待冷却，进入细菌活跃温度区间</li>
+</ul>
+<p>所以在看完了这么多资料后，我可以明确地讲，"剩菜不能吃" 只不过是一种想要远离泥腿子符号的精神出逃，也可能是有一些知识但是不多的城市青年相信并且热衷于传播与的"高级谣言", 但是在一个通往众多方向的路口，城市青年选择了追随这一个谣言，也是这个群体潜意识的体现。</p>
+<p>我们这一代人，有人从农村走出来到了大城市，有人从大院儿走出来到了国外，那些关于贫穷和苦难的记忆时刻折磨着我们，所以我们需要不断寻找并且总结各种值得否定的点进行批倒批臭，例如对吸烟、敬酒、做辛苦的体力劳动、吃剩饭、舍不得消费等行为进行批判的话题总是一次次进入公众视野。这对个人来讲是一种"弑父"的精神倾向，而这些行为又部分地迎合了消费主义的需要，所以里应外合完成了病毒式传播。</p>
+<p>我们的世界现在过于激进与莽撞，也许我们应该怀念保守主义的温情，在我们还不知道亚硝酸盐的时候，我们的祖先日出而作日落而息，依靠 “ 邻人吃了剩菜，有的人死了，有的人没死” 的生活经验得出的“放一两天剩菜可以吃，三天后喂狗”的结论，要比掺杂了各种立场之争的“剩菜不能吃”的结论要更加正确，前者是为了活下来享受田园牧歌的美好生活，而后者更多是为了铲除异己、划分人群、制造争端。</p>]]></content>
+        <author>
+            <name>XiGou</name>
+            <uri>https://github.com/XiGou</uri>
+        </author>
+        <category label="writing" term="writing"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[博尔赫斯的永恒与无限]]></title>
         <id>https://xigou.github.io/zh-CN/blog/2025/10/26/Borges-Infinity-Permanent</id>
@@ -590,52 +652,6 @@
 <p>“是因为我们虔诚地祈求神明？”</p>
 <p>“并非如此， 是因为我们这里没有600万人可供屠杀，而我们这些在土地里挖马铃薯求生的农民，也没有掌握毒气淋浴室、马克沁机枪这样的高效率杀人技术；更重要的是我们这起起落落的山地，找不出一片平地修建足以容纳数万人的集中营！”</p>
 <p>我若有所思地点了点头：“这么说来，我们离大屠杀是东风具备，只差万事了？我想这还是要感谢上帝对于这个村庄进行的如此周密的安排，阻止了一场可能发生的大屠杀。”</p>]]></content>
-        <author>
-            <name>XiGou</name>
-            <uri>https://github.com/XiGou</uri>
-        </author>
-        <category label="writing" term="writing"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[江南烟花奇案]]></title>
-        <id>https://xigou.github.io/zh-CN/blog/2025/01/02/jiangnan-firework-case</id>
-        <link href="https://xigou.github.io/zh-CN/blog/2025/01/02/jiangnan-firework-case"/>
-        <updated>2025-01-02T23:14:31.000Z</updated>
-        <summary type="html"><![CDATA[本文是 AI 创作，与本人无任何关系。]]></summary>
-        <content type="html"><![CDATA[<blockquote>
-<p><strong>本文是 AI 创作，与本人无任何关系。</strong></p>
-</blockquote>
-<p>故事的起始，若非虚构，便是遗忘的产物。它发生在一个古老而遥远的国度，其名字早已被时光的长河抹去，仿佛从未存在。但我依稀记得，有一条蜿蜒如命运的河流贯穿其间，将这片土地割裂成两种对立而又和谐的存在。在河的南岸，有一片被称为“江南”的地域，那里的一切如梦般朦胧，似乎仅仅是记忆的倒影。</p>
-<p>当时的人们，仿佛被某种无形的宿命驱使，过着一成不变的生活。他们总是在一年将尽时，像被解开的钟摆，涌上街头，以一种既茫然又执着的姿态在狭窄的街巷中游走。没有庆祝的仪式，也没有哀悼的语言，只有散乱的脚步声，仿佛在追逐某种不可见的真理，或逃避某种不可逃的虚无。他们的举动无序，却透着一种奇特的统一，如同河流两岸相对而立的景致：在混沌之中，也孕育着某种深刻的秩序。</p>
-<p>那一天，恰逢一年的尽头，也是一个寻常的星期二。没有安息日的束缚，人们如同脱缰的影子，汇聚在一条喧嚣的街道上，等待着教堂的钟声敲响第十二下。他们抬起头，脖颈拉得很长，仿佛这样便能接近天空，更接近他们心中的疑问：月亮，是否真的会如传言般爆炸？</p>
-<p>街上的喧闹带着某种奇异的紧张感，像是对未知的敬畏与期待交织而成的低语。仰望的人群并不问“如果”，也不问“为何”，只是一种沉默的信念在驱使着他们，仿佛时间的尽头与月亮的命运有着某种神秘的共振。</p>
-<p>这个故事，我是从一个衣衫褴褛的老头那里听来的。他的脸上刻满了岁月的纹路，仿佛某种失落的地图。他用一种既慵懒又神秘的语气讲述这一切，而当他说到人们等待月亮爆炸时，我终于忍不住问他：“月亮为什么会爆炸？”</p>
-<p>他沉默了片刻，那沉默比他的回答更具重量。最终，他缓缓地开口，向我解释起那段久远的往事。原来，江南地区当时正由一位罗马将军统治，乃是败于战场，溃逃至此的亡命之徒。那年的冬末，关于这位将军的命运，坊间流传着一种奇怪的预言。人们说，他染上了重病，渐渐失去了往日的力量，而最年长的占星师，在一个寒冷的夜晚，宣布了一个令人不安的预言：如果这位将军死去，月亮便会爆炸。</p>
-<p>那位占星师的话，宛如一把无形的钥匙，打开了城市的恐惧与幻想。他曾说，月亮将会在天际绽放，像一朵巨大的大马士革玫瑰，在寂静的星空中盛开，鲜艳的光芒将填满所有的黑暗与空虚。那时的人们，似乎早已不再关心将军生死的真实与否，他们只对这一场异象抱有一种近乎宗教般的信仰：月亮，那个从未失去光辉的圆盘，终将因为某种莫名的宿命，在他们的眼中发生改变。</p>
-<p>教堂的钟声如期而至，十二下清脆的响声回荡在空气中，然而天空并没有发生什么预示着灾难的异象。就在这时，突然人群中的一位青年点燃了烟花，璀璨的火光在寒冷的夜空中绽放开来，瞬间点燃了街道上的躁动。人群的情绪如潮水般起伏，有人兴奋地大叫，仿佛月亮的爆炸终于到来；也有人崩溃地哭泣，眼中满是无法言说的恐惧与失落。</p>
-<p>就在这片混乱中，宪兵迅速围了过来，把那个年轻人带走了。青年被推上囚车时，仍显得不以为意，脸上挂着诡异的笑容，朝着四周的人群做着鬼脸，模仿着某个城市小丑的姿态——尽管那个时代并没有“哥谭小丑”这个概念，但老头显然喜欢用这样的修辞，将一种滑稽与讽刺的意味注入到那青年面容上的不合时宜的表情中。</p>
-<p>当将军听闻此事勃然大怒。他立刻下令三日之内将对这名青年执行绞刑。根据城门口张贴的通告，这个青年被指控为巫师，他通过烟花制造了月亮爆炸的假象，意图以此诅咒将军的生命，扰乱这片城市的秩序。</p>
-<p>这则通告迅速穿越了城中每个角落，像是一种无形的烙印，刻在了每个人的心头。月亮的爆炸，竟然成为了这场惩罚与权力博弈的象征。</p>
-<p>行刑的那一天终于来临。街道被人群挤得水泄不通，场面与三天前那个夜晚的骚动何其相似，仿佛命运的轮回再次上演。行刑官庄严地宣读了将军的诏书，而那诏书所载的是一首古老的诗歌，来自遥远的时代，凝聚了某种宿命的重量：</p>
-<hr>
-<p>丢了一只马蹄铁，<br>
-<!-- -->折了一匹战马；<br>
-<!-- -->折了一匹战马，<br>
-<!-- -->损了一位国王；<br>
-<!-- -->损了一位国王，<br>
-<!-- -->输了一场战争；<br>
-<!-- -->输了一场战争，<br>
-<!-- -->亡了一个帝国。</p>
-<hr>
-<p>“为什么那马蹄铁丢失了？” 他顿了顿，然后缓缓回答：“正是因为烟花在空中爆炸的声响，使得马儿受惊狂奔，脱落了它的蹄铁。”</p>
-<p>于是，这个青年，被判处了应有的惩罚——绞刑。因为他不是一个人，而是一个帝国命运中的一个节点，一个决定其未来的象征。</p>
-<p>后来，这座城市的人们变得异常老实，他们再也不敢将街道堵得水泄不通，烟花也不再绽放，马匹再不在街头驰骋，跳舞、唱歌成了禁忌。虽然如此，也有一些好消息，他们变得更为谨慎，连随地吐痰和大小便都不敢了。人们像原子一样，仅在一个狭小的空间里微弱地振动，唯有完成吃饭、排泄、交配这些最基本的生理需求。</p>
-<p>渐渐地，连将军也感到了乏味。他发现这个地方的人们已无任何生气，生活充满了空洞和无聊。于是，他带着大军离开了这座沉寂的城市，前往加沙，因为那里依旧充满活力与希望。</p>
-<p>听完这个故事，我手中的烟已燃尽，我猛吸了两口烟屁股，思索良久。这个邋里邋遢的老头，以为通过讲这样包藏祸心的故事便能糊弄我，或许他还太年轻了，太天真了。</p>
-<p>于是，我毫不犹豫地叫来宪兵，将他抓走。</p>
-<p>忘了说，我的故乡其实并非布宜诺斯艾利斯，那不过是我这种擅长讲故事的人的一招小把戏罢了。我来自一个方圆十里全是沙漠的地方，那儿的人脸上永远笼罩着一层阴郁的阴影。我们从小就在无尽的荒凉中长大，天生就嫉妒那些能在狂欢中展露笑颜的人，嫉妒那些在故事讲完后得意洋洋、沾沾自喜的人，因为他们拥有的光芒，恰恰是我们无法触及的阴影。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ref">Ref<a href="https://xigou.github.io/zh-CN/blog/2025/01/02/jiangnan-firework-case#ref" class="hash-link" aria-label="Ref的直接链接" title="Ref的直接链接" translate="no">​</a></h2>
-<p><a href="https://www.zaobao.com.sg/realtime/china/story20250112-5721142" target="_blank" rel="noopener noreferrer" class="">杭州元旦放气球期间射烟花 男子或处三年以上监禁 | 联合早报</a></p>]]></content>
         <author>
             <name>XiGou</name>
             <uri>https://github.com/XiGou</uri>
