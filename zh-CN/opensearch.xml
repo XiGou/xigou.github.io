@@ -4,7 +4,7 @@
   <ShortName>Quite Depth</ShortName>
   <Description>Search Quite Depth</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://xigou.github.io/zh-CN/https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f605.png</Image>
+  <Image width="16" height="16" type="image/x-icon">https://xigou.github.io/zh-CN/img/favicon.png</Image>
   <Url type="text/html" method="get" template="https://xigou.github.io/zh-CN/search?q={searchTerms}"/>
   <Url type="application/opensearchdescription+xml" rel="self" template="https://xigou.github.io/zh-CN/opensearch.xml" />
   <moz:SearchForm>https://xigou.github.io/zh-CN/</moz:SearchForm>
