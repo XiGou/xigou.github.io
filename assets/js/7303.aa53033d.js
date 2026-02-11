@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpersonal_blog=self.webpackChunkpersonal_blog||[]).push([[7303],{7303:(e,s,a)=>{a.d(s,{createInfoServices:()=>l.v});var l=a(68525);a(59964)}}]);
