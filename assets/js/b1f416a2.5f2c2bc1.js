@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpersonal_blog=self.webpackChunkpersonal_blog||[]).push([["3455"],{76431:function(e){e.exports=JSON.parse('{"tags":[{"label":"clippings","permalink":"/knowledges/tags/clippings","count":2},{"label":"git","permalink":"/knowledges/tags/git","count":2}]}')}}]);
