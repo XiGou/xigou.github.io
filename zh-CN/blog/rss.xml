@@ -4,11 +4,47 @@
         <title>Jorge's Bolg</title>
         <link>https://xigou.github.io/zh-CN/blog</link>
         <description>Jorge's Bolg</description>
-        <lastBuildDate>Wed, 11 Feb 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 10 Jun 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh-CN</language>
         <copyright>Jorge</copyright>
+        <item>
+            <title><![CDATA[置身事内：分税制塑造的赛里斯产业奇迹]]></title>
+            <link>https://xigou.github.io/zh-CN/blog/2026/06/10/zhi-shen-shi-nei-Embedded-Government</link>
+            <guid>https://xigou.github.io/zh-CN/blog/2026/06/10/zhi-shen-shi-nei-Embedded-Government</guid>
+            <pubDate>Wed, 10 Jun 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[兰小欢《置身事内》读书笔记]]></description>
+            <content:encoded><![CDATA[<p><a href="https://book.douban.com/subject/35546622/" target="_blank" rel="noopener noreferrer" class="">置身事内 (豆瓣)</a></p>
+<p>读完这本书，最深刻的体会是：在中国讨论经济，永远无法脱离政府。而要理解中国政府的运作逻辑，1994年的“分税制改革”就是一个压舱石级别的核心事件。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="分税制理解中国经济奇迹与阵痛的底层密码">分税制：理解中国经济奇迹与阵痛的底层密码<a href="https://xigou.github.io/zh-CN/blog/2026/06/10/zhi-shen-shi-nei-Embedded-Government#%E5%88%86%E7%A8%8E%E5%88%B6%E7%90%86%E8%A7%A3%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E%E5%A5%87%E8%BF%B9%E4%B8%8E%E9%98%B5%E7%97%9B%E7%9A%84%E5%BA%95%E5%B1%82%E5%AF%86%E7%A0%81" class="hash-link" aria-label="分税制：理解中国经济奇迹与阵痛的底层密码的直接链接" title="分税制：理解中国经济奇迹与阵�痛的底层密码的直接链接" translate="no">​</a></h4>
+<p>所谓“分税制”，是相对于改革前的“财政大包干（合税制）”而言的。在此之前，中国的税务多由各级地方政府征收，钱收上来后，再通过分成或定额上缴的方式转给中央。这种旧制度在早期经济总量小、税种单一时非常高效。由于遵循“多劳多得”的分配逻辑，极大地刺激了地方发展经济的积极性。但其弊端也很快显现：因为收税权力完全在地方，中央在财政上形同被“屏蔽”。地方政府为了少上缴，倾向于把账面税收数据做低，甚至把体制内税款转化为不受中央监管的“预算外资金”。久而久之，中央财政陷入入不敷出的窘境，各个省份隐隐呈现出“经济诸侯”的割据状态。</p>
+<p>为了扭转“弱中央”的局面，1994年的分税制改革应运而生。这场改革的核心是<strong>重新划分各个税种的征收权与留成比例</strong>。</p>
+<ul>
+<li class="">
+<p><strong>中央税</strong>：通常指维护国家主权、保障全国统一市场或调节宏观经济的税种，如关税、车辆购置税等。</p>
+</li>
+<li class="">
+<p><strong>地方税</strong>：与地方经济环境密切相关的税种，如土地增值税、城镇土地使用税、房产税等。</p>
+</li>
+<li class="">
+<p><strong>共享税</strong>：如国内增值税和个人所得税，由中央与地方按固定比例分成（目前增值税一般是中央与地方各占50%）。</p>
+</li>
+</ul>
+<p>看懂了这张财政收支表，我们生活中的许多“怪现象”就有了清晰的解释。</p>
+<p>最典型的便是高歌猛进的房地产市场。由于土地增值税、土地出让金等绝大部分与土地相关的收入均归地方，地方政府拥有了野蛮发展房地产的绝对动力。为了绕开法律对直接融资的限制、放大财政杠杆，地方政府各显神通，创新性地发展出了城投公司（地方政府融资平台）和政府引导基金等金融技术，一手打造了“土地财政”的黄金时代。</p>
+<p><strong>这种税制逻辑，还深刻地塑造了中国的商品质量与行政监管生态。</strong></p>
+<p>比如产品召回制度。我们经常听说某款汽车因为零部件隐患被国家质监局强制召回，却极少听说手机、剃须刀等数码家电发生大规模官方召回。这背后的原因固然有汽车涉及重大公共安全的特殊性，但从财政角度看，汽车产业从生产、销售到购置，链条极长，且涉及高额的车辆购置税与消费税（其中购置税为纯中央税）。对于这种能产生全国性巨额宏观税收的支柱行业，中央自然会集中收拢监管权，由国家级垂直部门进行统一、严厉的质量管控。</p>
+<p>再看烟酒这类特殊商品。白酒本质上是酒精与水的溶液，生产成本极易核算，在农村家庭酒坊里，几十元就能买到纯正的粮食酒。但在资本市场上，白酒企业却能炒出天价，公然违反广告法吹嘘“天价原浆、百年酒窖、少女踩曲”等神话却少受反垄断或虚假广告的致命打击。同样，深圳特区虽规定在公共场合吸烟最高可罚款500元，但在现实中几乎从未严格执行过。这背后的底层逻辑在于，烟酒不仅是中央消费税的超级来源，更是地方政府的“财神爷”——烟草贡献的企业所得税、地方留成增值税以及烟叶税，直接捆绑了地方的真金白银。为了保护这台庞大的“利税机器”，无论是中央还是地方，在监管层面上都存在一种默契的“高举轻放”。</p>
+<p>当然，这种“政府深度干预经济”的模式，在产业升级上也留下了极具英雄主义色彩的篇章。书中举了两个经典的例子。</p>
+<p>第一个是<strong>京东方（BOE）</strong>。在早期缺乏社会资本敢介入半导体显示行业时，地方政府通过城投平台砸入巨额财政资金，甚至冒着财政破产的风险为其作担保，吸引了大量社会资本跟进。最终，这种“地方政府当投资人”的模式彻底打破了日韩在液晶面板领域的垄断，而老百姓也因此享受到了廉价的电视、电脑和手机屏幕。</p>
+<p>第二个是<strong>光伏产业</strong>。早期中国光伏技术落后、发电成本畸高，在自由市场中根本无法存活。政府为了扶持新能源，推出了“标杆电价补贴制度”：电网按常规火电价格买电，其中的高额差价由国家财政进行补贴。国家的大方向很明确——用初期的重金补贴砸出一个产业链，再通过逐年降低补贴标准（退坡），倒逼企业搞技术创新、卷出低成本。虽然在套利空间巨大的初期，出现过在乡村沃野良田上铺满太阳能板的奇特乱象，但这套“大力出奇迹”的组合拳最终在2021年实现了光伏的“平价上网”（即不靠补贴也能盈利），那些不具备经济效益的套补项目自然被市场清洗和闲置。</p>
+<p>这两个励志且热血的案例，正是经济学中关于“政府干预经济是有利还是有害”这一百年辩题的中国式答卷。兰小欢教授在书中的立场总体是乐观且温和的。作为体制内的学者，他客观地肯定了这套体制在特定历史阶段爆发出的惊人效率。</p>
+<p>甚至对于一些灰色现象，作者也提供了更务实的冷思考。比如在特定历史时期，某些官员的“权力寻租”或不合规行为，客观上伴随着巨大的政治野心和政绩冲动，反而极大地拉动了地方基建和经济的周转。相比之下，如果官员为了绝对规避风险而选择“躺平”，让庞大的公共资源在账面上吃灰，对国家而言反而是更大的隐失。政策的制定如果不能充分兼容各方利益（包括地方官员的激励机制），再美好的宏大叙事也无法落地。</p>
+<p>普通大众在谈论政治和经济时，往往容易陷入“民主与独裁”、“正义与邪恶”等宏大而抽象的意识形态对立。而这本书真正的价值，在于提供了一个“利益博弈与政策细节”的微观视角。就以大家长期嘲讽的朝鲜、古巴、越南、阿富汗为例，没有深入了解之前你会武断地下结论，但是如果把这些文科的经济学家全都送到这些国家，研究个三年五载，你们肯定能看到相当有趣的政治和经济神话。</p>
+<p>总而言之，不论你是否完全赞同作者的乐观看法，读懂了这套游戏规则，你才有可能真正看懂中国。</p>]]></content:encoded>
+            <category>Reading</category>
+        </item>
         <item>
             <title><![CDATA[沙之书 · The Book of Sand]]></title>
             <link>https://xigou.github.io/zh-CN/blog/2026/02/11/the-book-of-sand</link>
@@ -19,7 +55,7 @@
 <p>之前在 GitHub 上看到有人用 vibe coding 做了博尔赫斯的《阿莱夫》：是一个可交互的网页，页面上有无穷无尽、混乱奔涌的文字，可以通过鼠标操作让混乱变为有序。
 当时觉得挺有意思——原来 vibe coding 不只是写业务代码，也能把文学里的有趣的东西做成可触摸的界面。</p>
 <p>于是就想着用自己最喜欢的《沙之书》做一个类似的实现。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="沙之书">沙之书<a href="https://xigou.github.io/zh-CN/blog/2026/02/11/the-book-of-sand#%E6%B2%99%E4%B9%8B%E4%B9%A6" class="hash-link" aria-label="沙之书的直接链接" title="沙之书的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="沙之书">沙之书<a href="https://xigou.github.io/zh-CN/blog/2026/02/11/the-book-of-sand#%E6%B2%99%E4%B9%8B%E4%B9%A6" class="hash-link" aria-label="沙之��书的直接链接" title="沙之书的直接链接" translate="no">​</a></h2>
 <p>一本无始无终的书。没有第一页，也没有最后一页；页码巨大而混乱，像沙一样数不清。书里的插画，翻过去就再也找不到——「仔细瞧瞧。以后再也看不到了。」</p>
 <p>博尔赫斯把无限压进一本实体书：人渴望穷尽它，却注定被它淹没。最终叙述者把它藏进图书馆的某架，不再打开。沙之书的核心，是<strong>无限与人之有限</strong>的对照：我们面对的是无法被「读完」的世界，而阅读与选择本身，就是与这种无限共处的方式。</p>
 <p>这个项目试图用代码重现这种体验：你可以一直翻页，但永远翻不到头。页码是随机的，内容也是随机的，但每次翻页都会生成新的内容。</p>
@@ -128,7 +164,7 @@
 <p>这正是一种新型的“精神神权”。润之当年劝导农民“求神不如求己”，是为了让劳动者掌握命运。而今，川鼠们四人围坐，将人生的胜负悉数寄托于那1.5公分厚的塑料块。他们在牌桌上求的是“手气”，这与当年在雨神庙求雨的愚民有何本质区别？<strong>这种对手气（天命）的顺从，是对“人定胜天”革命精神的系统性背叛。</strong></p>
 <p>在成都的茶馆里，在重庆的防空洞内，川鼠们进行的不是阶级动员，而是对生命力的内耗。润之要求“组织起来”是为了向土豪劣绅夺权，川鼠们的“约个三缺一”则是为了向虚无缴械。当先辈们在农会里讨论如何打破族权、分配土地时，川鼠们在讨论如何“自摸加底”。</p>
 <p>这种“方城文化”不仅不是所谓的省粹，反而是资本主义消费社会分泌出来的一种<strong>仪式性麻醉</strong>。它成功地将原本可能爆发的社会焦虑，转化为了指尖的机械撞击。润之在湘乡曾烧毁整担麻雀牌，定下“弊绝风清”的铁律，正是看穿了这种“小市民毒药”对革命意志的阉割作用。而今，川鼠们在撞击声中消解了最后一点阶级觉悟，在他们眼中，筹码的流动高于历史的流动，这正是对《报告》精神最阴险、最彻底的消解。</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="三-意志的火化革命不是请�客吃饭的歪解与物化">三、 意志的火化：“革命不是请客吃饭”的歪解与物化<a href="https://xigou.github.io/zh-CN/blog/2026/01/20/mao-and-mouse-from-sichuan-betray#%E4%B8%89-%E6%84%8F%E5%BF%97%E7%9A%84%E7%81%AB%E5%8C%96%E9%9D%A9%E5%91%BD%E4%B8%8D%E6%98%AF%E8%AF%B7%E5%AE%A2%E5%90%83%E9%A5%AD%E7%9A%84%E6%AD%AA%E8%A7%A3%E4%B8%8E%E7%89%A9%E5%8C%96" class="hash-link" aria-label="三、 意志的火化：“革命不是请客吃饭”的歪解与物化的直接链接" title="三、 意志的火化：“革命不是请客吃饭”的歪解与物化的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="三-意志的火化革命不是请客吃饭的歪解与物化">三、 意志的火化：“革命不是请客吃饭”的歪解与物化<a href="https://xigou.github.io/zh-CN/blog/2026/01/20/mao-and-mouse-from-sichuan-betray#%E4%B8%89-%E6%84%8F%E5%BF%97%E7%9A%84%E7%81%AB%E5%8C%96%E9%9D%A9%E5%91%BD%E4%B8%8D%E6%98%AF%E8%AF%B7%E5%AE%A2%E5%90%83%E9%A5%AD%E7%9A%84%E6%AD%AA%E8%A7%A3%E4%B8%8E%E7%89%A9%E5%8C%96" class="hash-link" aria-label="三、 意志的火化：“革命不是请客吃饭”的歪解与物化的直接链接" title="三、 意志的火化：“革命不是请客吃饭”的歪解与物化的直接链接" translate="no">​</a></h3>
 <p>润之教导我们：“革命不是请客吃饭。”这是在告诫革命者要时刻警惕温情脉脉的小资产阶级幻觉，要敢于直面鲜血与烈火。然而，现代川鼠却极其阴险地将这一政治嘱托解构成了“不革命了就偏要请客吃饭”。</p>
 <p>这是一种极度卑劣的“生理性避难”。川鼠们沉溺于重油重盐的感官麻痹，将所有的阶级愤怒转化为对红油辣度的生理忍受。这不仅是口腹之欲的放纵，更是一种<strong>感官上的阶级投降</strong>：当他们在排队三小时只为一口所谓“网红牛油”时，他们实际上是向餐饮资本交出了时间的主权；当他们在辛辣中满头大汗、涕泗横流时，这种生理性的痛苦成功地替代了他们对现实压迫的政治感知。<strong>他们用舌尖上的灼烧感，置换了脊梁上的屈辱感。</strong></p>
 <p>更深层的背叛在于对《报告》中“经济自卫”逻辑的彻底践踏。润之记载，贫农为了反抗城市商人的剥削，普遍禁止“蛋糕席”，限制猪、鸡、鸭的喂养以节约谷米。这是一种在极端贫困下爆发出的<strong>革命节欲主义</strong>。</p>
@@ -143,7 +179,7 @@
 <p>这种“耙耳朵”文化，绝非真正的平权，而是小市民阶层在物质匮乏与精神空虚下的<strong>政治性阉割</strong>。它构建了一个微小的、温情的、却极其卑下的“家庭避风港”。川鼠们通过向家庭内部权力让渡，巧妙地规避了对外部宏大权力的抗争义务。</p>
 <p>这是一种极度虚伪的“跪舔”。他们将所有的斗争精神转化为买菜、洗碗与家长里短，从而理直气壮地在社会结构性压迫面前保持沉默。在这种名为“宠妻”的软弱互保中，女性被重新锁死在一种“升级版”的家务管理权中，而男性则完成了精神上的自宫。这种以温情为名的精神阉割，让川鼠族群彻底丧失了作为阶级主体去冲决网罗的刚劲。</p>
 <hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="伟大的远景与猥琐的现状唯有诸禁能救赎">伟大的远景与猥琐的现状：唯有“诸禁”能救赎<a href="https://xigou.github.io/zh-CN/blog/2026/01/20/mao-and-mouse-from-sichuan-betray#%E4%BC%9F%E5%A4%A7%E7%9A%84%E8%BF%9C%E6%99%AF%E4%B8%8E%E7%8C%A5%E7%90%90%E7%9A%84%E7%8E%B0%E7%8A%B6%E5%94%AF%E6%9C%89%E8%AF%B8%E7%A6%81%E8%83%BD%E6%95%91%E8%B5%8E" class="hash-link" aria-label="伟大的远景与猥琐的现状：唯有“诸禁”能救赎的直接链接" title="伟大的远景与猥琐的现状�：唯有“诸禁”能救赎的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="伟大的远景与猥琐的现状唯有诸禁能救赎">伟大的远景与猥琐的现状：唯有“诸禁”能救赎<a href="https://xigou.github.io/zh-CN/blog/2026/01/20/mao-and-mouse-from-sichuan-betray#%E4%BC%9F%E5%A4%A7%E7%9A%84%E8%BF%9C%E6%99%AF%E4%B8%8E%E7%8C%A5%E7%90%90%E7%9A%84%E7%8E%B0%E7%8A%B6%E5%94%AF%E6%9C%89%E8%AF%B8%E7%A6%81%E8%83%BD%E6%95%91%E8%B5%8E" class="hash-link" aria-label="伟大的远景与猥琐的现状：唯有“诸禁”能救赎的直接链接" title="伟大的远景与猥琐的现状：唯有“诸禁”能救赎的直接链接" translate="no">​</a></h3>
 <p>润之在1927年预言，数万万农民将如暴风骤雨般起来，无论什么力量都压抑不住。那是何等的伟力！</p>
 <p>在《湖南农民运动考察报告》的第九章，润之以极大的热忱描绘了农民如何通过“诸禁”重塑社会脊梁。这种自发的、带有阶级自卫性质的节欲，是革命力量的源头。</p>
 <p>润之的“诸禁”，是为了让中国农民从“鼠”进化为“人”，从一盘散沙进化为钢铁洪流。而川鼠的现状，则是从“人”退化回“鼠”，从严谨的斗争者退化为只知多巴胺分泌的感官动物。这种背叛是全方位的、报复性的、带有某种恶意的沉沦。当川鼠在茶馆里搓着麻将、算着牌点时，他们已经彻底割席了那份1927年的钢铁遗嘱。他们用一种名为“巴适”的毒药，自我阉割了冲决网罗的雄心。</p>
@@ -276,7 +312,7 @@ ADI 为： 0–0.07 mg nitrite ion/kg 体重/日。这个值是基于对甲血�
 <p>一项希腊全国营养调查显示加工肉中的 nitrite 摄入量中位数约在 0.003–0.02 mg/kg bw/day，占 ADI 的一部分。</p>
 <p>中国对亚硝酸盐的添加有严格规定，主要用于肉制品护色防腐，最大允许残留量通常在&nbsp;<strong>30-70mg/kg</strong>（万分之三至万分之七）之间，酱腌菜限量是&nbsp;<strong>20mg/kg</strong>，并且禁止餐饮业直接使用，只能用复合添加剂，目标是&nbsp;<strong>用少量亚硝酸盐（小风险）来防范肉毒杆菌（大风险）</strong>。</p>
 <p>所以你（60KG）每日摄入超过 50g 加工肉类或者 250g 酱菜就会超过亚硝酸盐 ADI。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="熟菜剩菜中亚硝酸盐的变化规律">熟菜（剩菜）中亚硝酸盐的变化规律<a href="https://xigou.github.io/zh-CN/blog/2025/12/16/Leftovers-a-Matter-of-Stance-or-Science#%E7%86%9F%E8%8F%9C%E5%89%A9%E8%8F%9C%E4%B8%AD%E4%BA%9A%E7%A1%9D%E9%85%B8%E7%9B%90%E7%9A%84%E5%8F%98%E5%8C%96%E8%A7%84%E5%BE%8B" class="hash-link" aria-label="熟菜（剩菜）中亚硝酸盐的变化规律的直接链接" title="熟菜（剩菜）中亚硝酸盐的变化规律的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="熟菜剩菜中亚硝酸盐的变化规律">熟菜（剩菜）中亚硝酸盐的变化规律<a href="https://xigou.github.io/zh-CN/blog/2025/12/16/Leftovers-a-Matter-of-Stance-or-Science#%E7%86%9F%E8%8F%9C%E5%89%A9%E8%8F%9C%E4%B8%AD%E4%BA%9A%E7%A1%9D%E9%85%B8%E7%9B%90%E7%9A%84%E5%8F%98%E5%8C%96%E8%A7%84%E5%BE%8B" class="hash-link" aria-label="熟菜（剩菜）中亚硝酸�盐的变化规律的直接链接" title="熟菜（剩菜）中亚硝酸盐的变化规律的直接链接" translate="no">​</a></h2>
 <p>Ref 1: <a href="https://www.cfs.gov.hk/english/programme/programme_rafs/files/programme_rafs_fc_01_46_1.pdf?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="">Changes in Nitrate and Nitrite Levels of Cooked Vegetables during Storage</a>
 香港食品安全中心实测数据</p>
 <p>Table 1. Nitrate contents of vegetables and soup before and immediately after cooking
@@ -742,18 +778,6 @@ ADI 为： 0–0.07 mg nitrite ion/kg 体重/日。这个值是基于对甲血�
             <category>github</category>
             <category>actions</category>
             <category>obsidian</category>
-        </item>
-        <item>
-            <title><![CDATA[2025 清明凤凰经重装徒步]]></title>
-            <link>https://xigou.github.io/zh-CN/blog/2025/04/10/Lantau-Trail</link>
-            <guid>https://xigou.github.io/zh-CN/blog/2025/04/10/Lantau-Trail</guid>
-            <pubDate>Thu, 10 Apr 2025 23:14:31 GMT</pubDate>
-            <description><![CDATA[旅行图册，改用 notion 发布 （白嫖图片存储）]]></description>
-            <content:encoded><![CDATA[<p>旅行图册，改用 notion 发布 （白嫖图片存储）</p>
-<iframe src="https://xigou.notion.site/ebd/1d14b6444f1b8013976ede4e4d5b4cfb" width="100%" height="600" frameborder="0"></iframe>
-<p><a href="https://www.youtube.com/watch?v=LVkg4AgzCkk" target="_blank" rel="noopener noreferrer" class="">香港凤凰径重装徒步 Day1 - YouTube</a></p>
-<p><a href="https://www.youtube.com/watch?v=LoY-nqB5DiU" target="_blank" rel="noopener noreferrer" class="">香港凤凰径重装徒步 Day2 - YouTube</a></p>
-<p><a href="https://www.youtube.com/watch?v=DfXbHu-e78o" target="_blank" rel="noopener noreferrer" class="">香港凤凰径重装徒步 Day3 - YouTube</a></p>]]></content:encoded>
         </item>
     </channel>
 </rss>
