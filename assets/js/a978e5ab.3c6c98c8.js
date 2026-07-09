@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpersonal_blog=self.webpackChunkpersonal_blog||[]).push([["1372"],{41231(e){e.exports=JSON.parse('{"metadata":{"permalink":"/blog/page/6","page":6,"postsPerPage":10,"totalPages":6,"totalCount":52,"previousPage":"/blog/page/5","blogDescription":"Pursuing Love And Freedom All My Life!","blogTitle":"Jorge\'s blog!"}}')}}]);
