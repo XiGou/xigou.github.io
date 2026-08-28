@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xigou.github.io/zh-CN/blog</id>
-    <title>Jorge's Bolg</title>
+    <title>Quite Depth journal</title>
     <updated>2026-07-08T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xigou.github.io/zh-CN/blog"/>
-    <subtitle>Jorge's Bolg</subtitle>
+    <subtitle>Quite Depth journal</subtitle>
     <icon>https://xigou.github.io/zh-CN/img/favicon.png</icon>
     <rights>Jorge</rights>
     <entry>
