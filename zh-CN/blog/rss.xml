@@ -4,11 +4,43 @@
         <title>Quite Depth journal</title>
         <link>https://xigou.github.io/zh-CN/blog</link>
         <description>Quite Depth journal</description>
-        <lastBuildDate>Wed, 08 Jul 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 23 Sep 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh-CN</language>
         <copyright>Jorge</copyright>
+        <item>
+            <title><![CDATA[BAR 定理: "好事、穷人、轮得到你" 的不可能三角]]></title>
+            <link>https://xigou.github.io/zh-CN/blog/2026/09/23/from-CAP-toBAR</link>
+            <guid>https://xigou.github.io/zh-CN/blog/2026/09/23/from-CAP-toBAR</guid>
+            <pubDate>Wed, 23 Sep 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[CAP 定理是分布式系统的著名的不可能三角，人类社会同样有一个名叫 BAR 的不可能三角]]></description>
+            <content:encoded><![CDATA[<p>在分布式系统的领域，<strong>CAP 定理</strong>（Consistency, Availability, Partition tolerance）是每一位工程师入行时的图腾：它划定了物理世界的边界，告诉我们在信息交互的极限里，一致性、可用性与分区容错不可兼得。</p>
+<p>如果我们将视角从代码仓库移开，投射到这个名为“社会”的大型博弈系统里，你会发现同样存在一个冷酷的<strong>不可能三角</strong>。我将其命名为 <strong>BAR 定理</strong>。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="什么是-bar-定理">什么是 BAR 定理？<a href="https://xigou.github.io/zh-CN/blog/2026/09/23/from-CAP-toBAR#%E4%BB%80%E4%B9%88%E6%98%AF-bar-%E5%AE%9A%E7%90%86" class="hash-link" aria-label="什么是 BAR 定理？的直接链接" title="什么是 BAR 定理？的直接链接" translate="no">​</a></h4>
+<p>在任何有效的博弈系统中，以下三个属性无法同时满足：</p>
+<ul>
+<li class=""><strong>B — Boon（好事 / 超额收益）</strong>：远高于平均水平的回报，无论是金钱、阶级跃迁还是稀缺资源。</li>
+<li class=""><strong>A — Access（轮到你 / 可触达性）</strong>：普通个体可以无门槛、随时随地、按需获取。</li>
+<li class=""><strong>R — Resource-poor（穷人友善 / 零资本门槛）</strong>：参与者不需要具备先验的资本、人脉或特权。</li>
+</ul>
+<!-- -->
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="bar-的逻辑闭环">BAR 的逻辑闭环<a href="https://xigou.github.io/zh-CN/blog/2026/09/23/from-CAP-toBAR#bar-%E7%9A%84%E9%80%BB%E8%BE%91%E9%97%AD%E7%8E%AF" class="hash-link" aria-label="BAR 的逻辑闭环的直接链接" title="BAR 的逻辑闭环的直接链接" translate="no">​</a></h4>
+<p>这个定理揭示了资源的分配策略只有三种排列组合：</p>
+<ol>
+<li class=""><strong>B + A（好事能拿到）</strong>：这意味着系统必须设置高昂的准入门槛。比如顶级私立学校或私募股权投资。你确实能触达超额收益，但前提是你不能是“Resource-poor”。<strong>想要跨越门槛，参与者必须先具备资本或特权。</strong></li>
+<li class=""><strong>B + R（为匮乏者准备的好事）</strong>：这是典型的福利性配置，比如<strong>公租房</strong>。它既有实际收益（B），又面向低门槛群体（R），其结果必然是牺牲触达性（无 A）。稀缺导致了漫长的排队、摇号或者配额制度。<strong>好事是真的，但轮到你是不确定的。</strong></li>
+<li class=""><strong>A + R（人人可投、门槛极低）</strong>：当一个东西标榜着高收益（伪 B），却又让所有人都能轻松参与且没有门槛时，它本质上是一个<strong>流动性陷阱</strong>。最典型的例子是<strong>学历贬值</strong>。当本科甚至研究生学历变得人人可触达且门槛极低时，其作为“超额收益（B）”的属性便迅速坍塌，最终沦为系统性的冗余。</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="工业级的生存建议">工业级的生存建议<a href="https://xigou.github.io/zh-CN/blog/2026/09/23/from-CAP-toBAR#%E5%B7%A5%E4%B8%9A%E7%BA%A7%E7%9A%84%E7%94%9F%E5%AD%98%E5%BB%BA%E8%AE%AE" class="hash-link" aria-label="工业级的生存建议的直接链接" title="工业级的生存建议的直接链接" translate="no">​</a></h4>
+<p>理解 BAR 定理的意义不在于抱怨系统的不公，而在于对“博弈”本身祛魅。</p>
+<p>当一个机会被包装成“A+R”送到你面前时，你应该立刻警觉——<strong>如果它既不需要你有钱，又让你唾手可得，那么它极大概率不含任何 Boon。</strong></p>
+<p>现代社会的绩效主体往往陷入一种“平庸的忙碌”，本质上是在 A+R 的泥潭里试图通过勤奋刷出 B 的效果。然而定理告诉我们：<strong>系统的底层逻辑不支持这种运气。</strong></p>
+<p>要么积累资本去置换 B+A 的入场券，要么付出耐心在 B+R 的赛道里等待配额，最危险的，莫过于在 A+R 的幻象中，消耗掉自己唯一的原始资本。</p>
+<hr>]]></content:encoded>
+            <category>Philosophy</category>
+            <category>乐子</category>
+        </item>
         <item>
             <title><![CDATA[老中的第一哲学：吃屎一定要吃尖尖!]]></title>
             <link>https://xigou.github.io/zh-CN/blog/2026/07/08/eat-the-shit-on-the-top</link>
@@ -74,7 +106,7 @@
             <description><![CDATA[兰小欢《置身事内》读书笔记]]></description>
             <content:encoded><![CDATA[<p><a href="https://book.douban.com/subject/35546622/" target="_blank" rel="noopener noreferrer" class="">置身事内 (豆瓣)</a></p>
 <p>读完这本书，最深刻的体会是：在中国讨论经济，永远无法脱离政府。而要理解中国政府的运作逻辑，1994年的“分税制改革”就是一个压舱石级别的核心事件。</p>
-<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="分税制理解中国经济奇迹与阵痛的底层密码">分税制：理解中国经济奇迹与阵痛的底层密码<a href="https://xigou.github.io/zh-CN/blog/2026/06/10/zhi-shen-shi-nei-Embedded-Government#%E5%88%86%E7%A8%8E%E5%88%B6%E7%90%86%E8%A7%A3%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E%E5%A5%87%E8%BF%B9%E4%B8%8E%EF%BF%BD%E9%98%B5%E7%97%9B%E7%9A%84%E5%BA%95%E5%B1%82%E5%AF%86%E7%A0%81" class="hash-link" aria-label="分税制：理解中国经济奇迹与阵痛的底层密码的直接链接" title="分税制：理解中国经济奇迹与阵痛的底层密码的直接链接" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="分税制理解中国经济奇迹与阵痛的底层密码">分税制：理解中国经济奇迹与阵痛的底层密码<a href="https://xigou.github.io/zh-CN/blog/2026/06/10/zhi-shen-shi-nei-Embedded-Government#%E5%88%86%E7%A8%8E%E5%88%B6%E7%90%86%E8%A7%A3%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E%E5%A5%87%E8%BF%B9%E4%B8%8E%E9%98%B5%E7%97%9B%E7%9A%84%E5%BA%95%E5%B1%82%E5%AF%86%E7%A0%81" class="hash-link" aria-label="分税制：理解中国经济奇迹与阵痛的底层密码的直接链接" title="分税制：理解中国经济奇迹与阵痛的底层密码的直接链接" translate="no">​</a></h4>
 <p>所谓“分税制”，是相对于改革前的“财政大包干（合税制）”而言的。在此之前，中国的税务多由各级地方政府征收，钱收上来后，再通过分成或定额上缴的方式转给中央。这种旧制度在早期经济总量小、税种单一时非常高效。由于遵循“多劳多得”的分配逻辑，极大地刺激了地方发展经济的积极性。但其弊端也很快显现：因为收税权力完全在地方，中央在财政上形同被“屏蔽”。地方政府为了少上缴，倾向于把账面税收数据做低，甚至把体制内税款转化为不受中央监管的“预算外资金”。久而久之，中央财政陷入入不敷出的窘境，各个省份隐隐呈现出“经济诸侯”的割据状态。</p>
 <p>为了扭转“弱中央”的局面，1994年的分税制改革应运而生。这场改革的核心是<strong>重新划分各个税种的征收权与留成比例</strong>。</p>
 <ul>
@@ -357,7 +389,7 @@ ADI 为： 0–0.07 mg nitrite ion/kg 体重/日。这个值是基于对甲血�
 <a href="https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2017.4786" target="_blank" rel="noopener noreferrer" class=""># Re-evaluation of potassium nitrite (E&nbsp;249) and sodium nitrite (E&nbsp;250) as food additives</a></p>
 <p>广西疾控指出，<strong>摄入约 0.3–0.5 g（300–500 mg）nitrite</strong> 即可能出现中毒症状，<strong>1–3 g 可致死</strong>。这是基于已观察中毒案例与医疗急救经验总结的急性暴露量级（不是长期膳食标准）。
 <a href="https://www.gxcdc.org.cn/html/2024/jkts2015_0206/14636.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="">自治区疾控中心关于预防亚硝酸盐中毒的风险提示 - 健康提示 - 广西壮族自治区疾病预防控制中心</a></p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="亚硝酸盐在食物中的生成机制">亚硝酸盐在食物中的生成机制<a href="https://xigou.github.io/zh-CN/blog/2025/12/16/Leftovers-a-Matter-of-Stance-or-Science#%E4%BA%9A%E7%A1%9D%E9%85%B8%E7%9B%90%E5%9C%A8%E9%A3%9F%E7%89%A9%E4%B8%AD%E7%9A%84%E7%94%9F%E6%88%90%E6%9C%BA%E5%88%B6" class="hash-link" aria-label="亚硝酸盐�在食物中的生成机制的直接链接" title="亚硝酸盐在食物中的生成机制的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="亚硝酸盐在食物中的生成机制">亚硝酸盐在食物中的生成机制<a href="https://xigou.github.io/zh-CN/blog/2025/12/16/Leftovers-a-Matter-of-Stance-or-Science#%E4%BA%9A%E7%A1%9D%E9%85%B8%E7%9B%90%E5%9C%A8%E9%A3%9F%E7%89%A9%E4%B8%AD%E7%9A%84%E7%94%9F%E6%88%90%E6%9C%BA%E5%88%B6" class="hash-link" aria-label="亚硝酸盐在食物中的生成机制的直接链接" title="亚硝酸盐在食物中的生成机制的直接链接" translate="no">​</a></h2>
 <p>若食物中本身硝酸盐（nitrate, NO₃⁻）含量高，尤其是绿叶蔬菜，亚硝酸盐可由两种途径产生：</p>
 <ol>
 <li class=""><strong>植物自身 enzyme（硝酸还原酶）</strong> 在细胞损伤时可能将硝酸盐还原成亚硝酸盐。</li>
@@ -369,7 +401,7 @@ ADI 为： 0–0.07 mg nitrite ion/kg 体重/日。这个值是基于对甲血�
 <p>一项希腊全国营养调查显示加工肉中的 nitrite 摄入量中位数约在 0.003–0.02 mg/kg bw/day，占 ADI 的一部分。</p>
 <p>中国对亚硝酸盐的添加有严格规定，主要用于肉制品护色防腐，最大允许残留量通常在&nbsp;<strong>30-70mg/kg</strong>（万分之三至万分之七）之间，酱腌菜限量是&nbsp;<strong>20mg/kg</strong>，并且禁止餐饮业直接使用，只能用复合添加剂，目标是&nbsp;<strong>用少量亚硝酸盐（小风险）来防范肉毒杆菌（大风险）</strong>。</p>
 <p>所以你（60KG）每日摄入超过 50g 加工肉类或者 250g 酱菜就会超过亚硝酸盐 ADI。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="熟菜剩菜中�亚硝酸盐的变化规律">熟菜（剩菜）中亚硝酸盐的变化规律<a href="https://xigou.github.io/zh-CN/blog/2025/12/16/Leftovers-a-Matter-of-Stance-or-Science#%E7%86%9F%E8%8F%9C%E5%89%A9%E8%8F%9C%E4%B8%AD%E4%BA%9A%E7%A1%9D%E9%85%B8%E7%9B%90%E7%9A%84%E5%8F%98%E5%8C%96%E8%A7%84%E5%BE%8B" class="hash-link" aria-label="熟菜（剩菜）中亚硝酸盐的变化规律的直接链接" title="熟菜（剩菜）中亚硝酸盐的变化规律的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="熟菜剩菜中亚硝酸盐的变化规律">熟菜（剩菜）中亚硝酸盐的变化规律<a href="https://xigou.github.io/zh-CN/blog/2025/12/16/Leftovers-a-Matter-of-Stance-or-Science#%E7%86%9F%E8%8F%9C%E5%89%A9%E8%8F%9C%E4%B8%AD%E4%BA%9A%E7%A1%9D%E9%85%B8%E7%9B%90%E7%9A%84%E5%8F%98%E5%8C%96%E8%A7%84%E5%BE%8B" class="hash-link" aria-label="熟菜（剩菜）中亚硝酸盐的变化规律的直接链接" title="熟菜（剩菜）中亚硝酸盐的变化规律的直接链接" translate="no">​</a></h2>
 <p>Ref 1: <a href="https://www.cfs.gov.hk/english/programme/programme_rafs/files/programme_rafs_fc_01_46_1.pdf?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="">Changes in Nitrate and Nitrite Levels of Cooked Vegetables during Storage</a>
 香港食品安全中心实测数据</p>
 <p>Table 1. Nitrate contents of vegetables and soup before and immediately after cooking
@@ -682,7 +714,7 @@ ADI 为： 0–0.07 mg nitrite ion/kg 体重/日。这个值是基于对甲血�
 <p>基于数据的计算式思考，缺乏他者的抗力，缺乏爱欲的思考，仅仅是重复的叠加，缺乏爱欲的爱情也就缺乏了精神动力，会退化为“单纯的感官性”。感官性和工作都从属同一种秩序，它们都与精神和愿望无缘。</p>
 </blockquote>
 <hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="在群中数字时代的大众心理学">在群中：数字时代的大众心理学<a href="https://xigou.github.io/zh-CN/blog/2025/08/19/hanbingzhe-series#%E5%9C%A8%E7%BE%A4%E4%B8%AD%E6%95%B0%E5%AD%97%E6%97%B6%E4%BB%A3%E7%9A%84%E5%A4%A7%E4%BC%97%E5%BF%83%E7%90%86%E5%AD%A6" class="hash-link" aria-label="在群中：数字时代的大众心理学的直接��链接" title="在群中：数字时代的大众心理学的直接链接" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="在群中数字时代的大众�心理学">在群中：数字时代的大众心理学<a href="https://xigou.github.io/zh-CN/blog/2025/08/19/hanbingzhe-series#%E5%9C%A8%E7%BE%A4%E4%B8%AD%E6%95%B0%E5%AD%97%E6%97%B6%E4%BB%A3%E7%9A%84%E5%A4%A7%E4%BC%97%E5%BF%83%E7%90%86%E5%AD%A6" class="hash-link" aria-label="在群中：数字时代的大众心理学的直接链接" title="在群中：数字时代的大众心理学的直接链接" translate="no">​</a></h2>
 <p>这篇主要是反思互联网的即时通讯和社交网络等产品对大众的影响，互联网的匿名化导致人们不需要为言论负责，所以激发了人性之恶，人们之间不再相互尊重；去中心化导致严肃的媒体和文学不再被传播，垃圾信息带走了人的全部注意力；图片等媒介削弱了生命的瞬时性，人与人之间的关系被量化，社交关系变得令人尴尬；人的群体潜意识可以被信息流操纵，网络也削弱了人的行动能力，使得群体性的政治对抗变得几乎不可能。</p>
 <p>◆ 毫无敬意</p>
 <blockquote>
@@ -767,28 +799,6 @@ ADI 为： 0–0.07 mg nitrite ion/kg 体重/日。这个值是基于对甲血�
 <hr>]]></content:encoded>
             <category>Philosophy</category>
             <category>Reading</category>
-        </item>
-        <item>
-            <title><![CDATA[姜文新片《你行你上》]]></title>
-            <link>https://xigou.github.io/zh-CN/blog/2025/07/19/jiangwen-you-can-you-up</link>
-            <guid>https://xigou.github.io/zh-CN/blog/2025/07/19/jiangwen-you-can-you-up</guid>
-            <pubDate>Sat, 19 Jul 2025 00:14:31 GMT</pubDate>
-            <description><![CDATA[姜文新片《你行你上》]]></description>
-            <content:encoded><![CDATA[<p>故事的底色依然是一个好看的，有故事性的喜剧，是以钢琴家朗朗作为故事原型创作。</p>
-<p><img decoding="async" loading="lazy" src="https://xigou.github.io/zh-CN/assets/images/jiangwen-youcanyouup-52ad95d2ad851c6c1b7ca3f0b8cd3b31.jpeg" width="600" height="450" class="img_ev3q"></p>
-<p>故事里面朗朗四处求学，经历了很多任的老师。</p>
-<p>北京的女老师因为听见朗朗弹琴想起了乐谱被当成资产阶级物品而焚烧的痛苦记忆，跟朗朗分道扬镳;&nbsp;&nbsp;</p>
-<p>音乐学校的老师，虽然带着朗朗取得了小小的成就，但是却沽名钓誉，最后也不欢而散;&nbsp;&nbsp;</p>
-<p>黑不溜秋的钢琴大师，信誓旦旦的说如果郎朗不跟着他走就会被毁掉，而朗朗的父亲选择了去顶尖音乐学院而背叛了这位导师;&nbsp;</p>
-<p>这些各路老师总是很讨厌朗朗的父亲，想要把他赶回沈阳去，由自己带着朗朗去学习，但是朗爹反复强调，他才是总设计师，其他的老师都是兼职员工而已。</p>
-<p>在最后朗朗这样一个狂热的想要赢的人，在总设计师的带领下，去了美国顶尖的音乐学院，获得了与掌控音乐家生杀大权的指挥家同台演奏的机会，在盛大的表演现场，朗爹到处宣传这个好消息，最后激动的晕倒了，被急救的直升飞机拉着飞过舞台的上空，恍惚间看着这一切。</p>
-<p>朗朗这个狂热的想要赢的国家，从籍籍无名到登顶世界舞台的过程当中，想尽了办法，找了各路人马前来救国救民，最终全都分道扬镳。只有我们伟大的总设计师，带着朗朗把钢琴的弦一根根弹断，然后又换上了新的弦，踹开了脸黑心更黑的老大哥，与真正的世界霸主合作，最终才有了今天的空前盛况。</p>
-<p>电影的最后一幕是几行字，大意是，在朗朗大获成功以后，朗爹查出了肿瘤，有两个，长在他的气管两边，一左一右，这两个肿瘤跟郎朗的年龄是一样的，郎朗出生的时候就存在了。肿瘤随后就被割掉了。</p>
-<p>电影当中最抽象的一段就是用铁链加一个木板把朗朗吊在半空中弹奏钢琴，四周的大楼人头攒动，大家从窗户探出脑袋欣赏演出，这一幕仿佛似曾相识，但是我有一些记不清楚了，我不知道他们喊的是什么，是要工作还是要封控？是要清零还是要吃饭？</p>
-<p>对于这个从孩子出生就带着两大顽疾的总设计师，没有几个人有资格去评价他，也很难客观的去评价他，就算是亏待他一点，也是七分功三分过。而现在还有一个最大的好消息，就是他的两颗肿瘤已经被割掉了。</p>
-<p>但愿这两颗肿瘤不会再复发，但愿没有几万个大家还没有发现的新肿瘤，因为肿瘤对于任何一个普通人来讲，都是灭顶之灾。</p>]]></content:encoded>
-            <category>writing</category>
-            <category>Movie</category>
         </item>
     </channel>
 </rss>
